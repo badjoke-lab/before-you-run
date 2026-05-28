@@ -42,6 +42,7 @@ v0.1 release preparation
 - Candidate moderation report
 - Freshness/severity helper
 - Duplicate detection helper
+- Source credibility helper
 ```
 
 ---
@@ -80,5 +81,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-19: Add source credibility helpers
+PR-20: Add card update history
 ```

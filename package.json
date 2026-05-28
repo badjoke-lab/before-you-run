@@ -7,6 +7,7 @@
     "intake:run": "node scripts/run-intake-skeleton.mjs",
     "moderation:report": "node scripts/build-moderation-report.mjs",
     "freshness:report": "node scripts/build-freshness-severity-report.mjs",
-    "duplicates:report": "node scripts/build-duplicate-report.mjs"
+    "duplicates:report": "node scripts/build-duplicate-report.mjs",
+    "credibility:report": "node scripts/build-source-credibility-report.mjs"
   }
 }
