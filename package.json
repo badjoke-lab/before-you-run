@@ -14,6 +14,7 @@
     "social:report": "node scripts/build-social-signal-report.mjs data/social-signals.example.json reports/social-signals.example.md",
     "evidence:report": "node scripts/build-evidence-report.mjs",
     "verify:report": "node scripts/build-signal-verification-report.mjs",
-    "packs:report": "node scripts/build-category-safety-packs-report.mjs"
+    "packs:report": "node scripts/build-category-safety-packs-report.mjs",
+    "rules:build": "node scripts/build-downloadable-ai-rules.mjs"
   }
 }
