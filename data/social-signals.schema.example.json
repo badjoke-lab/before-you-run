@@ -1,0 +1,38 @@
+{
+  "required": [
+    "id",
+    "platform",
+    "source_kind",
+    "source_type",
+    "signal_status",
+    "source_url",
+    "display_source",
+    "language",
+    "collected_at",
+    "title",
+    "public_safe_summary",
+    "why_relevant",
+    "candidate_categories",
+    "confidence",
+    "freshness",
+    "severity_hint",
+    "capture",
+    "review_needs",
+    "verification"
+  ],
+  "optional": [
+    "observed_at",
+    "matched_keywords",
+    "notes"
+  ],
+  "allowed_values": {
+    "platform": ["x", "other-social"],
+    "source_kind": ["social-link", "screenshot-note", "manual-note"],
+    "source_type": ["signal"],
+    "signal_status": ["needs-verification", "watch", "rejected", "promoted-to-candidate"],
+    "confidence": ["low", "medium", "high"],
+    "freshness": ["new", "recent", "stale", "unknown"],
+    "severity_hint": ["high", "medium", "watch", "unknown"],
+    "capture_type": ["url-only", "screenshot-reference", "manual-note"]
+  }
+}
