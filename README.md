@@ -6,7 +6,9 @@ The project focuses on public-safe risky-action cards: what to avoid, what to ch
 
 ## Current status
 
-Current phase: v0.1 MVP planning and repository foundation.
+Current phase: v0.1 MVP release preparation.
+
+The repository currently includes the v0.1 static site foundation, data-driven risky-action cards, search/filter/detail behavior, AI/agent copy actions, utility pages, license files, and JSON validation.
 
 The public MVP specification is available at:
 
@@ -16,7 +18,7 @@ docs/specs/tripwire-mvp-spec-v0.1.md
 
 ## v0.1 scope
 
-The v0.1 MVP is planned to provide:
+The v0.1 MVP provides:
 
 ```text
 - English root page
@@ -32,6 +34,7 @@ The v0.1 MVP is planned to provide:
 - After-incident guide
 - Sources page
 - Mobile-readable layout
+- JSON data validation
 ```
 
 ## Public content boundary
@@ -52,18 +55,14 @@ Tripwire should not publish offensive operational detail, unverified claims as f
 
 ## Technical direction
 
-The initial implementation is planned as a static site using HTML, CSS, JavaScript, and JSON data files. Candidate collection and advisory-source integrations are planned for later versions.
+The initial implementation is a static site using HTML, CSS, JavaScript, and JSON data files. Candidate collection and advisory-source integrations are planned for later versions.
 
 ## License
-
-Planned license model:
 
 ```text
 Code: MIT License
 Editorial content, threat cards, translations, checklists, incident guides, and AI safety rules: CC BY-NC 4.0
 ```
-
-Dedicated license files will be added before v0.1 release.
 
 ## Validation
 
@@ -71,7 +70,5 @@ Run:
 
 ```bash
 npm run check
+node --check app.js
 ```
-
-This validates the current JSON data files.
-
