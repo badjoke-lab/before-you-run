@@ -46,6 +46,7 @@ v0.1 release preparation
 - Card update history foundation
 - Publish/review workflow foundation
 - Manual social signal ingestion foundation
+- Bluesky signal support
 ```
 
 ---
@@ -84,5 +85,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-23: Add Bluesky signal support
+PR-24: Add Mastodon signal support
 ```
