@@ -1,0 +1,21 @@
+[
+  {
+    "id": "example-unknown-package-warning",
+    "title": "Example warning about reviewing unknown package install scripts",
+    "url": "https://example.com/source",
+    "source_id": "manual",
+    "source_type": "reference",
+    "status": "candidate",
+    "language": "en",
+    "published_at": "2026-05-28",
+    "collected_at": "2026-05-28",
+    "summary": "Example candidate summary written in public-safe defensive language.",
+    "why_relevant": "This may become a card because it maps to a risky developer action.",
+    "candidate_categories": ["malicious-packages"],
+    "matched_keywords": ["malicious package", "postinstall"],
+    "confidence": "low",
+    "freshness": "new",
+    "severity_hint": "medium",
+    "notes": "Example only. Replace with real reviewed candidates later."
+  }
+]
