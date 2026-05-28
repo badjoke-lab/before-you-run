@@ -5,8 +5,9 @@ Source: data/candidate-review-queue.example.json
 
 ## Summary
 
-- Total candidates: 1
+- Total candidates: 2
 - needs-verification: 1
+- candidate: 1
 
 ## needs-verification
 
@@ -31,3 +32,27 @@ This may become a defensive card because it maps to package-install behavior.
 
 Public-safe summary:
 Example public-safe summary for review queue testing.
+
+## candidate
+
+### Check package install scripts before running install commands
+
+- Status: candidate
+- Source type: reference
+- Confidence: medium
+- Freshness: new
+- Severity hint: medium
+- Categories: malicious-packages
+- URL: https://example.com/source
+- Review priority: high
+- Review decision: draft-card
+- Safe card angle: Check package install scripts before running install commands
+- Review questions: Is the wording beginner-safe and public-safe?; Are the defensive checks clear and actionable?
+- Blocking issues: none
+- Review notes: Approved as a draft placeholder for editorial review.
+
+Why relevant:
+This maps directly to a defensive card about verifying scripts before package installation.
+
+Public-safe summary:
+Package install commands can run project-defined scripts, so review them before executing commands from an unfamiliar package or repository.

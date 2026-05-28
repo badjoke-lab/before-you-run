@@ -27,5 +27,31 @@
     ],
     "review_decision": "undecided",
     "review_notes": "Example only. Replace with reviewed candidates later."
+  },
+  {
+    "id": "queue-example-package-script-draft",
+    "status": "candidate",
+    "review_priority": "high",
+    "title": "Check package install scripts before running install commands",
+    "source_url": "https://example.com/source",
+    "source_id": "manual",
+    "source_type": "reference",
+    "language": "en",
+    "collected_at": "2026-05-28",
+    "candidate_categories": ["malicious-packages"],
+    "matched_keywords": ["install script", "postinstall"],
+    "confidence": "medium",
+    "freshness": "new",
+    "severity_hint": "medium",
+    "summary": "Package install commands can run project-defined scripts, so review them before executing commands from an unfamiliar package or repository.",
+    "why_relevant": "This maps directly to a defensive card about verifying scripts before package installation.",
+    "review_questions": [
+      "Is the wording beginner-safe and public-safe?",
+      "Are the defensive checks clear and actionable?"
+    ],
+    "safe_card_angle": "Check package install scripts before running install commands",
+    "blocking_issues": [],
+    "review_decision": "draft-card",
+    "review_notes": "Approved as a draft placeholder for editorial review."
   }
 ]

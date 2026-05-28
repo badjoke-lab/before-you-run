@@ -1,0 +1,88 @@
+[
+  {
+    "draft_id": "draft-check-package-install-scripts-before-running-install-commands",
+    "source_candidate_id": "queue-example-package-script-draft",
+    "draft_status": "draft",
+    "needs_editorial_review": true,
+    "id": "check-package-install-scripts-before-running-install-commands",
+    "title": "Check package install scripts before running install commands",
+    "title_ja": "要編集: 日本語タイトルを追加してください",
+    "severity": "medium",
+    "categories": [
+      "malicious-packages"
+    ],
+    "audience": [
+      "beginner",
+      "indie-dev",
+      "ai-coding"
+    ],
+    "summary": "Package install commands can run project-defined scripts, so review them before executing commands from an unfamiliar package or repository.",
+    "summary_ja": "要編集: 日本語サマリーを追加してください。",
+    "dangerous_actions": [
+      "Check package install scripts before running install commands"
+    ],
+    "dangerous_actions_ja": [
+      "要編集: 危険操作の日本語説明を追加してください。"
+    ],
+    "avoid_now": [
+      "Review source trust and command/script behavior before execution",
+      "Use isolation and ask for confirmation before risky actions"
+    ],
+    "avoid_now_ja": [
+      "実行前にソース信頼性とコマンド/スクリプト挙動を確認する",
+      "高リスク操作の前に隔離環境を使い、確認を取る"
+    ],
+    "sources": [
+      {
+        "title": "Check package install scripts before running install commands",
+        "url": "https://example.com/source",
+        "publisher": "manual",
+        "source_type": "reference",
+        "checked_at": "2026-05-28"
+      }
+    ],
+    "updated_at": "2026-05-28",
+    "ai_output": {
+      "risk_summary": "Package install commands can run project-defined scripts, so review them before executing commands from an unfamiliar package or repository.",
+      "do_not": [
+        "Do not execute risky commands from unfamiliar sources without review."
+      ],
+      "check_first": [
+        "Check source trust, scripts, permissions, and likely side effects."
+      ],
+      "safe_actions": [
+        "Use isolated environments and explicit approvals for risky steps."
+      ],
+      "ask_user_before": [
+        "Running install/build/test commands",
+        "Executing project-defined scripts"
+      ],
+      "agent_instruction": "Provide a short risk summary, list checks completed, and request explicit confirmation before risky execution.",
+      "checklist": [
+        "Checked source trust",
+        "Checked commands/scripts",
+        "Checked permissions and side effects",
+        "Asked user before execution"
+      ]
+    },
+    "ai_output_ja": {
+      "risk_summary": "要編集: 日本語リスク要約を追加してください。",
+      "do_not": [
+        "要編集: 日本語の禁止事項を追加してください。"
+      ],
+      "check_first": [
+        "要編集: 日本語の事前確認項目を追加してください。"
+      ],
+      "safe_actions": [
+        "要編集: 日本語の安全行動を追加してください。"
+      ],
+      "ask_user_before": [
+        "要編集: 日本語のユーザー確認項目を追加してください。"
+      ],
+      "agent_instruction": "要編集: 日本語のエージェント向け指示を追加してください。",
+      "checklist": [
+        "要編集: 日本語チェックリストを追加してください。"
+      ]
+    }
+  }
+]
