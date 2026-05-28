@@ -26,7 +26,7 @@
     "notes"
   ],
   "allowed_values": {
-    "platform": ["x", "other-social"],
+    "platform": ["x", "bluesky", "other-social"],
     "source_kind": ["social-link", "screenshot-note", "manual-note"],
     "source_type": ["signal"],
     "signal_status": ["needs-verification", "watch", "rejected", "promoted-to-candidate"],

@@ -13,8 +13,13 @@
     "title": "Example social signal about package install script review",
     "public_safe_summary": "Placeholder social signal summary. This is not treated as confirmed information.",
     "why_relevant": "This may point to a risky developer action, but it requires confirmation from stronger sources.",
-    "candidate_categories": ["malicious-packages"],
-    "matched_keywords": ["package script", "install script"],
+    "candidate_categories": [
+      "malicious-packages"
+    ],
+    "matched_keywords": [
+      "package script",
+      "install script"
+    ],
     "confidence": "low",
     "freshness": "new",
     "severity_hint": "watch",
@@ -39,5 +44,51 @@
       "verification_notes": "Example only. Social signals must be verified before publication."
     },
     "notes": "Manual placeholder signal. No API, scraping, or live fetch was performed."
+  },
+  {
+    "id": "social-signal-example-bluesky-dependency-warning",
+    "platform": "bluesky",
+    "source_kind": "social-link",
+    "source_type": "signal",
+    "signal_status": "needs-verification",
+    "source_url": "https://example.com/bluesky-post",
+    "display_source": "Example Bluesky post",
+    "language": "en",
+    "collected_at": "2026-05-28",
+    "observed_at": "2026-05-28",
+    "title": "Example Bluesky signal about dependency review",
+    "public_safe_summary": "Placeholder Bluesky signal summary. This is not treated as confirmed information.",
+    "why_relevant": "This may point to a developer dependency risk, but it requires confirmation from stronger sources.",
+    "candidate_categories": [
+      "supply-chain"
+    ],
+    "matched_keywords": [
+      "dependency",
+      "package review"
+    ],
+    "confidence": "low",
+    "freshness": "new",
+    "severity_hint": "watch",
+    "capture": {
+      "capture_type": "url-only",
+      "screenshot_reference": "",
+      "quoted_excerpt": "Short placeholder excerpt only.",
+      "needs_redaction": false,
+      "needs_screenshot_context": false
+    },
+    "review_needs": {
+      "needs_source_check": true,
+      "needs_confirmation_source": true,
+      "needs_safety_rewrite": false,
+      "needs_translation": false,
+      "needs_duplicate_check": true
+    },
+    "verification": {
+      "primary_source_found": false,
+      "reference_source_found": false,
+      "do_not_publish_as_confirmed": true,
+      "verification_notes": "Example only. Bluesky signals must be verified before publication."
+    },
+    "notes": "Manual placeholder Bluesky signal. No API, scraping, or live fetch was performed."
   }
 ]

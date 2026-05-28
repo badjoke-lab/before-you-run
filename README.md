@@ -183,13 +183,13 @@ This reads local example publish review data and writes a Markdown report. It do
 
 ## Manual social signal ingestion
 
-A local manual social signal report is available for Phase 3 workflows.
+A local manual social signal report is available for Phase 3 workflows covering X, Bluesky, and other manually collected social signals.
 
 ```bash
 npm run social:report
 ```
 
-This reads local example social signal data and writes a Markdown report. It does not use X APIs, fetch social posts, scrape websites, or publish candidates/cards automatically.
+This reads local example social signal data and writes a Markdown report. It does not use social APIs, perform live fetches, scrape websites, or publish candidates/cards automatically.
 
 ## Signal labels
 
