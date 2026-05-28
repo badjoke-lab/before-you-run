@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tripwire</title>
+    <meta
+      name="description"
+      content="Developer safety cards for risky actions, source-linked warnings, and AI/agent safety prompts."
+    />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="wrapper cluster header-inner">
+        <a href="/" class="site-title">Tripwire</a>
+        <nav aria-label="Primary">
+          <ul class="nav-list cluster" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/cards/">Cards</a></li>
+            <li><a href="/checklists/">Checklists</a></li>
+            <li><a href="/commands/">Commands</a></li>
+            <li><a href="/sources/">Sources</a></li>
+            <li><a href="/ai-rules/">AI Rules</a></li>
+            <li><a href="/ja/" lang="ja">Japanese</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="site-main">
+      <div class="wrapper stack">
+        <section class="hero stack">
+          <p class="badge">v0.1 MVP foundation</p>
+          <h1>Tripwire</h1>
+          <p>
+            Developer safety cards for risky actions, source-linked warnings, and AI/agent safety prompts.
+          </p>
+        </section>
+
+        <section class="panel flow" aria-labelledby="tracks-title">
+          <h2 id="tracks-title">What Tripwire tracks</h2>
+          <p>Tripwire highlights development actions that can cause security, stability, or trust problems if handled carelessly.</p>
+        </section>
+
+        <section class="panel flow" aria-labelledby="planned-title">
+          <h2 id="planned-title">v0.1 planned features</h2>
+          <ul>
+            <li>Public-safe warning cards with source links</li>
+            <li>Checklist and command safety references</li>
+            <li>AI and agent rule reminders for risky workflows</li>
+          </ul>
+        </section>
+
+        <section class="panel flow" aria-labelledby="boundary-title">
+          <h2 id="boundary-title">Public content boundary</h2>
+          <p>
+            This site is defensive and educational. It avoids exploit steps, bypass instructions, and unverified claims.
+          </p>
+        </section>
+
+        <section class="panel flow" aria-labelledby="status-title">
+          <h2 id="status-title">Current status</h2>
+          <p>This page is the initial static shell for the v0.1 MVP.</p>
+        </section>
+
+        <section class="panel placeholder flow" aria-labelledby="cards-placeholder-title">
+          <h2 id="cards-placeholder-title">Cards placeholder</h2>
+          <p>Card data and rendering will be added in a later PR.</p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrapper cluster footer-inner">
+        <p>&copy; <span data-current-year>2026</span> Tripwire</p>
+        <p><a href="/ja/" lang="ja">日本語ページ</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
