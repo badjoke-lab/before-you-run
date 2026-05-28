@@ -1,0 +1,74 @@
+{
+  "confidence": [
+    {
+      "id": "low",
+      "label": "Low",
+      "label_ja": "低",
+      "description": "Early or weak signal. Requires stronger confirmation before publication."
+    },
+    {
+      "id": "medium",
+      "label": "Medium",
+      "label_ja": "中",
+      "description": "Relevant signal with some supporting context, but still needs editorial review."
+    },
+    {
+      "id": "high",
+      "label": "High",
+      "label_ja": "高",
+      "description": "Strongly supported by primary or reliable reference sources."
+    }
+  ],
+  "freshness": [
+    {
+      "id": "new",
+      "label": "New",
+      "label_ja": "新規",
+      "description": "Recently collected or newly observed."
+    },
+    {
+      "id": "recent",
+      "label": "Recent",
+      "label_ja": "最近",
+      "description": "Still relevant and not stale for current defensive awareness."
+    },
+    {
+      "id": "stale",
+      "label": "Stale",
+      "label_ja": "古い",
+      "description": "Older item that may need re-checking before use."
+    },
+    {
+      "id": "unknown",
+      "label": "Unknown",
+      "label_ja": "不明",
+      "description": "Freshness is not yet clear."
+    }
+  ],
+  "severity_hint": [
+    {
+      "id": "high",
+      "label": "High",
+      "label_ja": "高",
+      "description": "Likely to require urgent attention if confirmed."
+    },
+    {
+      "id": "medium",
+      "label": "Medium",
+      "label_ja": "中",
+      "description": "Potentially important but needs more context or review."
+    },
+    {
+      "id": "watch",
+      "label": "Watch",
+      "label_ja": "監視",
+      "description": "Worth monitoring, but not enough for stronger severity."
+    },
+    {
+      "id": "unknown",
+      "label": "Unknown",
+      "label_ja": "不明",
+      "description": "Severity is not yet clear."
+    }
+  ]
+}

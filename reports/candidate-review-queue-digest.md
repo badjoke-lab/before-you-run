@@ -27,6 +27,11 @@ Source: data/candidate-review-queue.example.json
 - Blocking issues: Example source is placeholder only.
 - Review notes: Example only. Replace with reviewed candidates later.
 
+Label notes:
+- Confidence: Low because this is placeholder/manual example data.
+- Freshness: Marked new for local workflow testing.
+- Severity hint: Medium as a conservative example.
+
 Why relevant:
 This may become a defensive card because it maps to package-install behavior.
 
@@ -50,6 +55,11 @@ Example public-safe summary for review queue testing.
 - Review questions: Is the wording beginner-safe and public-safe?; Are the defensive checks clear and actionable?
 - Blocking issues: none
 - Review notes: Approved as a draft placeholder for editorial review.
+
+Label notes:
+- Confidence: Low because this is placeholder/manual example data.
+- Freshness: Marked new for local workflow testing.
+- Severity hint: Medium as a conservative example.
 
 Why relevant:
 This maps directly to a defensive card about verifying scripts before package installation.

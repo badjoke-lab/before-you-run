@@ -36,6 +36,7 @@ v0.1 release preparation
 - Manual candidate digest skeleton
 - Candidate review queue data model
 - Candidate-to-card draft pipeline
+- Signal confidence and freshness label definitions
 ```
 
 ---
@@ -74,5 +75,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-12: Add signal confidence and freshness labels
+PR-13: Add RSS/manual intake source runner skeleton
 ```

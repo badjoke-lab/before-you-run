@@ -20,6 +20,11 @@ Source: data/manual-candidates.example.json
 - Categories: malicious-packages
 - URL: https://example.com/source
 
+Label notes:
+- Confidence: Low because this is placeholder/manual example data.
+- Freshness: Marked new for local workflow testing.
+- Severity hint: Medium as a conservative example.
+
 Why relevant:
 This may become a card because it maps to a risky developer action.
 

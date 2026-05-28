@@ -169,6 +169,17 @@ function buildDigest(candidates, sourceLabel) {
         lines.push(`- Review notes: ${c.review_notes}`);
       }
 
+      if (c.label_notes && typeof c.label_notes === 'object') {
+        const labelLines = [];
+        if (c.label_notes.confidence) labelLines.push(`- Confidence: ${c.label_notes.confidence}`);
+        if (c.label_notes.freshness) labelLines.push(`- Freshness: ${c.label_notes.freshness}`);
+        if (c.label_notes.severity_hint) labelLines.push(`- Severity hint: ${c.label_notes.severity_hint}`);
+
+        if (labelLines.length > 0) {
+          lines.push('', 'Label notes:', ...labelLines);
+        }
+      }
+
       lines.push(
         '',
         'Why relevant:',

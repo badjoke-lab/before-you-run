@@ -181,9 +181,57 @@ function validateSourceTiers() {
   }
 }
 
+
+function validateSignalLabels() {
+  const path = "data/signal-labels.json";
+  const data = readJson(path);
+  if (data === null) return;
+
+  if (!data || typeof data !== "object" || Array.isArray(data)) {
+    addError(`${path} must be a top-level object`);
+    return;
+  }
+
+  const groups = {
+    confidence: new Set(["low", "medium", "high"]),
+    freshness: new Set(["new", "recent", "stale", "unknown"]),
+    severity_hint: new Set(["high", "medium", "watch", "unknown"])
+  };
+
+  for (const [group, requiredIds] of Object.entries(groups)) {
+    const value = data[group];
+    if (!Array.isArray(value)) {
+      addError(`${path}.${group} must be an array`);
+      continue;
+    }
+
+    value.forEach((item, i) => {
+      const p = `${path}.${group}[${i}]`;
+      if (!item || typeof item !== "object" || Array.isArray(item)) {
+        addError(`${p} must be an object`);
+        return;
+      }
+
+      if (!isNonEmptyString(item.id)) {
+        addError(`${p}.id is required`);
+      } else {
+        requiredIds.delete(item.id);
+      }
+      if (!isNonEmptyString(item.label)) addError(`${p}.label is required`);
+      if (!isNonEmptyString(item.label_ja)) addError(`${p}.label_ja is required`);
+      if (!isNonEmptyString(item.description)) addError(`${p}.description is required`);
+    });
+
+    for (const id of requiredIds) {
+      addError(`${path}.${group} missing required id: ${id}`);
+    }
+  }
+}
+
 validateThreats();
 validateCategories();
 validateSourceTiers();
+validateSignalLabels();
 
 if (errors.length > 0) {
   console.error("Tripwire data validation failed:");

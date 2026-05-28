@@ -93,6 +93,11 @@ npm run drafts:build
 
 This creates draft card JSON and a Markdown report from local review queue example data. Drafts are not published automatically.
 
+
+## Signal labels
+
+Tripwire includes confidence, freshness, and severity-hint label definitions for candidate review workflows. These labels are editorial aids and do not automatically publish or confirm candidate items.
+
 ## License
 
 ```text
