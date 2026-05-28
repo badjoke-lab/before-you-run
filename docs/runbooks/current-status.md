@@ -39,6 +39,7 @@ v0.1 release preparation
 - Signal confidence and freshness label definitions
 - RSS/manual intake source runner skeleton
 - Manual intake file format
+- Candidate moderation report
 ```
 
 ---
@@ -77,5 +78,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-15: Add candidate moderation report
+PR-16: Add freshness/severity helper
 ```

@@ -116,6 +116,16 @@ npm run intake:run
 
 Manual intake data is local example data only and does not publish candidates or cards automatically.
 
+## Candidate moderation report
+
+A local candidate moderation report builder is available for Phase 2 review workflows.
+
+```bash
+npm run moderation:report
+```
+
+This reads local manual intake example data and writes a Markdown moderation report. It does not publish candidates or cards.
+
 ## Signal labels
 
 Tripwire includes confidence, freshness, and severity-hint label definitions for candidate review workflows. These labels are editorial aids and do not automatically publish or confirm candidate items.
