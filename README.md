@@ -170,6 +170,17 @@ npm run history:report
 
 This reads local example update history data and writes a Markdown report. It does not modify published cards automatically.
 
+
+## Publish review workflow
+
+A local publish review report is available for Phase 2 editorial workflows.
+
+```bash
+npm run publish:report
+```
+
+This reads local example publish review data and writes a Markdown report. It does not publish or modify cards automatically.
+
 ## Signal labels
 
 Tripwire includes confidence, freshness, and severity-hint label definitions for candidate review workflows. These labels are editorial aids and do not automatically publish or confirm candidate items.
