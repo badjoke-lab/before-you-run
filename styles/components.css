@@ -187,3 +187,47 @@
     width: auto;
   }
 }
+
+.page-intro p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.checklist-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checklist-item {
+  position: relative;
+  padding-left: 1.8rem;
+}
+
+.checklist-item::before {
+  content: "☐";
+  position: absolute;
+  left: 0;
+}
+
+.command-warning code {
+  font-size: 0.95em;
+}
+
+.incident-panel p,
+.source-tier p {
+  margin: 0;
+}
+
+.definition-list {
+  margin: 0;
+}
+
+.definition-list dt {
+  font-weight: 600;
+}
+
+.definition-list dd {
+  margin: 0 0 var(--space-2) 0;
+  color: var(--color-muted);
+}
