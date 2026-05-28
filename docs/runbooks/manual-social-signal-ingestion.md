@@ -7,7 +7,7 @@ Last updated: 2026-05-28
 
 ## Purpose
 
-Manual social signal ingestion gives Tripwire reviewers a public-safe way to record X, Bluesky, and other SNS-derived observations as low-tier signal inputs before any candidate or card review. It is intended for early triage only: a social post, link, screenshot reference, or manual note may suggest that an item deserves review, but it does not confirm that the underlying claim is true.
+Manual social signal ingestion gives Tripwire reviewers a public-safe way to record X, Bluesky, Mastodon, and other SNS-derived observations as low-tier signal inputs before any candidate or card review. It is intended for early triage only: a social post, link, screenshot reference, or manual note may suggest that an item deserves review, but it does not confirm that the underlying claim is true.
 
 This workflow supports local editorial organization without adding automated social collection.
 
@@ -45,7 +45,7 @@ Not allowed in this workflow:
 
 ## Lower-tier handling rules
 
-X, Bluesky, and other SNS items are lower-tier signal inputs. They must not be treated as confirmed facts, even when a post appears credible or widely shared.
+X, Bluesky, Mastodon, and other SNS items are lower-tier signal inputs. They must not be treated as confirmed facts, even when a post appears credible or widely shared.
 
 Use these rules during review:
 
@@ -72,6 +72,18 @@ Bluesky observations follow the same manual, lower-tier signal rules as other so
 - Manual Bluesky entries should include source URL, short public-safe summary, and verification status.
 - Do not rely on reposts or quote-post style context without checking the original source.
 - No Bluesky API or automated collection is used in this workflow.
+```
+
+### Mastodon-specific handling
+
+Mastodon observations follow the same manual, lower-tier signal rules as other social sources. Use these Mastodon-specific checks during review:
+
+```text
+- Mastodon items are still lower-tier signal inputs unless confirmed elsewhere.
+- A Mastodon link alone is not confirmation.
+- Manual Mastodon entries should include source URL, instance/context if known, short public-safe summary, and verification status.
+- Federated reposts/boosts should not be treated as original-source confirmation.
+- No Mastodon API or automated collection is used in this workflow.
 ```
 
 ## Manual data file
