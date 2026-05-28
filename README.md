@@ -72,6 +72,16 @@ npm run digest:build
 
 This uses example candidate data and does not fetch external sources.
 
+## Candidate review queue
+
+A local review queue example is available for future v0.2 workflows.
+
+```bash
+npm run queue:digest
+```
+
+This generates a review digest from local example data only.
+
 ## License
 
 ```text

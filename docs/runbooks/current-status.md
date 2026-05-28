@@ -34,6 +34,7 @@ v0.1 release preparation
 - Expanded initial card set for v0.1
 - Source metadata foundation for future candidate collection
 - Manual candidate digest skeleton
+- Candidate review queue data model
 ```
 
 ---
@@ -72,5 +73,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-10: Add candidate review queue data model
+PR-11: Add candidate-to-card draft pipeline
 ```
