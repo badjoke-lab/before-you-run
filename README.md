@@ -126,6 +126,17 @@ npm run moderation:report
 
 This reads local manual intake example data and writes a Markdown moderation report. It does not publish candidates or cards.
 
+
+## Freshness / severity helper
+
+A local freshness and severity helper report is available for Phase 2 review workflows.
+
+```bash
+npm run freshness:report
+```
+
+This reads local manual intake example data and writes a Markdown helper report. It does not verify truth, fetch sources, or publish candidates/cards.
+
 ## Signal labels
 
 Tripwire includes confidence, freshness, and severity-hint label definitions for candidate review workflows. These labels are editorial aids and do not automatically publish or confirm candidate items.
