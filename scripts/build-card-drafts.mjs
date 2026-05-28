@@ -109,6 +109,12 @@ function buildDraft(item) {
       '実行前にソース信頼性とコマンド/スクリプト挙動を確認する',
       '高リスク操作の前に隔離環境を使い、確認を取る'
     ],
+    draft_labels: {
+      source_confidence: item.confidence || 'medium',
+      source_freshness: item.freshness || 'new',
+      severity_hint: item.severity_hint || 'medium',
+      label_notes: item.label_notes && typeof item.label_notes === 'object' ? item.label_notes : {}
+    },
     sources: [
       {
         title: item.title,

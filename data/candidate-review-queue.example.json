@@ -9,8 +9,13 @@
     "source_type": "reference",
     "language": "en",
     "collected_at": "2026-05-28",
-    "candidate_categories": ["malicious-packages"],
-    "matched_keywords": ["postinstall", "malicious package"],
+    "candidate_categories": [
+      "malicious-packages"
+    ],
+    "matched_keywords": [
+      "postinstall",
+      "malicious package"
+    ],
     "confidence": "low",
     "freshness": "new",
     "severity_hint": "medium",
@@ -26,7 +31,12 @@
       "Example source is placeholder only."
     ],
     "review_decision": "undecided",
-    "review_notes": "Example only. Replace with reviewed candidates later."
+    "review_notes": "Example only. Replace with reviewed candidates later.",
+    "label_notes": {
+      "confidence": "Low because this is placeholder/manual example data.",
+      "freshness": "Marked new for local workflow testing.",
+      "severity_hint": "Medium as a conservative example."
+    }
   },
   {
     "id": "queue-example-package-script-draft",
@@ -38,8 +48,13 @@
     "source_type": "reference",
     "language": "en",
     "collected_at": "2026-05-28",
-    "candidate_categories": ["malicious-packages"],
-    "matched_keywords": ["install script", "postinstall"],
+    "candidate_categories": [
+      "malicious-packages"
+    ],
+    "matched_keywords": [
+      "install script",
+      "postinstall"
+    ],
     "confidence": "medium",
     "freshness": "new",
     "severity_hint": "medium",
@@ -52,6 +67,11 @@
     "safe_card_angle": "Check package install scripts before running install commands",
     "blocking_issues": [],
     "review_decision": "draft-card",
-    "review_notes": "Approved as a draft placeholder for editorial review."
+    "review_notes": "Approved as a draft placeholder for editorial review.",
+    "label_notes": {
+      "confidence": "Low because this is placeholder/manual example data.",
+      "freshness": "Marked new for local workflow testing.",
+      "severity_hint": "Medium as a conservative example."
+    }
   }
 ]

@@ -32,6 +32,16 @@
       "実行前にソース信頼性とコマンド/スクリプト挙動を確認する",
       "高リスク操作の前に隔離環境を使い、確認を取る"
     ],
+    "draft_labels": {
+      "source_confidence": "medium",
+      "source_freshness": "new",
+      "severity_hint": "medium",
+      "label_notes": {
+        "confidence": "Low because this is placeholder/manual example data.",
+        "freshness": "Marked new for local workflow testing.",
+        "severity_hint": "Medium as a conservative example."
+      }
+    },
     "sources": [
       {
         "title": "Check package install scripts before running install commands",
