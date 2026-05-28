@@ -40,6 +40,7 @@ v0.1 release preparation
 - RSS/manual intake source runner skeleton
 - Manual intake file format
 - Candidate moderation report
+- Freshness/severity helper
 ```
 
 ---
@@ -78,5 +79,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-16: Add freshness/severity helper
+PR-17: Add duplicate detection
 ```
