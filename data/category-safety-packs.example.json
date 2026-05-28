@@ -35,5 +35,42 @@
       "needs_ai_output_review": true
     },
     "notes": "Example safety pack only. Not a generated final rule bundle."
+  },
+  {
+    "id": "pack-unknown-repository-basic",
+    "category_id": "unknown-repository",
+    "title": "Unknown repository safety pack",
+    "language": "en",
+    "pack_status": "reviewed",
+    "updated_at": "2026-05-28",
+    "audience": "beginner-developers",
+    "purpose": "Help AI assistants give safe, defensive guidance about unknown repository risk.",
+    "allowed_guidance": [
+      "Explain unknown repository risks in beginner-safe language.",
+      "Suggest reviewing README, scripts, dependencies, maintainers, issues, releases, and recent commits before running code.",
+      "Recommend using a disposable or isolated environment for first-time review.",
+      "Tell users to avoid adding secrets, tokens, or production credentials to unknown projects."
+    ],
+    "disallowed_guidance": [
+      "Do not provide exploit steps.",
+      "Do not provide credential theft methods.",
+      "Do not provide bypass instructions.",
+      "Do not provide weaponized payloads.",
+      "Do not make unverified claims about real repositories."
+    ],
+    "safe_response_rules": [
+      "Keep advice defensive and public-safe.",
+      "Use uncertainty labels when source context is incomplete.",
+      "Recommend manual review before running unfamiliar code.",
+      "Prefer safer alternatives over operational detail."
+    ],
+    "ai_prompt_snippet": "When discussing unknown repository risk, provide beginner-safe defensive advice only. Recommend repository review, isolation, and secret-handling precautions.",
+    "review_requirements": {
+      "needs_source_review": false,
+      "needs_safety_review": false,
+      "needs_translation_review": false,
+      "needs_ai_output_review": false
+    },
+    "notes": "Reviewed example safety pack for local downloadable rule generation."
   }
 ]

@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-05-28",
+  "source": "data/category-safety-packs.example.json",
+  "network_access": false,
+  "ai_generation": false,
+  "rules": [
+    {
+      "pack_id": "pack-unknown-repository-basic",
+      "category_id": "unknown-repository",
+      "title": "Unknown repository safety pack",
+      "language": "en",
+      "audience": "beginner-developers",
+      "path": "downloads/ai-rules/unknown-repository-basic.md",
+      "updated_at": "2026-05-28"
+    }
+  ]
+}

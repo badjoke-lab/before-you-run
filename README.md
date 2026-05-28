@@ -53,6 +53,17 @@ Tripwire is defensive and educational. Public content should focus on:
 
 Tripwire should not publish offensive operational detail, unverified claims as facts, or private planning notes.
 
+
+## Downloadable AI rules
+
+Reviewed category safety packs can be exported locally as Markdown AI rule files.
+
+```bash
+npm run rules:build
+```
+
+This reads local reviewed safety pack examples and writes Markdown rule files plus a manifest. It does not use AI, fetch sources, modify cards, or publish anything automatically.
+
 ## Technical direction
 
 The initial implementation is a static site using HTML, CSS, JavaScript, and JSON data files. Candidate collection and advisory-source integrations are planned for later versions.
