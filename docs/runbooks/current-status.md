@@ -41,6 +41,7 @@ v0.1 release preparation
 - Manual intake file format
 - Candidate moderation report
 - Freshness/severity helper
+- Duplicate detection helper
 ```
 
 ---
@@ -79,5 +80,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-17: Add duplicate detection
+PR-19: Add source credibility helpers
 ```
