@@ -37,6 +37,7 @@ v0.1 release preparation
 - Candidate review queue data model
 - Candidate-to-card draft pipeline
 - Signal confidence and freshness label definitions
+- RSS/manual intake source runner skeleton
 ```
 
 ---
@@ -75,5 +76,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-13: Add RSS/manual intake source runner skeleton
+PR-14: Add manual intake file format
 ```
