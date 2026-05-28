@@ -52,6 +52,7 @@ v0.1 release preparation
 - Signal verification queue
 - Category safety packs foundation
 - Downloadable AI rules foundation
+- AGENTS.md / Cursor bundle foundation
 ```
 
 ---
@@ -90,5 +91,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-29: Add AGENTS.md / Cursor bundle
+PR-30: Add AI-output validation report
 ```

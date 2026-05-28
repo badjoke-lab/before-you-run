@@ -64,6 +64,16 @@ npm run rules:build
 
 This reads local reviewed safety pack examples and writes Markdown rule files plus a manifest. It does not use AI, fetch sources, modify cards, or publish anything automatically.
 
+## Assistant bundles
+
+Reviewed downloadable AI rules can be combined into local assistant bundle examples.
+
+```bash
+npm run bundles:build
+```
+
+This writes AGENTS.example.md, cursor-rules.example.md, a manifest, and a report. It does not use AI, fetch sources, install editor config, or publish anything automatically.
+
 ## Technical direction
 
 The initial implementation is a static site using HTML, CSS, JavaScript, and JSON data files. Candidate collection and advisory-source integrations are planned for later versions.

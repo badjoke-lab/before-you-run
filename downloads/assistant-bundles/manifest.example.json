@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-05-28",
+  "source_manifest": "downloads/ai-rules/manifest.example.json",
+  "network_access": false,
+  "ai_generation": false,
+  "bundles": [
+    {
+      "type": "agents-md",
+      "path": "downloads/assistant-bundles/AGENTS.example.md",
+      "source_rules": [
+        "downloads/ai-rules/unknown-repository-basic.md"
+      ]
+    },
+    {
+      "type": "cursor-rules",
+      "path": "downloads/assistant-bundles/cursor-rules.example.md",
+      "source_rules": [
+        "downloads/ai-rules/unknown-repository-basic.md"
+      ]
+    }
+  ]
+}

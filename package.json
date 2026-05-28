@@ -15,6 +15,7 @@
     "evidence:report": "node scripts/build-evidence-report.mjs",
     "verify:report": "node scripts/build-signal-verification-report.mjs",
     "packs:report": "node scripts/build-category-safety-packs-report.mjs",
-    "rules:build": "node scripts/build-downloadable-ai-rules.mjs"
+    "rules:build": "node scripts/build-downloadable-ai-rules.mjs",
+    "bundles:build": "node scripts/build-assistant-bundles.mjs"
   }
 }
