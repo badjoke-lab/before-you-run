@@ -33,6 +33,7 @@ v0.1 release preparation
 - JSON validation and CI check
 - Expanded initial card set for v0.1
 - Source metadata foundation for future candidate collection
+- Manual candidate digest skeleton
 ```
 
 ---
@@ -71,5 +72,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-09: Add RSS/manual candidate fetch skeleton
+PR-10: Add candidate review queue data model
 ```

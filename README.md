@@ -61,6 +61,17 @@ The initial implementation is a static site using HTML, CSS, JavaScript, and JSO
 
 Tripwire includes public-safe source metadata for future candidate collection. Automated collection is not active in v0.1.
 
+
+## Candidate digest skeleton
+
+A local manual candidate digest builder is available for future v0.2 workflows.
+
+```bash
+npm run digest:build
+```
+
+This uses example candidate data and does not fetch external sources.
+
 ## License
 
 ```text

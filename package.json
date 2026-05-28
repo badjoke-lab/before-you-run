@@ -1,5 +1,6 @@
 {
   "scripts": {
-    "check": "node scripts/validate-data.mjs"
+    "check": "node scripts/validate-data.mjs",
+    "digest:build": "node scripts/build-candidate-digest.mjs"
   }
 }
