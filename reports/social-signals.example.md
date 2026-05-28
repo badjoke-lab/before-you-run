@@ -6,12 +6,13 @@ Automatic publication: false
 
 ## Summary
 
-- Total social signals: 2
-- needs-verification: 2
+- Total social signals: 3
+- needs-verification: 3
 
 ## Platform groups
 
 - bluesky: 1
+- mastodon: 1
 - x: 1
 
 ## Signal status groups
@@ -91,4 +92,41 @@ Placeholder Bluesky signal summary. This is not treated as confirmed information
 
 Why relevant:
 This may point to a developer dependency risk, but it requires confirmation from stronger sources.
+
+#### Example Mastodon signal about repository review
+
+- ID: social-signal-example-mastodon-repo-warning
+- Platform: mastodon
+- Source kind: social-link
+- Source type: signal
+- Signal status: needs-verification
+- Suggested action: hold-for-confirmation
+- Confidence: low
+- Freshness: new
+- Severity hint: watch
+- URL: https://example.com/mastodon-post
+- Categories: unknown-repository
+
+Review needs:
+- Needs source check: true
+- Needs confirmation source: true
+- Needs safety rewrite: false
+- Needs translation: false
+- Needs duplicate check: true
+
+Verification:
+- Primary source found: false
+- Reference source found: false
+- Do not publish as confirmed: true
+- Notes: Example only. Mastodon signals must be verified before publication.
+
+Helper notes:
+- Signal risk note: This is a signal-only item. Do not treat it as confirmed without stronger sources.
+- Verification helper: No stronger source recorded yet. Hold for confirmation.
+
+Public-safe summary:
+Placeholder Mastodon signal summary. This is not treated as confirmed information.
+
+Why relevant:
+This may point to a risky repository review pattern, but it requires confirmation from stronger sources.
 

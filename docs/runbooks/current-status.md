@@ -47,6 +47,7 @@ v0.1 release preparation
 - Publish/review workflow foundation
 - Manual social signal ingestion foundation
 - Bluesky signal support
+- Mastodon signal support
 ```
 
 ---
@@ -85,5 +86,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-24: Add Mastodon signal support
+PR-25: Add screenshot/manual evidence flow
 ```

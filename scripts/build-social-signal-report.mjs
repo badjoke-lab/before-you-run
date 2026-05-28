@@ -50,7 +50,7 @@ const REQUIRED_VERIFICATION_FIELDS = [
 ];
 
 const ALLOWED = {
-  platform: new Set(["x", "bluesky", "other-social"]),
+  platform: new Set(["x", "bluesky", "mastodon", "other-social"]),
   source_kind: new Set(["social-link", "screenshot-note", "manual-note"]),
   source_type: new Set(["signal"]),
   signal_status: new Set(["needs-verification", "watch", "rejected", "promoted-to-candidate"]),
@@ -61,7 +61,7 @@ const ALLOWED = {
 };
 
 const STATUS_ORDER = ["needs-verification", "watch", "rejected", "promoted-to-candidate"];
-const PLATFORM_ORDER = ["bluesky", "x", "other-social"];
+const PLATFORM_ORDER = ["bluesky", "mastodon", "x", "other-social"];
 
 function assertPlainObject(value, label) {
   if (value === null || typeof value !== "object" || Array.isArray(value)) {
