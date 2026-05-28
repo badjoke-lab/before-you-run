@@ -1,0 +1,44 @@
+[
+  {
+    "id": "candidate",
+    "label": "Candidate",
+    "label_ja": "候補",
+    "description": "A newly collected item that may be relevant for a future defensive card."
+  },
+  {
+    "id": "high-priority-candidate",
+    "label": "High priority candidate",
+    "label_ja": "高優先度候補",
+    "description": "A candidate with stronger urgency due to potential impact on developer safety."
+  },
+  {
+    "id": "maybe-relevant",
+    "label": "Maybe relevant",
+    "label_ja": "関連の可能性あり",
+    "description": "A weak or partial signal that may become relevant after more context is gathered."
+  },
+  {
+    "id": "needs-verification",
+    "label": "Needs verification",
+    "label_ja": "要確認",
+    "description": "A possible signal that requires stronger source confirmation before being treated as a card."
+  },
+  {
+    "id": "rejected",
+    "label": "Rejected",
+    "label_ja": "却下",
+    "description": "An item determined to be out of scope, unreliable, or unsafe to publish."
+  },
+  {
+    "id": "published",
+    "label": "Published",
+    "label_ja": "公開済み",
+    "description": "A validated candidate that has been converted into a public-safe what-to-avoid card."
+  },
+  {
+    "id": "updated",
+    "label": "Updated",
+    "label_ja": "更新済み",
+    "description": "A published card that received a substantive defensive update from new information."
+  }
+]

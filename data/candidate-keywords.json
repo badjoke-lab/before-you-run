@@ -1,0 +1,98 @@
+[
+  {
+    "id": "supply-chain",
+    "label": "Supply chain",
+    "label_ja": "サプライチェーン",
+    "keywords": [
+      "npm malware",
+      "malicious package",
+      "postinstall",
+      "dependency confusion",
+      "typosquatting"
+    ]
+  },
+  {
+    "id": "secrets",
+    "label": "Secrets",
+    "label_ja": "シークレット",
+    "keywords": [
+      "api key leak",
+      "token exposure",
+      "credential leak",
+      "hardcoded secret",
+      "env file exposure"
+    ]
+  },
+  {
+    "id": "ai-coding",
+    "label": "AI coding",
+    "label_ja": "AIコーディング",
+    "keywords": [
+      "prompt injection",
+      "unsafe code suggestion",
+      "agent misuse",
+      "llm generated malware",
+      "copilot security"
+    ]
+  },
+  {
+    "id": "dangerous-commands",
+    "label": "Dangerous commands",
+    "label_ja": "危険なコマンド",
+    "keywords": [
+      "curl pipe sh",
+      "destructive command",
+      "rm -rf",
+      "privilege escalation script",
+      "unsafe terminal snippet"
+    ]
+  },
+  {
+    "id": "fake-jobs",
+    "label": "Fake jobs",
+    "label_ja": "偽求人",
+    "keywords": [
+      "fake recruiter",
+      "job scam",
+      "take-home malware",
+      "interview repository scam",
+      "hiring phishing"
+    ]
+  },
+  {
+    "id": "developer-phishing",
+    "label": "Developer phishing",
+    "label_ja": "開発者向けフィッシング",
+    "keywords": [
+      "git credential phishing",
+      "oauth phishing",
+      "repository invite scam",
+      "developer social engineering",
+      "security alert scam"
+    ]
+  },
+  {
+    "id": "browser-extensions",
+    "label": "Browser extensions",
+    "label_ja": "ブラウザ拡張",
+    "keywords": [
+      "malicious extension",
+      "extension data theft",
+      "fake browser add-on",
+      "extension supply chain",
+      "session cookie theft"
+    ]
+  },
+  {
+    "id": "wallet-safety",
+    "label": "Wallet safety",
+    "label_ja": "ウォレット安全性",
+    "keywords": [
+      "wallet drainer",
+      "seed phrase phishing",
+      "malicious wallet app",
+      "clipboard hijack",
+      "wallet impersonation"
+    ]
+  }
+]

@@ -57,6 +57,10 @@ Tripwire should not publish offensive operational detail, unverified claims as f
 
 The initial implementation is a static site using HTML, CSS, JavaScript, and JSON data files. Candidate collection and advisory-source integrations are planned for later versions.
 
+## Candidate source metadata
+
+Tripwire includes public-safe source metadata for future candidate collection. Automated collection is not active in v0.1.
+
 ## License
 
 ```text

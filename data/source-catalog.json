@@ -1,0 +1,132 @@
+[
+  {
+    "id": "github-security-blog",
+    "name": "GitHub Security Blog",
+    "homepage_url": "https://github.blog/security/",
+    "source_type": "reference",
+    "collection_mode": "future-rss-or-manual",
+    "tier": "tier1",
+    "language": ["en"],
+    "notes": "Public security blog used for defensive awareness and candidate discovery."
+  },
+  {
+    "id": "github-advisory-database",
+    "name": "GitHub Advisory Database",
+    "homepage_url": "https://github.com/advisories",
+    "source_type": "primary",
+    "collection_mode": "future-api-or-manual",
+    "tier": "tier1",
+    "language": ["en"],
+    "notes": "Public advisory reference for confirmed vulnerability and package risk tracking."
+  },
+  {
+    "id": "osv",
+    "name": "OSV.dev",
+    "homepage_url": "https://osv.dev/",
+    "source_type": "primary",
+    "collection_mode": "future-api-or-manual",
+    "tier": "tier1",
+    "language": ["en"],
+    "notes": "Open vulnerability reference used for defensive confirmation and triage context."
+  },
+  {
+    "id": "openssf",
+    "name": "OpenSSF",
+    "homepage_url": "https://openssf.org/",
+    "source_type": "reference",
+    "collection_mode": "future-rss-or-manual",
+    "tier": "tier2",
+    "language": ["en"],
+    "notes": "Ecosystem guidance source for secure development and supply-chain awareness."
+  },
+  {
+    "id": "jpcert-cc",
+    "name": "JPCERT/CC",
+    "homepage_url": "https://www.jpcert.or.jp/",
+    "source_type": "primary",
+    "collection_mode": "future-rss-or-manual",
+    "tier": "tier1",
+    "language": ["ja", "en"],
+    "notes": "Public incident and advisory source useful for defensive monitoring in Japan."
+  },
+  {
+    "id": "jvn",
+    "name": "JVN",
+    "homepage_url": "https://jvndb.jvn.jp/",
+    "source_type": "primary",
+    "collection_mode": "future-rss-or-manual",
+    "tier": "tier1",
+    "language": ["ja", "en"],
+    "notes": "Public vulnerability database for defensive verification and candidate discovery."
+  },
+  {
+    "id": "socket-blog",
+    "name": "Socket Blog",
+    "homepage_url": "https://socket.dev/blog",
+    "source_type": "reference",
+    "collection_mode": "future-rss-or-manual",
+    "tier": "tier2",
+    "language": ["en"],
+    "notes": "Security research blog used as a reference signal for package risk trends."
+  },
+  {
+    "id": "bleepingcomputer",
+    "name": "BleepingComputer",
+    "homepage_url": "https://www.bleepingcomputer.com/",
+    "source_type": "reference",
+    "collection_mode": "future-rss-or-manual",
+    "tier": "tier2",
+    "language": ["en"],
+    "notes": "Public security news source used for defensive situational awareness."
+  },
+  {
+    "id": "hacker-news-algolia",
+    "name": "Hacker News Algolia",
+    "homepage_url": "https://hn.algolia.com/",
+    "source_type": "signal",
+    "collection_mode": "future-manual-or-query-link",
+    "tier": "tier3",
+    "language": ["en"],
+    "notes": "Community discussion signal source; items require verification before use."
+  },
+  {
+    "id": "google-alerts-manual-import",
+    "name": "Google Alerts manual import",
+    "homepage_url": "https://www.google.com/alerts",
+    "source_type": "signal",
+    "collection_mode": "manual",
+    "tier": "tier3",
+    "language": ["en", "ja"],
+    "notes": "Manual alert signal intake for discovery only; not a confirmation source."
+  },
+  {
+    "id": "bluesky-manual-signal",
+    "name": "Bluesky manual/signal source",
+    "homepage_url": "https://bsky.app/",
+    "source_type": "signal",
+    "collection_mode": "manual",
+    "tier": "tier3",
+    "language": ["en", "ja"],
+    "notes": "Manual social signal source for early awareness; requires stronger confirmation."
+  },
+  {
+    "id": "mastodon-manual-signal",
+    "name": "Mastodon manual/signal source",
+    "homepage_url": "https://joinmastodon.org/",
+    "source_type": "signal",
+    "collection_mode": "manual",
+    "tier": "tier3",
+    "language": ["en", "ja"],
+    "notes": "Manual social signal source for candidate discovery; not treated as confirmed evidence."
+  },
+  {
+    "id": "x-search-link-manual-signal",
+    "name": "X search-link/manual signal source",
+    "homepage_url": "https://x.com/",
+    "source_type": "signal",
+    "collection_mode": "manual",
+    "tier": "tier3",
+    "language": ["en", "ja"],
+    "notes": "Manual social search-link signal used for discovery and follow-up verification only."
+  }
+]
