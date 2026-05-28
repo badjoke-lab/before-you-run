@@ -43,6 +43,7 @@ v0.1 release preparation
 - Freshness/severity helper
 - Duplicate detection helper
 - Source credibility helper
+- Card update history foundation
 ```
 
 ---
@@ -81,5 +82,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-20: Add card update history
+PR-21: Add publish/review workflow
 ```

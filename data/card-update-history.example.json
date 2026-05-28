@@ -1,0 +1,31 @@
+[
+  {
+    "id": "history-example-unknown-repo",
+    "card_id": "unknown-repository-risk",
+    "card_title": "Review unknown repositories before running scripts",
+    "language": "en",
+    "history_status": "reviewed",
+    "updated_at": "2026-05-28",
+    "reviewed_at": "2026-05-28",
+    "source_rechecked_at": "2026-05-28",
+    "change_type": "source-review",
+    "change_summary": "Example update history entry for source re-check workflow testing.",
+    "change_reason": "Confirm that the card still uses public-safe defensive guidance.",
+    "source_review": {
+      "source_count": 1,
+      "primary_sources": 0,
+      "reference_sources": 1,
+      "signal_sources": 0,
+      "needs_stronger_source": true,
+      "source_notes": "Example only. Replace with real source review notes later."
+    },
+    "editorial_review": {
+      "needs_safety_rewrite": false,
+      "needs_translation_review": false,
+      "needs_severity_review": false,
+      "editorial_notes": "Placeholder review note."
+    },
+    "review_decision": "keep-with-notes",
+    "next_review_after": "2026-06-28"
+  }
+]
