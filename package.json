@@ -10,6 +10,7 @@
     "duplicates:report": "node scripts/build-duplicate-report.mjs",
     "credibility:report": "node scripts/build-source-credibility-report.mjs",
     "history:report": "node scripts/build-card-update-history-report.mjs",
-    "publish:report": "node scripts/build-publish-review-report.mjs"
+    "publish:report": "node scripts/build-publish-review-report.mjs",
+    "social:report": "node scripts/build-social-signal-report.mjs"
   }
 }

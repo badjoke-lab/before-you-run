@@ -181,6 +181,16 @@ npm run publish:report
 
 This reads local example publish review data and writes a Markdown report. It does not publish or modify cards automatically.
 
+## Manual social signal ingestion
+
+A local manual social signal report is available for Phase 3 workflows.
+
+```bash
+npm run social:report
+```
+
+This reads local example social signal data and writes a Markdown report. It does not use X APIs, fetch social posts, scrape websites, or publish candidates/cards automatically.
+
 ## Signal labels
 
 Tripwire includes confidence, freshness, and severity-hint label definitions for candidate review workflows. These labels are editorial aids and do not automatically publish or confirm candidate items.

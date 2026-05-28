@@ -45,6 +45,7 @@ v0.1 release preparation
 - Source credibility helper
 - Card update history foundation
 - Publish/review workflow foundation
+- Manual social signal ingestion foundation
 ```
 
 ---
@@ -74,7 +75,7 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ```text
 - v0.1 does not include automated candidate collection
 - v0.1 does not include advisory database integrations
-- v0.1 does not include social signal collection
+- v0.1 does not include automated social signal collection
 - v0.1 does not include user accounts or user submissions
 ```
 
@@ -83,5 +84,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-22: Add manual social signal ingestion
+PR-23: Add Bluesky signal support
 ```
