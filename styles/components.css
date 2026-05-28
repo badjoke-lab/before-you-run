@@ -145,3 +145,45 @@
 .related-card {
   padding: 0.25rem 0;
 }
+
+.ai-output-panel {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-3);
+}
+
+.copy-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.copy-actions button {
+  width: 100%;
+}
+
+.copy-status {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.copy-fallback {
+  width: 100%;
+  min-height: 10rem;
+  font: inherit;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+@media (min-width: 48rem) {
+  .copy-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .copy-actions button {
+    width: auto;
+  }
+}

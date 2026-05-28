@@ -4,8 +4,15 @@
     "title": "Review unknown repositories before opening them in a trusted editor",
     "title_ja": "知らないリポジトリを信頼済みエディタで開く前に確認する",
     "severity": "high",
-    "categories": ["unknown-repos", "ai-coding-agents"],
-    "audience": ["beginner", "indie-dev", "ai-coding"],
+    "categories": [
+      "unknown-repos",
+      "ai-coding-agents"
+    ],
+    "audience": [
+      "beginner",
+      "indie-dev",
+      "ai-coding"
+    ],
     "summary": "Unknown repositories can include project settings, install scripts, or task definitions that are unsafe to run without review.",
     "summary_ja": "知らないリポジトリには、確認せずに実行すると危険な設定・インストールスクリプト・タスク定義が含まれる場合があります。",
     "dangerous_actions": [
@@ -35,54 +42,361 @@
         "checked_at": "2026-05-28"
       }
     ],
-    "updated_at": "2026-05-28"
+    "updated_at": "2026-05-28",
+    "ai_output": {
+      "risk_summary": "Risky development tasks can trigger unsafe execution, unwanted changes, or accidental data exposure if done without review.",
+      "do_not": [
+        "Do not execute commands or apply changes blindly from unverified sources.",
+        "Do not expose secrets, tokens, or private data in prompts, code, or logs."
+      ],
+      "check_first": [
+        "Review repository scripts, automation files, and requested command scope.",
+        "Confirm whether sensitive files, credentials, or trust settings are involved."
+      ],
+      "safe_actions": [
+        "Use an isolated environment and minimal privileges for first-pass review.",
+        "Summarize risks and ask the user before running risky commands or changing trust state."
+      ],
+      "ask_user_before": [
+        "Running install commands",
+        "Running build or test scripts",
+        "Changing trust settings",
+        "Accessing environment files"
+      ],
+      "agent_instruction": "Before taking risky actions, explain what will run, what was reviewed, and ask for explicit user confirmation.",
+      "checklist": [
+        "Checked scripts and automation files",
+        "Checked trust and permission settings",
+        "Checked for secret or token exposure risk",
+        "Asked user before risky execution",
+        "Recorded reviewed files and intended actions"
+      ]
+    },
+    "ai_output_ja": {
+      "risk_summary": "危険な開発作業は、事前確認なしだと不正な実行・不要な変更・情報漏えいにつながる可能性があります。",
+      "do_not": [
+        "未確認の情報をそのまま使ってコマンド実行や変更をしない。",
+        "シークレット・トークン・機密情報をprompt、コード、ログへ載せない。"
+      ],
+      "check_first": [
+        "リポジトリのscripts、automation files、実行範囲を確認する。",
+        "機密ファイル、認証情報、信頼設定への影響有無を確認する。"
+      ],
+      "safe_actions": [
+        "初回確認は隔離環境と最小権限で行う。",
+        "リスクを要約し、危険な実行や信頼設定変更の前にユーザー確認を取る。"
+      ],
+      "ask_user_before": [
+        "installコマンドの実行",
+        "build/testスクリプトの実行",
+        "信頼設定の変更",
+        "環境ファイルへのアクセス"
+      ],
+      "agent_instruction": "危険な操作の前に、何を実行するか・何を確認したかを説明し、明示的な承認を得てください。",
+      "checklist": [
+        "scriptsとautomation filesを確認した",
+        "信頼設定と権限影響を確認した",
+        "シークレット露出リスクを確認した",
+        "危険な実行前にユーザー確認した",
+        "確認対象ファイルと実行内容を記録した"
+      ]
+    }
   },
   {
     "id": "check-package-install-scripts",
     "title": "Check package install scripts before running install commands",
     "title_ja": "installコマンド実行前にパッケージのスクリプトを確認する",
     "severity": "high",
-    "categories": ["malicious-packages", "dangerous-commands"],
-    "audience": ["beginner", "indie-dev", "ai-coding"],
+    "categories": [
+      "malicious-packages",
+      "dangerous-commands"
+    ],
+    "audience": [
+      "beginner",
+      "indie-dev",
+      "ai-coding"
+    ],
     "summary": "Dependency install flows can trigger scripts automatically, so basic review helps avoid unsafe execution.",
     "summary_ja": "依存関係のinstallではスクリプトが自動実行されることがあるため、事前確認で危険な実行を避けやすくなります。",
-    "dangerous_actions": ["Running install commands without checking package scripts"],
-    "dangerous_actions_ja": ["パッケージスクリプトを確認せずにinstallコマンドを実行する"],
-    "avoid_now": ["Review package manifests and lockfiles before install"],
-    "avoid_now_ja": ["install前にmanifestとlockfileを確認する"],
-    "sources": [{"title":"Tripwire MVP seed card","url":"docs/specs/tripwire-mvp-spec-v0.1.md","publisher":"Tripwire","source_tier":"project","source_type":"reference","published_at":"2026-05-28","checked_at":"2026-05-28"}],
-    "updated_at": "2026-05-28"
+    "dangerous_actions": [
+      "Running install commands without checking package scripts"
+    ],
+    "dangerous_actions_ja": [
+      "パッケージスクリプトを確認せずにinstallコマンドを実行する"
+    ],
+    "avoid_now": [
+      "Review package manifests and lockfiles before install"
+    ],
+    "avoid_now_ja": [
+      "install前にmanifestとlockfileを確認する"
+    ],
+    "sources": [
+      {
+        "title": "Tripwire MVP seed card",
+        "url": "docs/specs/tripwire-mvp-spec-v0.1.md",
+        "publisher": "Tripwire",
+        "source_tier": "project",
+        "source_type": "reference",
+        "published_at": "2026-05-28",
+        "checked_at": "2026-05-28"
+      }
+    ],
+    "updated_at": "2026-05-28",
+    "ai_output": {
+      "risk_summary": "Risky development tasks can trigger unsafe execution, unwanted changes, or accidental data exposure if done without review.",
+      "do_not": [
+        "Do not execute commands or apply changes blindly from unverified sources.",
+        "Do not expose secrets, tokens, or private data in prompts, code, or logs."
+      ],
+      "check_first": [
+        "Review repository scripts, automation files, and requested command scope.",
+        "Confirm whether sensitive files, credentials, or trust settings are involved."
+      ],
+      "safe_actions": [
+        "Use an isolated environment and minimal privileges for first-pass review.",
+        "Summarize risks and ask the user before running risky commands or changing trust state."
+      ],
+      "ask_user_before": [
+        "Running install commands",
+        "Running build or test scripts",
+        "Changing trust settings",
+        "Accessing environment files"
+      ],
+      "agent_instruction": "Before taking risky actions, explain what will run, what was reviewed, and ask for explicit user confirmation.",
+      "checklist": [
+        "Checked scripts and automation files",
+        "Checked trust and permission settings",
+        "Checked for secret or token exposure risk",
+        "Asked user before risky execution",
+        "Recorded reviewed files and intended actions"
+      ]
+    },
+    "ai_output_ja": {
+      "risk_summary": "危険な開発作業は、事前確認なしだと不正な実行・不要な変更・情報漏えいにつながる可能性があります。",
+      "do_not": [
+        "未確認の情報をそのまま使ってコマンド実行や変更をしない。",
+        "シークレット・トークン・機密情報をprompt、コード、ログへ載せない。"
+      ],
+      "check_first": [
+        "リポジトリのscripts、automation files、実行範囲を確認する。",
+        "機密ファイル、認証情報、信頼設定への影響有無を確認する。"
+      ],
+      "safe_actions": [
+        "初回確認は隔離環境と最小権限で行う。",
+        "リスクを要約し、危険な実行や信頼設定変更の前にユーザー確認を取る。"
+      ],
+      "ask_user_before": [
+        "installコマンドの実行",
+        "build/testスクリプトの実行",
+        "信頼設定の変更",
+        "環境ファイルへのアクセス"
+      ],
+      "agent_instruction": "危険な操作の前に、何を実行するか・何を確認したかを説明し、明示的な承認を得てください。",
+      "checklist": [
+        "scriptsとautomation filesを確認した",
+        "信頼設定と権限影響を確認した",
+        "シークレット露出リスクを確認した",
+        "危険な実行前にユーザー確認した",
+        "確認対象ファイルと実行内容を記録した"
+      ]
+    }
   },
   {
     "id": "keep-secrets-out-of-prompts-and-repos",
     "title": "Keep secrets and API keys out of prompts and public repositories",
     "title_ja": "シークレットやAPIキーをpromptと公開リポジトリに含めない",
     "severity": "high",
-    "categories": ["secrets-tokens", "ai-coding-agents"],
-    "audience": ["beginner", "indie-dev", "ai-coding"],
+    "categories": [
+      "secrets-tokens",
+      "ai-coding-agents"
+    ],
+    "audience": [
+      "beginner",
+      "indie-dev",
+      "ai-coding"
+    ],
     "summary": "Credentials copied into prompts, commits, or issue threads may be retained or exposed beyond intended scope.",
     "summary_ja": "認証情報をprompt、commit、issueに含めると、意図しない範囲に保持・公開されるおそれがあります。",
-    "dangerous_actions": ["Pasting active tokens into AI chats or public code"],
-    "dangerous_actions_ja": ["有効なトークンをAIチャットや公開コードへ貼り付ける"],
-    "avoid_now": ["Use placeholders and secret managers for credentials"],
-    "avoid_now_ja": ["認証情報はプレースホルダーとsecret managerで扱う"],
-    "sources": [{"title":"Tripwire MVP seed card","url":"docs/specs/tripwire-mvp-spec-v0.1.md","publisher":"Tripwire","source_tier":"project","source_type":"reference","published_at":"2026-05-28","checked_at":"2026-05-28"}],
-    "updated_at": "2026-05-28"
+    "dangerous_actions": [
+      "Pasting active tokens into AI chats or public code"
+    ],
+    "dangerous_actions_ja": [
+      "有効なトークンをAIチャットや公開コードへ貼り付ける"
+    ],
+    "avoid_now": [
+      "Use placeholders and secret managers for credentials"
+    ],
+    "avoid_now_ja": [
+      "認証情報はプレースホルダーとsecret managerで扱う"
+    ],
+    "sources": [
+      {
+        "title": "Tripwire MVP seed card",
+        "url": "docs/specs/tripwire-mvp-spec-v0.1.md",
+        "publisher": "Tripwire",
+        "source_tier": "project",
+        "source_type": "reference",
+        "published_at": "2026-05-28",
+        "checked_at": "2026-05-28"
+      }
+    ],
+    "updated_at": "2026-05-28",
+    "ai_output": {
+      "risk_summary": "Risky development tasks can trigger unsafe execution, unwanted changes, or accidental data exposure if done without review.",
+      "do_not": [
+        "Do not execute commands or apply changes blindly from unverified sources.",
+        "Do not expose secrets, tokens, or private data in prompts, code, or logs."
+      ],
+      "check_first": [
+        "Review repository scripts, automation files, and requested command scope.",
+        "Confirm whether sensitive files, credentials, or trust settings are involved."
+      ],
+      "safe_actions": [
+        "Use an isolated environment and minimal privileges for first-pass review.",
+        "Summarize risks and ask the user before running risky commands or changing trust state."
+      ],
+      "ask_user_before": [
+        "Running install commands",
+        "Running build or test scripts",
+        "Changing trust settings",
+        "Accessing environment files"
+      ],
+      "agent_instruction": "Before taking risky actions, explain what will run, what was reviewed, and ask for explicit user confirmation.",
+      "checklist": [
+        "Checked scripts and automation files",
+        "Checked trust and permission settings",
+        "Checked for secret or token exposure risk",
+        "Asked user before risky execution",
+        "Recorded reviewed files and intended actions"
+      ]
+    },
+    "ai_output_ja": {
+      "risk_summary": "危険な開発作業は、事前確認なしだと不正な実行・不要な変更・情報漏えいにつながる可能性があります。",
+      "do_not": [
+        "未確認の情報をそのまま使ってコマンド実行や変更をしない。",
+        "シークレット・トークン・機密情報をprompt、コード、ログへ載せない。"
+      ],
+      "check_first": [
+        "リポジトリのscripts、automation files、実行範囲を確認する。",
+        "機密ファイル、認証情報、信頼設定への影響有無を確認する。"
+      ],
+      "safe_actions": [
+        "初回確認は隔離環境と最小権限で行う。",
+        "リスクを要約し、危険な実行や信頼設定変更の前にユーザー確認を取る。"
+      ],
+      "ask_user_before": [
+        "installコマンドの実行",
+        "build/testスクリプトの実行",
+        "信頼設定の変更",
+        "環境ファイルへのアクセス"
+      ],
+      "agent_instruction": "危険な操作の前に、何を実行するか・何を確認したかを説明し、明示的な承認を得てください。",
+      "checklist": [
+        "scriptsとautomation filesを確認した",
+        "信頼設定と権限影響を確認した",
+        "シークレット露出リスクを確認した",
+        "危険な実行前にユーザー確認した",
+        "確認対象ファイルと実行内容を記録した"
+      ]
+    }
   },
   {
     "id": "avoid-copying-unknown-terminal-commands",
     "title": "Avoid copying unknown commands into a terminal",
     "title_ja": "不明なコマンドをそのままターミナルへ貼り付けない",
     "severity": "medium",
-    "categories": ["dangerous-commands", "unknown-repos"],
-    "audience": ["beginner", "indie-dev", "ai-coding"],
+    "categories": [
+      "dangerous-commands",
+      "unknown-repos"
+    ],
+    "audience": [
+      "beginner",
+      "indie-dev",
+      "ai-coding"
+    ],
     "summary": "Commands from untrusted posts or chats can chain actions that are hard to notice at a glance.",
     "summary_ja": "信頼できない投稿やチャットのコマンドは、気づきにくい連鎖実行を含むことがあります。",
-    "dangerous_actions": ["Running copied commands without understanding each part"],
-    "dangerous_actions_ja": ["内容を理解せずにコピーしたコマンドを実行する"],
-    "avoid_now": ["Break commands into parts and verify intent first"],
-    "avoid_now_ja": ["コマンドを分割し、意図を確認してから実行する"],
-    "sources": [{"title":"Tripwire MVP seed card","url":"docs/specs/tripwire-mvp-spec-v0.1.md","publisher":"Tripwire","source_tier":"project","source_type":"reference","published_at":"2026-05-28","checked_at":"2026-05-28"}],
-    "updated_at": "2026-05-28"
+    "dangerous_actions": [
+      "Running copied commands without understanding each part"
+    ],
+    "dangerous_actions_ja": [
+      "内容を理解せずにコピーしたコマンドを実行する"
+    ],
+    "avoid_now": [
+      "Break commands into parts and verify intent first"
+    ],
+    "avoid_now_ja": [
+      "コマンドを分割し、意図を確認してから実行する"
+    ],
+    "sources": [
+      {
+        "title": "Tripwire MVP seed card",
+        "url": "docs/specs/tripwire-mvp-spec-v0.1.md",
+        "publisher": "Tripwire",
+        "source_tier": "project",
+        "source_type": "reference",
+        "published_at": "2026-05-28",
+        "checked_at": "2026-05-28"
+      }
+    ],
+    "updated_at": "2026-05-28",
+    "ai_output": {
+      "risk_summary": "Risky development tasks can trigger unsafe execution, unwanted changes, or accidental data exposure if done without review.",
+      "do_not": [
+        "Do not execute commands or apply changes blindly from unverified sources.",
+        "Do not expose secrets, tokens, or private data in prompts, code, or logs."
+      ],
+      "check_first": [
+        "Review repository scripts, automation files, and requested command scope.",
+        "Confirm whether sensitive files, credentials, or trust settings are involved."
+      ],
+      "safe_actions": [
+        "Use an isolated environment and minimal privileges for first-pass review.",
+        "Summarize risks and ask the user before running risky commands or changing trust state."
+      ],
+      "ask_user_before": [
+        "Running install commands",
+        "Running build or test scripts",
+        "Changing trust settings",
+        "Accessing environment files"
+      ],
+      "agent_instruction": "Before taking risky actions, explain what will run, what was reviewed, and ask for explicit user confirmation.",
+      "checklist": [
+        "Checked scripts and automation files",
+        "Checked trust and permission settings",
+        "Checked for secret or token exposure risk",
+        "Asked user before risky execution",
+        "Recorded reviewed files and intended actions"
+      ]
+    },
+    "ai_output_ja": {
+      "risk_summary": "危険な開発作業は、事前確認なしだと不正な実行・不要な変更・情報漏えいにつながる可能性があります。",
+      "do_not": [
+        "未確認の情報をそのまま使ってコマンド実行や変更をしない。",
+        "シークレット・トークン・機密情報をprompt、コード、ログへ載せない。"
+      ],
+      "check_first": [
+        "リポジトリのscripts、automation files、実行範囲を確認する。",
+        "機密ファイル、認証情報、信頼設定への影響有無を確認する。"
+      ],
+      "safe_actions": [
+        "初回確認は隔離環境と最小権限で行う。",
+        "リスクを要約し、危険な実行や信頼設定変更の前にユーザー確認を取る。"
+      ],
+      "ask_user_before": [
+        "installコマンドの実行",
+        "build/testスクリプトの実行",
+        "信頼設定の変更",
+        "環境ファイルへのアクセス"
+      ],
+      "agent_instruction": "危険な操作の前に、何を実行するか・何を確認したかを説明し、明示的な承認を得てください。",
+      "checklist": [
+        "scriptsとautomation filesを確認した",
+        "信頼設定と権限影響を確認した",
+        "シークレット露出リスクを確認した",
+        "危険な実行前にユーザー確認した",
+        "確認対象ファイルと実行内容を記録した"
+      ]
+    }
   }
 ]
