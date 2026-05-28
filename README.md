@@ -212,6 +212,17 @@ npm run verify:report
 
 This reads local example verification queue data and writes a Markdown report. It does not fetch sources, use social APIs, process images, or publish candidates/cards automatically.
 
+
+## Category safety packs
+
+A local category safety pack report is available for Phase 4 AI-facing defensive guidance workflows.
+
+```bash
+npm run packs:report
+```
+
+This reads local example safety pack data and writes a Markdown report. It does not use AI, fetch sources, publish cards, or generate downloadable bundles automatically.
+
 ## Signal labels
 
 Tripwire includes confidence, freshness, and severity-hint label definitions for candidate review workflows. These labels are editorial aids and do not automatically publish or confirm candidate items.

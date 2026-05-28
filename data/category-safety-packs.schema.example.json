@@ -1,0 +1,24 @@
+{
+  "required": [
+    "id",
+    "category_id",
+    "title",
+    "language",
+    "pack_status",
+    "updated_at",
+    "audience",
+    "purpose",
+    "allowed_guidance",
+    "disallowed_guidance",
+    "safe_response_rules",
+    "ai_prompt_snippet",
+    "review_requirements"
+  ],
+  "optional": [
+    "notes"
+  ],
+  "allowed_values": {
+    "pack_status": ["draft", "reviewed", "needs-review", "archived"],
+    "audience": ["beginner-developers", "general-users", "maintainers", "other"]
+  }
+}
