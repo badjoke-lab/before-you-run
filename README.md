@@ -201,6 +201,17 @@ npm run evidence:report
 
 This reads local example evidence data and writes a Markdown report. It does not process images, run OCR, fetch sources, or publish candidates/cards automatically.
 
+
+## Signal verification queue
+
+A local signal verification queue report is available for Phase 3 workflows.
+
+```bash
+npm run verify:report
+```
+
+This reads local example verification queue data and writes a Markdown report. It does not fetch sources, use social APIs, process images, or publish candidates/cards automatically.
+
 ## Signal labels
 
 Tripwire includes confidence, freshness, and severity-hint label definitions for candidate review workflows. These labels are editorial aids and do not automatically publish or confirm candidate items.

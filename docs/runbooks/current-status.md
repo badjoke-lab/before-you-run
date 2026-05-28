@@ -49,6 +49,7 @@ v0.1 release preparation
 - Bluesky signal support
 - Mastodon signal support
 - Screenshot/manual evidence flow
+- Signal verification queue
 ```
 
 ---
@@ -87,5 +88,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-26: Add signal verification queue
+PR-27: Add category safety packs
 ```
