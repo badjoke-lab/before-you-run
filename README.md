@@ -64,3 +64,14 @@ Editorial content, threat cards, translations, checklists, incident guides, and 
 ```
 
 Dedicated license files will be added before v0.1 release.
+
+## Validation
+
+Run:
+
+```bash
+npm run check
+```
+
+This validates the current JSON data files.
+

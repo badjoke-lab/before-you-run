@@ -102,6 +102,7 @@ The v0.1 implementation is planned as a static site.
 - Client-side search and filters
 - Static deployment target
 - Data validation before release
+- Basic JSON data validation is available through npm run check.
 ```
 
 Candidate collection and external advisory-source integrations are planned for later versions.
