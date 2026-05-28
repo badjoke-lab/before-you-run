@@ -44,6 +44,7 @@ v0.1 release preparation
 - Duplicate detection helper
 - Source credibility helper
 - Card update history foundation
+- Publish/review workflow foundation
 ```
 
 ---
@@ -82,5 +83,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-21: Add publish/review workflow
+PR-22: Add manual social signal ingestion
 ```

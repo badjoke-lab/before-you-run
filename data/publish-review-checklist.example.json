@@ -1,0 +1,44 @@
+[
+  {
+    "id": "publish-review-example-package-scripts",
+    "source_candidate_id": "queue-example-package-script-draft",
+    "draft_id": "draft-check-package-install-scripts",
+    "target_card_id": "check-package-install-scripts-before-install",
+    "target_title": "Check package install scripts before running install commands",
+    "language": "en",
+    "review_status": "ready-for-final-review",
+    "reviewed_at": "2026-05-28",
+    "reviewer": "manual-review",
+    "gates": {
+      "source_checked": true,
+      "source_url_present": true,
+      "duplicate_checked": true,
+      "freshness_checked": true,
+      "severity_checked": true,
+      "credibility_checked": true,
+      "safety_rewrite_checked": true,
+      "translation_checked": true,
+      "ai_output_checked": true,
+      "unsafe_detail_removed": true
+    },
+    "source_summary": {
+      "source_count": 1,
+      "primary_sources": 0,
+      "reference_sources": 1,
+      "signal_sources": 0,
+      "needs_stronger_source": true,
+      "source_notes": "Example source review note. Replace with real review notes before publication."
+    },
+    "editorial_summary": {
+      "public_safe": true,
+      "beginner_safe": true,
+      "contains_unverified_claims": false,
+      "contains_operational_detail": false,
+      "needs_manual_copyedit": true,
+      "editorial_notes": "Example only. Final text must be manually reviewed before publication."
+    },
+    "decision": "hold-for-stronger-source",
+    "decision_reason": "Example item has a defensive angle but needs stronger source support before publication.",
+    "next_action": "Find or confirm a stronger source before copying into data/threats.json."
+  }
+]
