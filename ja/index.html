@@ -67,9 +67,16 @@
           <p>このページは v0.1 MVP の静的な土台です。</p>
         </section>
 
-        <section class="panel placeholder flow" aria-labelledby="cards-placeholder-title-ja">
-          <h2 id="cards-placeholder-title-ja">カード表示のプレースホルダー</h2>
-          <p>カードデータと描画機能は、後続PRで追加予定です。</p>
+        <section class="panel flow" aria-labelledby="cards-preview-title-ja">
+          <div class="section-heading">
+            <div>
+              <p class="badge">Preview</p>
+              <h2 id="cards-preview-title-ja">危険行動カード</h2>
+            </div>
+            <p class="section-note">v0.1 データモデル確認用の初期カードです。</p>
+          </div>
+          <div id="card-list" class="card-grid" data-card-list></div>
+          <p class="empty-state" data-card-empty hidden>カードデータを読み込めませんでした。</p>
         </section>
       </div>
     </main>

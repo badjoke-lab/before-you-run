@@ -1,0 +1,20 @@
+[
+  {
+    "id": "primary",
+    "label": "Primary",
+    "label_ja": "一次情報",
+    "description": "Official advisories, project notices, or structured advisory databases."
+  },
+  {
+    "id": "reference",
+    "label": "Reference",
+    "label_ja": "参考情報",
+    "description": "Research articles, reputable news, or project documentation used for context."
+  },
+  {
+    "id": "signal",
+    "label": "Signal",
+    "label_ja": "シグナル",
+    "description": "Unconfirmed or early community signals that need verification."
+  }
+]

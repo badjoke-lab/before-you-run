@@ -36,3 +36,67 @@
 .placeholder {
   border-style: dashed;
 }
+
+.section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.section-note {
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-3);
+}
+
+.threat-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  padding: var(--space-3);
+}
+
+.threat-card__title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.threat-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.threat-card__summary {
+  margin: 0;
+  color: var(--color-text);
+}
+
+.label {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+.label--severity {
+  font-weight: 600;
+}
+
+.label--source {
+  border-style: dashed;
+}
+
+.empty-state {
+  margin: 0;
+  color: var(--color-muted);
+}
