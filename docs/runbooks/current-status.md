@@ -35,6 +35,7 @@ v0.1 release preparation
 - Source metadata foundation for future candidate collection
 - Manual candidate digest skeleton
 - Candidate review queue data model
+- Candidate-to-card draft pipeline
 ```
 
 ---
@@ -73,5 +74,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-11: Add candidate-to-card draft pipeline
+PR-12: Add signal confidence and freshness labels
 ```

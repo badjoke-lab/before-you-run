@@ -82,6 +82,17 @@ npm run queue:digest
 
 This generates a review digest from local example data only.
 
+
+## Card draft pipeline
+
+A local candidate-to-card draft builder is available for future v0.2 workflows.
+
+```bash
+npm run drafts:build
+```
+
+This creates draft card JSON and a Markdown report from local review queue example data. Drafts are not published automatically.
+
 ## License
 
 ```text
