@@ -48,25 +48,6 @@
           <p>安全性や信頼性を損なうおそれのある開発行動を、初心者にも読みやすい形で整理します。</p>
         </section>
 
-        <section class="panel flow" aria-labelledby="planned-title-ja">
-          <h2 id="planned-title-ja">v0.1 予定機能</h2>
-          <ul>
-            <li>ソース付きの公開安全カード</li>
-            <li>チェックリストとコマンド安全リファレンス</li>
-            <li>AI/エージェント向けの安全ルール表示</li>
-          </ul>
-        </section>
-
-        <section class="panel flow" aria-labelledby="boundary-title-ja">
-          <h2 id="boundary-title-ja">公開コンテンツの境界</h2>
-          <p>本サイトは防御・教育目的です。攻撃手順や回避手法などの危険情報は掲載しません。</p>
-        </section>
-
-        <section class="panel flow" aria-labelledby="status-title-ja">
-          <h2 id="status-title-ja">現在の状態</h2>
-          <p>このページは v0.1 MVP の静的な土台です。</p>
-        </section>
-
         <section class="panel flow" aria-labelledby="cards-preview-title-ja">
           <div class="section-heading">
             <div>
@@ -75,9 +56,33 @@
             </div>
             <p class="section-note">v0.1 データモデル確認用の初期カードです。</p>
           </div>
+
+          <section class="panel flow" aria-labelledby="card-controls-title-ja">
+            <div class="section-heading">
+              <div>
+                <p class="badge">絞り込み</p>
+                <h3 id="card-controls-title-ja">危険行動カードを探す</h3>
+              </div>
+              <p class="section-note">初期カードデータを検索・絞り込みできます。</p>
+            </div>
+
+            <form class="filter-panel" data-card-controls>
+              <label>検索 <input type="search" data-card-search placeholder="カードを検索..." /></label>
+              <label>カテゴリ <select data-card-category></select></label>
+              <label>重要度 <select data-card-severity></select></label>
+              <label>対象読者 <select data-card-audience></select></label>
+              <label>ソース種別 <select data-card-source-type></select></label>
+              <button type="button" data-card-reset>絞り込みをリセット</button>
+            </form>
+
+            <p class="result-count" data-card-count></p>
+          </section>
+
           <div id="card-list" class="card-grid" data-card-list></div>
           <p class="empty-state" data-card-empty hidden>カードデータを読み込めませんでした。</p>
         </section>
+
+        <section class="panel flow" data-card-detail hidden></section>
       </div>
     </main>
 
