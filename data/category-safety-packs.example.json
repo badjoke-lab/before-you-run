@@ -1,0 +1,39 @@
+[
+  {
+    "id": "pack-malicious-packages-basic",
+    "category_id": "malicious-packages",
+    "title": "Malicious package safety pack",
+    "language": "en",
+    "pack_status": "draft",
+    "updated_at": "2026-05-28",
+    "audience": "beginner-developers",
+    "purpose": "Help AI assistants give safe, defensive guidance about package install risk.",
+    "allowed_guidance": [
+      "Explain package install risks in beginner-safe language.",
+      "Suggest reviewing package metadata, maintainer signals, install scripts, and permissions.",
+      "Recommend using isolated test environments for unknown dependencies.",
+      "Tell users to avoid pasting secrets into terminals, prompts, or repositories."
+    ],
+    "disallowed_guidance": [
+      "Do not provide exploit steps.",
+      "Do not provide credential theft methods.",
+      "Do not provide bypass instructions.",
+      "Do not provide weaponized payloads.",
+      "Do not make unverified claims about real packages."
+    ],
+    "safe_response_rules": [
+      "Keep advice defensive and public-safe.",
+      "Use uncertainty labels when the source is incomplete.",
+      "Recommend stronger source checks before publishing claims.",
+      "Prefer safer alternatives over operational details."
+    ],
+    "ai_prompt_snippet": "When discussing package install risk, provide beginner-safe defensive advice only. Do not include exploit steps, credential theft methods, bypass instructions, or weaponized payloads.",
+    "review_requirements": {
+      "needs_source_review": true,
+      "needs_safety_review": true,
+      "needs_translation_review": false,
+      "needs_ai_output_review": true
+    },
+    "notes": "Example safety pack only. Not a generated final rule bundle."
+  }
+]

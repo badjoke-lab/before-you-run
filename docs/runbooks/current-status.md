@@ -50,6 +50,7 @@ v0.1 release preparation
 - Mastodon signal support
 - Screenshot/manual evidence flow
 - Signal verification queue
+- Category safety packs foundation
 ```
 
 ---
@@ -88,5 +89,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-27: Add category safety packs
+PR-28: Add downloadable AI rules
 ```
