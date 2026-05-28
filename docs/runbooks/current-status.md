@@ -32,6 +32,7 @@ v0.1 release preparation
 - License and notice files
 - JSON validation and CI check
 - Expanded initial card set for v0.1
+- Source metadata foundation for future candidate collection
 ```
 
 ---
@@ -70,5 +71,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-v0.1 release review and deployment check
+PR-09: Add RSS/manual candidate fetch skeleton
 ```
