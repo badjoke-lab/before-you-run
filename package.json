@@ -3,6 +3,7 @@
     "check": "node scripts/validate-data.mjs",
     "digest:build": "node scripts/build-candidate-digest.mjs",
     "queue:digest": "node scripts/build-candidate-digest.mjs data/candidate-review-queue.example.json reports/candidate-review-queue-digest.md",
-    "drafts:build": "node scripts/build-card-drafts.mjs"
+    "drafts:build": "node scripts/build-card-drafts.mjs",
+    "intake:run": "node scripts/run-intake-skeleton.mjs"
   }
 }

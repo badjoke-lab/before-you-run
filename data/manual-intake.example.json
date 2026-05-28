@@ -1,0 +1,20 @@
+[
+  {
+    "id": "manual-intake-example-package-script",
+    "source_id": "manual",
+    "source_type": "reference",
+    "source_name": "Manual example source",
+    "url": "https://example.com/source",
+    "title": "Example item about package install script review",
+    "language": "en",
+    "collected_at": "2026-05-28",
+    "published_at": "2026-05-28",
+    "raw_summary": "Example public-safe source summary for local intake testing.",
+    "candidate_categories": ["malicious-packages"],
+    "matched_keywords": ["postinstall", "malicious package"],
+    "confidence": "low",
+    "freshness": "new",
+    "severity_hint": "medium",
+    "intake_notes": "Placeholder only. No external fetch was performed."
+  }
+]

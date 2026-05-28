@@ -94,6 +94,18 @@ npm run drafts:build
 This creates draft card JSON and a Markdown report from local review queue example data. Drafts are not published automatically.
 
 
+
+
+## Intake runner skeleton
+
+A local no-network intake runner skeleton is available for future Phase 2 workflows.
+
+```bash
+npm run intake:run
+```
+
+This processes local example intake data only. It does not fetch RSS feeds or call external APIs.
+
 ## Signal labels
 
 Tripwire includes confidence, freshness, and severity-hint label definitions for candidate review workflows. These labels are editorial aids and do not automatically publish or confirm candidate items.
