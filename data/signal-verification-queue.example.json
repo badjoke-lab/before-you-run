@@ -1,0 +1,39 @@
+[
+  {
+    "id": "verify-example-x-package-warning",
+    "queue_status": "needs-verification",
+    "priority": "medium",
+    "source_signal_id": "social-signal-example-x-package-warning",
+    "source_evidence_id": "evidence-example-screenshot-package-warning",
+    "platform": "x",
+    "source_type": "signal",
+    "source_kind": "social-link",
+    "title": "Example verification queue item for package warning",
+    "language": "en",
+    "created_at": "2026-05-28",
+    "last_reviewed_at": "2026-05-28",
+    "public_safe_summary": "Placeholder verification queue summary. This item is not confirmed.",
+    "verification_needs": {
+      "needs_primary_source": true,
+      "needs_reference_source": true,
+      "needs_original_context": true,
+      "needs_duplicate_check": true,
+      "needs_safety_rewrite": false,
+      "needs_translation": false,
+      "needs_redaction_review": true
+    },
+    "verification_state": {
+      "primary_source_found": false,
+      "reference_source_found": false,
+      "original_context_checked": false,
+      "duplicate_checked": false,
+      "redaction_checked": false,
+      "safe_to_promote": false,
+      "do_not_publish_as_confirmed": true
+    },
+    "review_decision": "hold",
+    "decision_reason": "Example signal needs stronger source confirmation before candidate promotion.",
+    "next_action": "Find a primary or reliable reference source before moving this item into candidate review.",
+    "notes": "Manual placeholder verification queue item. No API, scraping, OCR, or live fetch was performed."
+  }
+]

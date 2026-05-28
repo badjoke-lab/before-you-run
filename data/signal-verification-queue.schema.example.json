@@ -1,0 +1,33 @@
+{
+  "required": [
+    "id",
+    "queue_status",
+    "priority",
+    "platform",
+    "source_type",
+    "source_kind",
+    "title",
+    "language",
+    "created_at",
+    "public_safe_summary",
+    "verification_needs",
+    "verification_state",
+    "review_decision",
+    "decision_reason",
+    "next_action"
+  ],
+  "optional": [
+    "source_signal_id",
+    "source_evidence_id",
+    "last_reviewed_at",
+    "notes"
+  ],
+  "allowed_values": {
+    "queue_status": ["needs-verification", "in-review", "blocked", "ready-for-candidate-review", "rejected"],
+    "priority": ["high", "medium", "low", "watch"],
+    "platform": ["x", "bluesky", "mastodon", "other-social", "web", "other"],
+    "source_type": ["signal"],
+    "source_kind": ["social-link", "screenshot-note", "manual-note", "url-with-note"],
+    "review_decision": ["hold", "promote-to-candidate-review", "needs-more-context", "needs-redaction", "reject"]
+  }
+}
