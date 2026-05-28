@@ -14,6 +14,8 @@ const ALLOWED_SOURCE_TYPE = new Set(['primary', 'reference', 'signal']);
 const ALLOWED_CONFIDENCE = new Set(['low', 'medium', 'high']);
 const ALLOWED_FRESHNESS = new Set(['new', 'recent', 'stale', 'unknown']);
 const ALLOWED_SEVERITY = new Set(['high', 'medium', 'watch', 'unknown']);
+const ALLOWED_REVIEW_PRIORITY = new Set(['low', 'medium', 'high']);
+const ALLOWED_REVIEW_DECISION = new Set(['undecided', 'needs-more-sources', 'draft-card', 'reject', 'publish']);
 
 const DEFAULT_INPUT = 'data/manual-candidates.example.json';
 const today = new Date().toISOString().slice(0, 10);
@@ -25,6 +27,14 @@ const outputPath = process.argv[3] || DEFAULT_OUTPUT;
 function fail(message) {
   console.error(`Error: ${message}`);
   process.exit(1);
+}
+
+function formatList(values) {
+  if (!Array.isArray(values) || values.length === 0) {
+    return 'none';
+  }
+
+  return values.join('; ');
 }
 
 function parseCandidates(filePath) {
@@ -44,7 +54,7 @@ function parseCandidates(filePath) {
     fail('Input JSON top-level value must be an array.');
   }
 
-  const requiredFields = ['id', 'title', 'url', 'status', 'source_type', 'summary', 'why_relevant'];
+  const requiredFields = ['id', 'title', 'status', 'source_type', 'summary', 'why_relevant'];
 
   parsed.forEach((candidate, index) => {
     const prefix = `Candidate at index ${index}`;
@@ -57,6 +67,11 @@ function parseCandidates(filePath) {
       if (typeof candidate[field] !== 'string' || candidate[field].trim() === '') {
         fail(`${prefix} is missing required field: ${field}`);
       }
+    }
+
+    const sourceUrl = candidate.source_url || candidate.url;
+    if (typeof sourceUrl !== 'string' || sourceUrl.trim() === '') {
+      fail(`${prefix} is missing required field: source_url or url`);
     }
 
     if (!ALLOWED_STATUS.has(candidate.status)) {
@@ -74,6 +89,12 @@ function parseCandidates(filePath) {
     }
     if (candidate.severity_hint != null && !ALLOWED_SEVERITY.has(candidate.severity_hint)) {
       fail(`${prefix} has invalid severity_hint: ${candidate.severity_hint}`);
+    }
+    if (candidate.review_priority != null && !ALLOWED_REVIEW_PRIORITY.has(candidate.review_priority)) {
+      fail(`${prefix} has invalid review_priority: ${candidate.review_priority}`);
+    }
+    if (candidate.review_decision != null && !ALLOWED_REVIEW_DECISION.has(candidate.review_decision)) {
+      fail(`${prefix} has invalid review_decision: ${candidate.review_decision}`);
     }
   });
 
@@ -114,6 +135,7 @@ function buildDigest(candidates, sourceLabel) {
       const categories = Array.isArray(c.candidate_categories) && c.candidate_categories.length > 0
         ? c.candidate_categories.join(', ')
         : 'none';
+      const sourceUrl = c.source_url || c.url;
 
       lines.push(
         '',
@@ -125,7 +147,29 @@ function buildDigest(candidates, sourceLabel) {
         `- Freshness: ${c.freshness || 'unknown'}`,
         `- Severity hint: ${c.severity_hint || 'unknown'}`,
         `- Categories: ${categories}`,
-        `- URL: ${c.url}`,
+        `- URL: ${sourceUrl}`
+      );
+
+      if (c.review_priority) {
+        lines.push(`- Review priority: ${c.review_priority}`);
+      }
+      if (c.review_decision) {
+        lines.push(`- Review decision: ${c.review_decision}`);
+      }
+      if (c.safe_card_angle) {
+        lines.push(`- Safe card angle: ${c.safe_card_angle}`);
+      }
+      if (Array.isArray(c.review_questions)) {
+        lines.push(`- Review questions: ${formatList(c.review_questions)}`);
+      }
+      if (Array.isArray(c.blocking_issues)) {
+        lines.push(`- Blocking issues: ${formatList(c.blocking_issues)}`);
+      }
+      if (c.review_notes) {
+        lines.push(`- Review notes: ${c.review_notes}`);
+      }
+
+      lines.push(
         '',
         'Why relevant:',
         c.why_relevant,

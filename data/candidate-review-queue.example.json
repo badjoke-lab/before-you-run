@@ -1,0 +1,31 @@
+[
+  {
+    "id": "queue-example-unknown-package-script",
+    "status": "needs-verification",
+    "review_priority": "medium",
+    "title": "Example candidate about reviewing package install scripts",
+    "source_url": "https://example.com/source",
+    "source_id": "manual",
+    "source_type": "reference",
+    "language": "en",
+    "collected_at": "2026-05-28",
+    "candidate_categories": ["malicious-packages"],
+    "matched_keywords": ["postinstall", "malicious package"],
+    "confidence": "low",
+    "freshness": "new",
+    "severity_hint": "medium",
+    "summary": "Example public-safe summary for review queue testing.",
+    "why_relevant": "This may become a defensive card because it maps to package-install behavior.",
+    "review_questions": [
+      "Is there a stronger primary or reference source?",
+      "Can this become a clear what-to-avoid card?",
+      "Is the wording free of unsafe operational detail?"
+    ],
+    "safe_card_angle": "Check package scripts before install commands.",
+    "blocking_issues": [
+      "Example source is placeholder only."
+    ],
+    "review_decision": "undecided",
+    "review_notes": "Example only. Replace with reviewed candidates later."
+  }
+]
