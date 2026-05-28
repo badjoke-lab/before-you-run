@@ -1,0 +1,88 @@
+[
+  {
+    "id": "unknown-repo-before-review",
+    "title": "Review unknown repositories before opening them in a trusted editor",
+    "title_ja": "知らないリポジトリを信頼済みエディタで開く前に確認する",
+    "severity": "high",
+    "categories": ["unknown-repos", "ai-coding-agents"],
+    "audience": ["beginner", "indie-dev", "ai-coding"],
+    "summary": "Unknown repositories can include project settings, install scripts, or task definitions that are unsafe to run without review.",
+    "summary_ja": "知らないリポジトリには、確認せずに実行すると危険な設定・インストールスクリプト・タスク定義が含まれる場合があります。",
+    "dangerous_actions": [
+      "Opening an unknown repository as trusted before review",
+      "Running install or build commands before checking project scripts"
+    ],
+    "dangerous_actions_ja": [
+      "知らないリポジトリを確認前に信頼済みとして開く",
+      "project scriptsを確認せずにinstallやbuildを実行する"
+    ],
+    "avoid_now": [
+      "Inspect project files before running commands",
+      "Keep unknown repositories untrusted until reviewed"
+    ],
+    "avoid_now_ja": [
+      "コマンド実行前にproject filesを確認する",
+      "確認が終わるまで未知のリポジトリを信頼済みにしない"
+    ],
+    "sources": [
+      {
+        "title": "Tripwire MVP seed card",
+        "url": "docs/specs/tripwire-mvp-spec-v0.1.md",
+        "publisher": "Tripwire",
+        "source_tier": "project",
+        "source_type": "reference",
+        "published_at": "2026-05-28",
+        "checked_at": "2026-05-28"
+      }
+    ],
+    "updated_at": "2026-05-28"
+  },
+  {
+    "id": "check-package-install-scripts",
+    "title": "Check package install scripts before running install commands",
+    "title_ja": "installコマンド実行前にパッケージのスクリプトを確認する",
+    "severity": "high",
+    "categories": ["malicious-packages", "dangerous-commands"],
+    "audience": ["beginner", "indie-dev", "ai-coding"],
+    "summary": "Dependency install flows can trigger scripts automatically, so basic review helps avoid unsafe execution.",
+    "summary_ja": "依存関係のinstallではスクリプトが自動実行されることがあるため、事前確認で危険な実行を避けやすくなります。",
+    "dangerous_actions": ["Running install commands without checking package scripts"],
+    "dangerous_actions_ja": ["パッケージスクリプトを確認せずにinstallコマンドを実行する"],
+    "avoid_now": ["Review package manifests and lockfiles before install"],
+    "avoid_now_ja": ["install前にmanifestとlockfileを確認する"],
+    "sources": [{"title":"Tripwire MVP seed card","url":"docs/specs/tripwire-mvp-spec-v0.1.md","publisher":"Tripwire","source_tier":"project","source_type":"reference","published_at":"2026-05-28","checked_at":"2026-05-28"}],
+    "updated_at": "2026-05-28"
+  },
+  {
+    "id": "keep-secrets-out-of-prompts-and-repos",
+    "title": "Keep secrets and API keys out of prompts and public repositories",
+    "title_ja": "シークレットやAPIキーをpromptと公開リポジトリに含めない",
+    "severity": "high",
+    "categories": ["secrets-tokens", "ai-coding-agents"],
+    "audience": ["beginner", "indie-dev", "ai-coding"],
+    "summary": "Credentials copied into prompts, commits, or issue threads may be retained or exposed beyond intended scope.",
+    "summary_ja": "認証情報をprompt、commit、issueに含めると、意図しない範囲に保持・公開されるおそれがあります。",
+    "dangerous_actions": ["Pasting active tokens into AI chats or public code"],
+    "dangerous_actions_ja": ["有効なトークンをAIチャットや公開コードへ貼り付ける"],
+    "avoid_now": ["Use placeholders and secret managers for credentials"],
+    "avoid_now_ja": ["認証情報はプレースホルダーとsecret managerで扱う"],
+    "sources": [{"title":"Tripwire MVP seed card","url":"docs/specs/tripwire-mvp-spec-v0.1.md","publisher":"Tripwire","source_tier":"project","source_type":"reference","published_at":"2026-05-28","checked_at":"2026-05-28"}],
+    "updated_at": "2026-05-28"
+  },
+  {
+    "id": "avoid-copying-unknown-terminal-commands",
+    "title": "Avoid copying unknown commands into a terminal",
+    "title_ja": "不明なコマンドをそのままターミナルへ貼り付けない",
+    "severity": "medium",
+    "categories": ["dangerous-commands", "unknown-repos"],
+    "audience": ["beginner", "indie-dev", "ai-coding"],
+    "summary": "Commands from untrusted posts or chats can chain actions that are hard to notice at a glance.",
+    "summary_ja": "信頼できない投稿やチャットのコマンドは、気づきにくい連鎖実行を含むことがあります。",
+    "dangerous_actions": ["Running copied commands without understanding each part"],
+    "dangerous_actions_ja": ["内容を理解せずにコピーしたコマンドを実行する"],
+    "avoid_now": ["Break commands into parts and verify intent first"],
+    "avoid_now_ja": ["コマンドを分割し、意図を確認してから実行する"],
+    "sources": [{"title":"Tripwire MVP seed card","url":"docs/specs/tripwire-mvp-spec-v0.1.md","publisher":"Tripwire","source_tier":"project","source_type":"reference","published_at":"2026-05-28","checked_at":"2026-05-28"}],
+    "updated_at": "2026-05-28"
+  }
+]

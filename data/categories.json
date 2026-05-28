@@ -1,0 +1,44 @@
+[
+  {
+    "id": "unknown-repos",
+    "label": "Unknown Repos",
+    "label_ja": "未知のリポジトリ",
+    "description": "Risks around cloning, opening, or running unfamiliar repositories.",
+    "description_ja": "知らないリポジトリをclone、open、実行する際のリスク。"
+  },
+  {
+    "id": "malicious-packages",
+    "label": "Malicious Packages",
+    "label_ja": "悪意あるパッケージ",
+    "description": "Risks from unreviewed dependencies, install scripts, and package updates.",
+    "description_ja": "未確認の依存関係、install script、更新に伴うリスク。"
+  },
+  {
+    "id": "secrets-tokens",
+    "label": "Secrets & Tokens",
+    "label_ja": "シークレットとトークン",
+    "description": "Risks of exposing credentials in prompts, code, logs, or repositories.",
+    "description_ja": "prompt、コード、ログ、リポジトリで認証情報を漏えいするリスク。"
+  },
+  {
+    "id": "ai-coding-agents",
+    "label": "AI Coding Agents",
+    "label_ja": "AIコーディングエージェント",
+    "description": "Risks when trusting AI-assisted workflows without review boundaries.",
+    "description_ja": "AI支援ワークフローを確認せずに信頼する際のリスク。"
+  },
+  {
+    "id": "dangerous-commands",
+    "label": "Dangerous Commands",
+    "label_ja": "危険なコマンド",
+    "description": "Risks from running unknown terminal commands without validation.",
+    "description_ja": "確認せずに不明なターミナルコマンドを実行するリスク。"
+  },
+  {
+    "id": "scams-fake-jobs",
+    "label": "Scams & Fake Jobs",
+    "label_ja": "詐欺・偽求人",
+    "description": "Risks from social engineering, suspicious tests, and fake recruiting flows.",
+    "description_ja": "ソーシャルエンジニアリング、疑わしい課題、偽の採用フローによるリスク。"
+  }
+]

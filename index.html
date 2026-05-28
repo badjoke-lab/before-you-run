@@ -71,9 +71,16 @@
           <p>This page is the initial static shell for the v0.1 MVP.</p>
         </section>
 
-        <section class="panel placeholder flow" aria-labelledby="cards-placeholder-title">
-          <h2 id="cards-placeholder-title">Cards placeholder</h2>
-          <p>Card data and rendering will be added in a later PR.</p>
+        <section class="panel flow" aria-labelledby="cards-preview-title">
+          <div class="section-heading">
+            <div>
+              <p class="badge">Preview</p>
+              <h2 id="cards-preview-title">Risky-action cards</h2>
+            </div>
+            <p class="section-note">Seed cards for the v0.1 data model.</p>
+          </div>
+          <div id="card-list" class="card-grid" data-card-list></div>
+          <p class="empty-state" data-card-empty hidden>Card data is not available yet.</p>
         </section>
       </div>
     </main>
