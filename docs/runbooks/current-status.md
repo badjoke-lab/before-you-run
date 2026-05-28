@@ -48,6 +48,7 @@ v0.1 release preparation
 - Manual social signal ingestion foundation
 - Bluesky signal support
 - Mastodon signal support
+- Screenshot/manual evidence flow
 ```
 
 ---
@@ -86,5 +87,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-25: Add screenshot/manual evidence flow
+PR-26: Add signal verification queue
 ```

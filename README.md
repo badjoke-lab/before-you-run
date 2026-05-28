@@ -191,6 +191,16 @@ npm run social:report
 
 This reads local example social signal data and writes a Markdown report. It does not use social APIs, perform live fetches, scrape websites, or publish candidates/cards automatically. Social signals do not publish cards automatically.
 
+## Screenshot / manual evidence flow
+
+A local evidence report is available for screenshot references and manual evidence notes.
+
+```bash
+npm run evidence:report
+```
+
+This reads local example evidence data and writes a Markdown report. It does not process images, run OCR, fetch sources, or publish candidates/cards automatically.
+
 ## Signal labels
 
 Tripwire includes confidence, freshness, and severity-hint label definitions for candidate review workflows. These labels are editorial aids and do not automatically publish or confirm candidate items.
