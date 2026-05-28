@@ -11,6 +11,7 @@
     "credibility:report": "node scripts/build-source-credibility-report.mjs",
     "history:report": "node scripts/build-card-update-history-report.mjs",
     "publish:report": "node scripts/build-publish-review-report.mjs",
-    "social:report": "node scripts/build-social-signal-report.mjs data/social-signals.example.json reports/social-signals.example.md"
+    "social:report": "node scripts/build-social-signal-report.mjs data/social-signals.example.json reports/social-signals.example.md",
+    "evidence:report": "node scripts/build-evidence-report.mjs"
   }
 }

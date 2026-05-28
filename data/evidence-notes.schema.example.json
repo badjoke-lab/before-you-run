@@ -1,0 +1,31 @@
+{
+  "required": [
+    "id",
+    "evidence_type",
+    "evidence_status",
+    "source_context",
+    "platform",
+    "language",
+    "collected_at",
+    "title",
+    "public_safe_summary",
+    "screenshot_reference",
+    "source_url",
+    "capture_notes",
+    "redaction",
+    "context_review",
+    "verification"
+  ],
+  "optional": [
+    "observed_at",
+    "related_signal_id",
+    "related_candidate_id",
+    "notes"
+  ],
+  "allowed_values": {
+    "evidence_type": ["screenshot-reference", "manual-note", "url-with-note"],
+    "evidence_status": ["needs-review", "needs-redaction", "needs-context", "verified-reference", "rejected"],
+    "source_context": ["manual-social-signal", "manual-intake", "candidate-review", "other"],
+    "platform": ["x", "bluesky", "mastodon", "other-social", "web", "other"]
+  }
+}

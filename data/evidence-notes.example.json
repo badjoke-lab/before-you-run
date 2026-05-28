@@ -1,0 +1,39 @@
+[
+  {
+    "id": "evidence-example-screenshot-package-warning",
+    "evidence_type": "screenshot-reference",
+    "evidence_status": "needs-review",
+    "source_context": "manual-social-signal",
+    "related_signal_id": "social-signal-example-x-package-warning",
+    "related_candidate_id": "",
+    "platform": "x",
+    "language": "en",
+    "collected_at": "2026-05-28",
+    "observed_at": "2026-05-28",
+    "title": "Example screenshot reference for package warning",
+    "public_safe_summary": "Placeholder screenshot evidence note. This does not confirm the claim by itself.",
+    "screenshot_reference": "local-placeholder/path-or-note.png",
+    "source_url": "https://example.com/social-post",
+    "capture_notes": "Example only. The screenshot itself is not processed or committed.",
+    "redaction": {
+      "needs_redaction": true,
+      "possible_personal_data": true,
+      "possible_secret_data": false,
+      "redaction_notes": "Check whether usernames, profile images, or unrelated people should be removed before any public use."
+    },
+    "context_review": {
+      "needs_original_source_check": true,
+      "needs_date_check": true,
+      "needs_thread_context": true,
+      "needs_translation": false,
+      "context_notes": "A screenshot alone is not enough for publication."
+    },
+    "verification": {
+      "primary_source_found": false,
+      "reference_source_found": false,
+      "do_not_publish_as_confirmed": true,
+      "verification_notes": "Evidence note must be verified against stronger sources before publication."
+    },
+    "notes": "Manual placeholder evidence. No OCR, image parsing, API use, scraping, or live fetch was performed."
+  }
+]
