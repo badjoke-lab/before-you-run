@@ -137,6 +137,17 @@ npm run freshness:report
 
 This reads local manual intake example data and writes a Markdown helper report. It does not verify truth, fetch sources, or publish candidates/cards.
 
+
+## Duplicate detection
+
+A local duplicate detection report is available for manual intake review.
+
+```bash
+npm run duplicates:report
+```
+
+This checks local manual intake data only and does not fetch external sources.
+
 ## Signal labels
 
 Tripwire includes confidence, freshness, and severity-hint label definitions for candidate review workflows. These labels are editorial aids and do not automatically publish or confirm candidate items.
