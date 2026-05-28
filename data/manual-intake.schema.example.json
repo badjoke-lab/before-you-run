@@ -1,0 +1,45 @@
+{
+  "required": [
+    "id",
+    "source_kind",
+    "source_type",
+    "source_name",
+    "url",
+    "title",
+    "language",
+    "collected_at",
+    "raw_summary",
+    "candidate_categories",
+    "confidence",
+    "freshness",
+    "severity_hint"
+  ],
+  "optional": [
+    "source_id",
+    "published_at",
+    "matched_keywords",
+    "submitter_note",
+    "quoted_excerpt",
+    "screenshot_reference",
+    "needs_translation",
+    "needs_source_check",
+    "needs_safety_rewrite",
+    "intake_notes",
+    "label_notes"
+  ],
+  "allowed_values": {
+    "source_kind": [
+      "article",
+      "official-advisory",
+      "blog",
+      "social-link",
+      "screenshot-note",
+      "manual-note",
+      "other"
+    ],
+    "source_type": ["primary", "reference", "signal"],
+    "confidence": ["low", "medium", "high"],
+    "freshness": ["new", "recent", "stale", "unknown"],
+    "severity_hint": ["high", "medium", "watch", "unknown"]
+  }
+}

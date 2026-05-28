@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+const ALLOWED_SOURCE_KIND = new Set(['article', 'official-advisory', 'blog', 'social-link', 'screenshot-note', 'manual-note', 'other']);
 const ALLOWED_SOURCE_TYPE = new Set(['primary', 'reference', 'signal']);
 const ALLOWED_CONFIDENCE = new Set(['low', 'medium', 'high']);
 const ALLOWED_FRESHNESS = new Set(['new', 'recent', 'stale', 'unknown']);
@@ -36,7 +37,7 @@ function parseIntakeItems(filePath) {
   }
 
   const requiredFields = [
-    'id', 'source_id', 'source_type', 'source_name', 'url', 'title', 'language', 'collected_at',
+    'id', 'source_kind', 'source_type', 'source_name', 'url', 'title', 'language', 'collected_at',
     'raw_summary', 'candidate_categories', 'confidence', 'freshness', 'severity_hint'
   ];
 
@@ -53,7 +54,7 @@ function parseIntakeItems(filePath) {
       }
     }
 
-    for (const field of ['id', 'source_id', 'source_type', 'source_name', 'url', 'title', 'language', 'collected_at', 'raw_summary', 'confidence', 'freshness', 'severity_hint']) {
+    for (const field of ['id', 'source_kind', 'source_type', 'source_name', 'url', 'title', 'language', 'collected_at', 'raw_summary', 'confidence', 'freshness', 'severity_hint']) {
       if (typeof item[field] !== 'string' || item[field].trim() === '') {
         fail(`${prefix} has invalid value for field: ${field}`);
       }
@@ -63,6 +64,15 @@ function parseIntakeItems(filePath) {
       fail(`${prefix} must include a non-empty candidate_categories array.`);
     }
 
+    for (const field of ['needs_translation', 'needs_source_check', 'needs_safety_rewrite']) {
+      if (item[field] != null && typeof item[field] !== 'boolean') {
+        fail(`${prefix} has non-boolean optional field: ${field}`);
+      }
+    }
+
+    if (!ALLOWED_SOURCE_KIND.has(item.source_kind)) {
+      fail(`${prefix} has invalid source_kind: ${item.source_kind}`);
+    }
     if (!ALLOWED_SOURCE_TYPE.has(item.source_type)) {
       fail(`${prefix} has invalid source_type: ${item.source_type}`);
     }
@@ -98,23 +108,43 @@ function buildReport(items, sourceLabel) {
   ];
 
   for (const item of items) {
+    const labelNotes = item.label_notes && typeof item.label_notes === 'object'
+      ? Object.entries(item.label_notes).map(([key, value]) => `${key}: ${value}`).join(' | ')
+      : 'No label notes.';
+
     lines.push(
       '',
       `### ${item.title}`,
       '',
       `- Source: ${item.source_name}`,
+      `- Source kind: ${item.source_kind}`,
       `- Source type: ${item.source_type}`,
       `- URL: ${item.url}`,
       `- Confidence: ${item.confidence}`,
       `- Freshness: ${item.freshness}`,
       `- Severity hint: ${item.severity_hint}`,
       `- Categories: ${item.candidate_categories.join(', ')}`,
+      `- Needs translation: ${item.needs_translation ?? false}`,
+      `- Needs source check: ${item.needs_source_check ?? false}`,
+      `- Needs safety rewrite: ${item.needs_safety_rewrite ?? false}`,
       '',
       'Public-safe summary:',
       item.raw_summary,
       '',
+      'Submitter note:',
+      item.submitter_note || 'No submitter note.',
+      '',
+      'Quoted excerpt:',
+      item.quoted_excerpt || 'No quoted excerpt.',
+      '',
+      'Screenshot reference:',
+      item.screenshot_reference || 'No screenshot reference.',
+      '',
       'Notes:',
-      item.intake_notes || 'No additional notes.'
+      item.intake_notes || 'No additional notes.',
+      '',
+      'Label notes:',
+      labelNotes
     );
   }
 

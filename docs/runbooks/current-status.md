@@ -38,6 +38,7 @@ v0.1 release preparation
 - Candidate-to-card draft pipeline
 - Signal confidence and freshness label definitions
 - RSS/manual intake source runner skeleton
+- Manual intake file format
 ```
 
 ---
@@ -76,5 +77,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-14: Add manual intake file format
+PR-15: Add candidate moderation report
 ```

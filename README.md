@@ -106,6 +106,16 @@ npm run intake:run
 
 This processes local example intake data only. It does not fetch RSS feeds or call external APIs.
 
+## Manual intake format
+
+Tripwire includes a local manual intake format for URLs, article notes, social links, screenshot references, and manual notes.
+
+```bash
+npm run intake:run
+```
+
+Manual intake data is local example data only and does not publish candidates or cards automatically.
+
 ## Signal labels
 
 Tripwire includes confidence, freshness, and severity-hint label definitions for candidate review workflows. These labels are editorial aids and do not automatically publish or confirm candidate items.

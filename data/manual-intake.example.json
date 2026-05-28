@@ -1,11 +1,12 @@
 [
   {
-    "id": "manual-intake-example-package-script",
+    "id": "manual-intake-example-article-package-script",
+    "source_kind": "article",
     "source_id": "manual",
     "source_type": "reference",
-    "source_name": "Manual example source",
-    "url": "https://example.com/source",
-    "title": "Example item about package install script review",
+    "source_name": "Manual example article",
+    "url": "https://example.com/article",
+    "title": "Example article about reviewing package install scripts",
     "language": "en",
     "collected_at": "2026-05-28",
     "published_at": "2026-05-28",
@@ -15,6 +16,75 @@
     "confidence": "low",
     "freshness": "new",
     "severity_hint": "medium",
-    "intake_notes": "Placeholder only. No external fetch was performed."
+    "submitter_note": "Manual placeholder item for intake format testing.",
+    "quoted_excerpt": "Short placeholder excerpt only.",
+    "screenshot_reference": "",
+    "needs_translation": false,
+    "needs_source_check": true,
+    "needs_safety_rewrite": false,
+    "intake_notes": "Placeholder only. No external fetch was performed.",
+    "label_notes": {
+      "confidence": "Low because this is placeholder/manual example data.",
+      "freshness": "Marked new for local workflow testing.",
+      "severity_hint": "Medium as a conservative example."
+    }
+  },
+  {
+    "id": "manual-intake-example-official-advisory-auth-check",
+    "source_kind": "official-advisory",
+    "source_id": "manual",
+    "source_type": "primary",
+    "source_name": "Manual example advisory",
+    "url": "https://example.com/advisory",
+    "title": "Example advisory note about access policy verification",
+    "language": "en",
+    "collected_at": "2026-05-28",
+    "published_at": "2026-05-27",
+    "raw_summary": "Public-safe placeholder summary describing verification-focused advisory content.",
+    "candidate_categories": ["credential-exposure", "supply-chain"],
+    "matched_keywords": ["advisory", "verification"],
+    "confidence": "medium",
+    "freshness": "recent",
+    "severity_hint": "high",
+    "submitter_note": "Collected manually from a public advisory page for testing.",
+    "quoted_excerpt": "Placeholder excerpt from a public advisory summary.",
+    "needs_translation": false,
+    "needs_source_check": false,
+    "needs_safety_rewrite": true,
+    "intake_notes": "Use for local moderation practice only.",
+    "label_notes": {
+      "confidence": "Medium because this is still placeholder text.",
+      "freshness": "Recent based on placeholder published date.",
+      "severity_hint": "High to exercise reviewer triage flow."
+    }
+  },
+  {
+    "id": "manual-intake-example-social-link-discussion",
+    "source_kind": "social-link",
+    "source_id": "manual",
+    "source_type": "signal",
+    "source_name": "Manual example social link",
+    "url": "https://example.com/social",
+    "title": "Example social discussion link for review",
+    "language": "en",
+    "collected_at": "2026-05-28",
+    "raw_summary": "Public-safe placeholder summary of a social signal that needs verification.",
+    "candidate_categories": ["social-engineering"],
+    "matched_keywords": ["social post", "review needed"],
+    "confidence": "low",
+    "freshness": "new",
+    "severity_hint": "watch",
+    "submitter_note": "Signal-only placeholder, requires source confirmation.",
+    "quoted_excerpt": "Short placeholder social note.",
+    "screenshot_reference": "screenshots/manual-social-example.png",
+    "needs_translation": true,
+    "needs_source_check": true,
+    "needs_safety_rewrite": false,
+    "intake_notes": "Manual social link example for local workflow checks.",
+    "label_notes": {
+      "confidence": "Low because this is an unverified social signal.",
+      "freshness": "Marked new to represent same-day collection.",
+      "severity_hint": "Watch pending moderation review."
+    }
   }
 ]
