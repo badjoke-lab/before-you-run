@@ -57,6 +57,7 @@ v0.1 release preparation
 - AI-output docs/index
 - Sitemap and robots foundation
 - Local operator workflow foundation
+- One-item local operation walkthrough
 ```
 
 ---
@@ -95,5 +96,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-35: Add one-item local operation walkthrough
+PR-36: Add category pages
 ```

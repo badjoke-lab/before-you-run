@@ -20,6 +20,7 @@
     "ai-output:validate": "node scripts/build-ai-output-validation-report.mjs",
     "sitemap:build": "node scripts/build-sitemap.mjs",
     "operator:setup": "node scripts/setup-local-operator-files.mjs",
-    "operator:run": "node scripts/run-local-operator-workflow.mjs"
+    "operator:run": "node scripts/run-local-operator-workflow.mjs",
+    "walkthrough:run": "node scripts/run-one-item-operator-walkthrough.mjs"
   }
 }

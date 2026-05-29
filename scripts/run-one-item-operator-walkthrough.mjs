@@ -8,8 +8,8 @@ const COMMANDS = [
     args: [
       "scripts/run-intake-skeleton.mjs",
       "data/operator-walkthrough.manual-intake.example.json",
-      "data/operator-walkthrough.intake-runs.example.json",
-      "reports/operator-walkthrough.intake-run.example.md"
+      "data/operator-walkthrough.intake-runs.local.json",
+      "reports/operator-walkthrough.intake-run.local.md"
     ]
   },
   {
@@ -17,7 +17,7 @@ const COMMANDS = [
     args: [
       "scripts/build-moderation-report.mjs",
       "data/operator-walkthrough.manual-intake.example.json",
-      "reports/operator-walkthrough.candidate-moderation.example.md"
+      "reports/operator-walkthrough.candidate-moderation.local.md"
     ]
   },
   {
@@ -25,7 +25,7 @@ const COMMANDS = [
     args: [
       "scripts/build-freshness-severity-report.mjs",
       "data/operator-walkthrough.manual-intake.example.json",
-      "reports/operator-walkthrough.freshness-severity.example.md"
+      "reports/operator-walkthrough.freshness-severity.local.md"
     ]
   },
   {
@@ -33,7 +33,7 @@ const COMMANDS = [
     args: [
       "scripts/build-duplicate-report.mjs",
       "data/operator-walkthrough.manual-intake.example.json",
-      "reports/operator-walkthrough.duplicates.example.md"
+      "reports/operator-walkthrough.duplicates.local.md"
     ]
   },
   {
@@ -41,7 +41,7 @@ const COMMANDS = [
     args: [
       "scripts/build-source-credibility-report.mjs",
       "data/operator-walkthrough.manual-intake.example.json",
-      "reports/operator-walkthrough.source-credibility.example.md"
+      "reports/operator-walkthrough.source-credibility.local.md"
     ]
   },
   {
@@ -49,7 +49,7 @@ const COMMANDS = [
     args: [
       "scripts/build-social-signal-report.mjs",
       "data/operator-walkthrough.social-signals.example.json",
-      "reports/operator-walkthrough.social-signals.example.md"
+      "reports/operator-walkthrough.social-signals.local.md"
     ]
   },
   {
@@ -57,7 +57,7 @@ const COMMANDS = [
     args: [
       "scripts/build-evidence-report.mjs",
       "data/operator-walkthrough.evidence-notes.example.json",
-      "reports/operator-walkthrough.evidence-notes.example.md"
+      "reports/operator-walkthrough.evidence-notes.local.md"
     ]
   },
   {
@@ -65,7 +65,7 @@ const COMMANDS = [
     args: [
       "scripts/build-signal-verification-report.mjs",
       "data/operator-walkthrough.signal-verification-queue.example.json",
-      "reports/operator-walkthrough.signal-verification-queue.example.md"
+      "reports/operator-walkthrough.signal-verification-queue.local.md"
     ]
   },
   {
@@ -73,7 +73,7 @@ const COMMANDS = [
     args: [
       "scripts/build-publish-review-report.mjs",
       "data/operator-walkthrough.publish-review-checklist.example.json",
-      "reports/operator-walkthrough.publish-review.example.md"
+      "reports/operator-walkthrough.publish-review.local.md"
     ]
   }
 ];
@@ -86,7 +86,7 @@ function writeSummaryReport() {
     "Network access: false  ",
     "AI generation: false  ",
     "Automatic publication: false  ",
-    "data/threats.json modified: false",
+    "Public card data modified: false",
     "",
     "## Walkthrough item",
     "",
@@ -100,7 +100,7 @@ function writeSummaryReport() {
     "",
     "## Result",
     "",
-    "The example item is intentionally held. It should not be copied into `data/threats.json` until stronger source/context checks are complete.",
+    "The example item is intentionally held. It should not be moved into public card data until stronger source and context checks are complete.",
     "",
     "## Operator lesson",
     "",

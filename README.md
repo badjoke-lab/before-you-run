@@ -95,6 +95,13 @@ reports/*.local.md
 
 This workflow does not fetch sources, use social APIs, run AI, process screenshots, publish cards, or modify `data/threats.json` automatically.
 
+## One-item local workflow walkthrough
+
+A tracked one-item walkthrough is available to demonstrate the local review flow without using real claims or private data.
+
+Command: npm run walkthrough:run
+
+This runs the local review pipeline against safe placeholder walkthrough data and writes ignored local walkthrough reports. It does not modify public card data or publish cards.
 ## Downloadable AI rules
 
 Reviewed category safety packs can be exported locally as Markdown AI rule files.
