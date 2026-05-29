@@ -1,0 +1,20 @@
+[
+  {
+    "id": "walkthrough-manual-intake-unknown-repo",
+    "source_kind": "blog",
+    "source_type": "reference",
+    "source_name": "Example developer safety note",
+    "url": "https://example.com/developer-safety-note",
+    "title": "Example note about reviewing unknown repositories before running scripts",
+    "language": "en",
+    "collected_at": "2026-05-29",
+    "raw_summary": "Placeholder example describing a beginner-safe reminder to review unfamiliar repositories before running scripts.",
+    "candidate_categories": ["unknown-repository"],
+    "confidence": "medium",
+    "freshness": "new",
+    "severity_hint": "watch",
+    "needs_source_check": true,
+    "needs_safety_rewrite": false,
+    "needs_translation": false
+  }
+]
