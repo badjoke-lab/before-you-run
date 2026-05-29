@@ -53,6 +53,7 @@ v0.1 release preparation
 - Category safety packs foundation
 - Downloadable AI rules foundation
 - AGENTS.md / Cursor bundle foundation
+- AI-output validation report
 ```
 
 ---
@@ -91,5 +92,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-30: Add AI-output validation report
+PR-31: Add AI-output docs/index
 ```
