@@ -5,6 +5,8 @@
     "queue:digest": "node scripts/build-candidate-digest.mjs data/candidate-review-queue.example.json reports/candidate-review-queue-digest.md",
     "drafts:build": "node scripts/build-card-drafts.mjs",
     "intake:run": "node scripts/run-intake-skeleton.mjs",
+    "candidates:collect": "node scripts/collect-candidates.mjs",
+    "candidates:collect:review": "node scripts/collect-candidates.mjs && node scripts/build-card-drafts.mjs data/candidate-review-queue.generated.json data/card-drafts.generated.json reports/card-drafts.generated.md",
     "moderation:report": "node scripts/build-moderation-report.mjs",
     "freshness:report": "node scripts/build-freshness-severity-report.mjs",
     "duplicates:report": "node scripts/build-duplicate-report.mjs",
