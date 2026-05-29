@@ -1,8 +1,8 @@
 [
   {
-    "id": "github-blog",
-    "name": "GitHub Blog",
-    "url": "https://github.blog/feed/",
+    "id": "github-blog-focused",
+    "name": "GitHub Blog Focused Feed",
+    "url": "https://github.blog/security/feed/",
     "source_type": "reference",
     "source_kind": "blog",
     "language": "en",
