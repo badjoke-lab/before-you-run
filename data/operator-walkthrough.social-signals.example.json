@@ -1,0 +1,43 @@
+[
+  {
+    "id": "walkthrough-social-signal-unknown-repo",
+    "platform": "x",
+    "source_kind": "social-link",
+    "source_type": "signal",
+    "signal_status": "needs-verification",
+    "source_url": "https://example.com/social-signal",
+    "display_source": "Example social signal",
+    "language": "en",
+    "collected_at": "2026-05-29",
+    "observed_at": "2026-05-29",
+    "title": "Example social signal about unknown repository review",
+    "public_safe_summary": "Placeholder signal only. This is not confirmed and must not be published as fact.",
+    "why_relevant": "This signal may indicate a risky developer action pattern, but it needs stronger source confirmation.",
+    "candidate_categories": ["unknown-repository"],
+    "matched_keywords": ["unknown repository", "script review"],
+    "confidence": "low",
+    "freshness": "new",
+    "severity_hint": "watch",
+    "capture": {
+      "capture_type": "url-only",
+      "screenshot_reference": "",
+      "quoted_excerpt": "Short placeholder excerpt only.",
+      "needs_redaction": false,
+      "needs_screenshot_context": false
+    },
+    "review_needs": {
+      "needs_source_check": true,
+      "needs_confirmation_source": true,
+      "needs_safety_rewrite": false,
+      "needs_translation": false,
+      "needs_duplicate_check": true
+    },
+    "verification": {
+      "primary_source_found": false,
+      "reference_source_found": true,
+      "do_not_publish_as_confirmed": true,
+      "verification_notes": "Example only. This signal should stay unconfirmed unless stronger sources are recorded."
+    },
+    "notes": "Walkthrough placeholder. No API, scraping, or live fetch was performed."
+  }
+]
