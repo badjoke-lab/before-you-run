@@ -1,12 +1,90 @@
 [
   {
-    "id": "github-blog-focused",
-    "name": "GitHub Blog Focused Feed",
+    "id": "github-security-blog",
+    "name": "GitHub Security Blog",
     "url": "https://github.blog/security/feed/",
     "source_type": "reference",
     "source_kind": "blog",
     "language": "en",
-    "default_categories": ["tooling"],
-    "trust_note": "Review each item before publication."
+    "limit": 10,
+    "default_categories": ["tooling", "supply-chain", "secrets-tokens"],
+    "trust_note": "Developer platform security feed. Review each item before publication."
+  },
+  {
+    "id": "github-changelog",
+    "name": "GitHub Changelog",
+    "url": "https://github.blog/changelog/feed/",
+    "source_type": "reference",
+    "source_kind": "blog",
+    "language": "en",
+    "limit": 8,
+    "default_categories": ["tooling", "ai-coding-agents"],
+    "trust_note": "Developer platform changelog. Filter strictly before publication."
+  },
+  {
+    "id": "openssf-blog",
+    "name": "OpenSSF Blog",
+    "url": "https://openssf.org/feed/",
+    "source_type": "reference",
+    "source_kind": "blog",
+    "language": "en",
+    "limit": 10,
+    "default_categories": ["supply-chain", "tooling"],
+    "trust_note": "Open-source ecosystem source. Review for beginner-safe card angles."
+  },
+  {
+    "id": "cisa-advisories",
+    "name": "CISA Advisories",
+    "url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+    "source_type": "primary",
+    "source_kind": "official-advisory",
+    "language": "en",
+    "limit": 10,
+    "default_categories": ["tooling", "supply-chain"],
+    "trust_note": "Official public advisory feed. Summarize only defensive actions."
+  },
+  {
+    "id": "pypi-blog",
+    "name": "PyPI Blog",
+    "url": "https://blog.pypi.org/feeds/all.atom.xml",
+    "source_type": "primary",
+    "source_kind": "official-project-blog",
+    "language": "en",
+    "limit": 8,
+    "default_categories": ["supply-chain", "tooling"],
+    "trust_note": "Official Python Package Index blog. Review package and publishing safety items."
+  },
+  {
+    "id": "nodejs-blog",
+    "name": "Node.js Blog",
+    "url": "https://nodejs.org/en/feed/blog.xml",
+    "source_type": "primary",
+    "source_kind": "official-project-blog",
+    "language": "en",
+    "limit": 8,
+    "default_categories": ["tooling", "supply-chain"],
+    "trust_note": "Official Node.js blog feed. Review release and tooling items before publication."
+  },
+  {
+    "id": "ruby-news",
+    "name": "Ruby News",
+    "url": "https://www.ruby-lang.org/en/feeds/news.rss",
+    "source_type": "primary",
+    "source_kind": "official-project-news",
+    "language": "en",
+    "limit": 8,
+    "default_categories": ["tooling", "supply-chain"],
+    "trust_note": "Official Ruby news feed. Review update and dependency-safety angles."
+  },
+  {
+    "id": "rust-blog",
+    "name": "Rust Blog",
+    "url": "https://blog.rust-lang.org/feed.xml",
+    "source_type": "primary",
+    "source_kind": "official-project-blog",
+    "language": "en",
+    "limit": 8,
+    "default_categories": ["tooling", "supply-chain"],
+    "trust_note": "Official Rust blog feed. Review project and dependency-safety guidance."
   }
 ]
