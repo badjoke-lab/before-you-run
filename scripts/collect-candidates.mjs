@@ -72,7 +72,10 @@ const NOISE_TERMS = [
   'announcing',
   'roadmap',
   'survey',
-  'newsletter'
+  'newsletter',
+  'outreachy',
+  'mentorship',
+  'summer of code'
 ];
 
 const NON_DEVELOPER_CISA_TERMS = [
@@ -241,18 +244,25 @@ function parseSourceTime(rawValue) {
   };
 }
 
+function isDirectSecurityTitle(title) {
+  const text = String(title || '').toLowerCase();
+  return /\b(cve|security advisory|vulnerability|malware|malicious package|supply chain)\b/.test(text);
+}
+
 function scoreItem(item, source) {
   const haystack = `${item.title} ${item.summary}`.toLowerCase();
+  const title = String(item.title || '').toLowerCase();
   const strong = findTerms(haystack, STRONG_TERMS);
   const support = findTerms(haystack, SUPPORT_TERMS);
   const noise = findTerms(haystack, NOISE_TERMS);
   const cisaNoise = source.id === 'cisa-advisories' && hasAny(haystack, NON_DEVELOPER_CISA_TERMS);
+  const routineLanguagePost = ['ruby-news', 'rust-blog', 'nodejs-blog'].includes(source.id) && !isDirectSecurityTitle(title);
   const releaseOnly = ['ruby-news', 'rust-blog', 'nodejs-blog'].includes(source.id)
-    && hasAny(haystack, RELEASE_ONLY_TERMS)
-    && !hasAny(haystack, ['security', 'cve', 'vulnerability', 'advisory', 'malware', 'supply chain']);
-  const score = (strong.length * 3) + support.length - (noise.length * 4) - (cisaNoise ? 8 : 0) - (releaseOnly ? 8 : 0);
+    && hasAny(title, RELEASE_ONLY_TERMS)
+    && !isDirectSecurityTitle(title);
+  const score = (strong.length * 3) + support.length - (noise.length * 4) - (cisaNoise ? 8 : 0) - (releaseOnly ? 8 : 0) - (routineLanguagePost ? 8 : 0);
   const matched = [...new Set([...strong, ...support])];
-  return { score, matched, strong, support, noise, cisaNoise, releaseOnly };
+  return { score, matched, strong, support, noise, cisaNoise, releaseOnly, routineLanguagePost };
 }
 
 function buildSummary(item) {
@@ -266,7 +276,7 @@ function buildCandidate(item, source, index) {
   const sourceTime = parseSourceTime(item.published);
   const id = `${source.id}-${slugify(item.title)}-${index + 1}`.slice(0, 96);
   const hasStrongSignal = scored.strong.length > 0;
-  const hasNoise = scored.noise.length > 0 || scored.cisaNoise || scored.releaseOnly;
+  const hasNoise = scored.noise.length > 0 || scored.cisaNoise || scored.releaseOnly || scored.routineLanguagePost;
   const shouldDraft = hasStrongSignal && !hasNoise && scored.score >= 4;
   const status = shouldDraft ? 'candidate' : hasStrongSignal ? 'maybe-relevant' : 'rejected';
   const priority = scored.score >= 8 ? 'high' : scored.score >= 4 ? 'medium' : 'low';
@@ -283,6 +293,9 @@ function buildCandidate(item, source, index) {
   }
   if (scored.releaseOnly) {
     blockingIssues.push('Looks like a routine release post without a clear security/card angle.');
+  }
+  if (scored.routineLanguagePost) {
+    blockingIssues.push('Language/project feed item is not a direct security advisory title.');
   }
 
   return {
