@@ -1,0 +1,12 @@
+[
+  {
+    "id": "github-blog",
+    "name": "GitHub Blog",
+    "url": "https://github.blog/feed/",
+    "source_type": "reference",
+    "source_kind": "blog",
+    "language": "en",
+    "default_categories": ["tooling"],
+    "trust_note": "Review each item before publication."
+  }
+]
