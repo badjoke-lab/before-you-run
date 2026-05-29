@@ -122,5 +122,493 @@
     "checked_at": "2026-05-29",
     "status": "active",
     "freshness_label": "recent"
+  },
+  {
+    "id": "check-vscode-extensions-and-cicd-tokens",
+    "title": "Check VS Code extensions and CI/CD tokens before trusting them",
+    "title_ja": "VS Code拡張機能とCI/CDトークンを信頼する前に確認する",
+    "severity": "high",
+    "categories": [
+      "tooling",
+      "supply-chain",
+      "secrets-tokens"
+    ],
+    "audience": [
+      "beginner",
+      "indie-dev",
+      "ai-coding"
+    ],
+    "summary": "Developer extensions, CI/CD workflows, repository permissions, tokens, and secrets can expose credentials if trusted without review.",
+    "summary_ja": "開発用拡張機能、CI/CD workflow、リポジトリ権限、トークン、シークレットは、確認せずに信頼すると認証情報の露出につながる可能性があります。",
+    "dangerous_actions": [
+      "Installing VS Code extensions without checking publisher, permissions, and recent trust signals",
+      "Giving broad GitHub tokens or secrets to CI/CD workflows",
+      "Assuming developer tools are safe because they are popular",
+      "Letting automation access repositories without reviewing what it can read or write"
+    ],
+    "dangerous_actions_ja": [
+      "publisher、権限、最近の信頼シグナルを確認せずにVS Code拡張機能を入れる",
+      "CI/CD workflowに広いGitHubトークンやシークレットを渡す",
+      "有名な開発ツールなら安全だと決めつける",
+      "自動化がリポジトリで何を読み書きできるか確認せずに許可する"
+    ],
+    "avoid_now": [
+      "Check extension publisher, update history, and requested permissions before installing",
+      "Keep GitHub tokens and CI/CD secrets narrowly scoped",
+      "Review workflows before exposing repository secrets",
+      "Test new developer tooling in an isolated environment before trusting it"
+    ],
+    "avoid_now_ja": [
+      "インストール前に拡張機能のpublisher、更新履歴、要求権限を確認する",
+      "GitHubトークンとCI/CDシークレットは必要最小限の権限にする",
+      "repository secretsを渡す前にworkflowを確認する",
+      "新しい開発ツールは信頼する前に隔離環境で試す"
+    ],
+    "sources": [
+      {
+        "title": "Supply Chain Compromises Impact Nx Console and GitHub Repositories",
+        "url": "https://www.cisa.gov/news-events/alerts/2026/05/28/supply-chain-compromises-impact-nx-console-and-github-repositories",
+        "publisher": "CISA Advisories",
+        "source_tier": "primary",
+        "source_type": "official-advisory",
+        "published_at": "2026-05-28T12:00:00Z",
+        "checked_at": "2026-05-29",
+        "source_published_original": "Thu, 28 May 26 12:00:00 +0000",
+        "source_time_precision": "datetime",
+        "source_published_at": "2026-05-28T12:00:00Z",
+        "source_published_date": "2026-05-28",
+        "source_timezone": "explicit-in-source",
+        "source_timezone_confidence": "explicit"
+      }
+    ],
+    "updated_at": "2026-05-29",
+    "ai_output": {
+      "risk_summary": "Developer tooling and automation can expose repository secrets when broad permissions are trusted without review.",
+      "do_not": [
+        "Installing VS Code extensions without checking publisher, permissions, and recent trust signals",
+        "Giving broad GitHub tokens or secrets to CI/CD workflows"
+      ],
+      "check_first": [
+        "Check extension publisher, update history, and requested permissions before installing",
+        "Keep GitHub tokens and CI/CD secrets narrowly scoped"
+      ],
+      "safe_actions": [
+        "Review workflows before exposing repository secrets",
+        "Test new developer tooling in an isolated environment before trusting it"
+      ],
+      "ask_user_before": [
+        "Installing new developer tooling or extensions",
+        "Adding or changing CI/CD workflows that can access secrets",
+        "Sending credentials to a package registry",
+        "Adding dependencies from unfamiliar registries or packages"
+      ],
+      "agent_instruction": "Summarize source trust, credential exposure risk, and safer alternatives. Ask for explicit approval before changing dependencies, extensions, registries, or CI/CD permissions.",
+      "checklist": [
+        "Checked source and publisher trust",
+        "Checked requested permissions and credential exposure",
+        "Reviewed configuration and lockfile changes",
+        "Used least privilege credentials",
+        "Asked for approval before risky changes"
+      ]
+    },
+    "ai_output_ja": {
+      "risk_summary": "開発ツールや自動化は、広い権限を確認せずに信頼するとリポジトリのシークレットを露出させる可能性があります。",
+      "do_not": [
+        "publisher、権限、最近の信頼シグナルを確認せずにVS Code拡張機能を入れる",
+        "CI/CD workflowに広いGitHubトークンやシークレットを渡す"
+      ],
+      "check_first": [
+        "インストール前に拡張機能のpublisher、更新履歴、要求権限を確認する",
+        "GitHubトークンとCI/CDシークレットは必要最小限の権限にする"
+      ],
+      "safe_actions": [
+        "repository secretsを渡す前にworkflowを確認する",
+        "新しい開発ツールは信頼する前に隔離環境で試す"
+      ],
+      "ask_user_before": [
+        "新しい開発ツールや拡張機能を追加する",
+        "シークレットにアクセスできるCI/CD workflowを追加・変更する",
+        "パッケージregistryへ認証情報を送る",
+        "不明なregistryやpackageから依存関係を追加する"
+      ],
+      "agent_instruction": "ソース信頼性、認証情報露出リスク、安全な代替案を要約し、依存関係・拡張機能・registry・CI/CD権限を変更する前に明示的な承認を得る。",
+      "checklist": [
+        "ソースとpublisherの信頼性を確認した",
+        "要求権限と認証情報露出を確認した",
+        "設定ファイルとlockfile差分を確認した",
+        "認証情報を最小権限にした",
+        "高リスク変更の前に承認を得た"
+      ]
+    },
+    "first_seen_at": "2026-05-29",
+    "checked_at": "2026-05-29",
+    "status": "active",
+    "freshness_label": "recent"
+  },
+  {
+    "id": "check-package-risk-before-ai-suggested-dependencies",
+    "title": "Check package risk before adding dependencies suggested by AI",
+    "title_ja": "AIに提案された依存パッケージを追加する前にリスクを確認する",
+    "severity": "high",
+    "categories": [
+      "malicious-packages",
+      "supply-chain",
+      "tooling"
+    ],
+    "audience": [
+      "beginner",
+      "indie-dev",
+      "ai-coding"
+    ],
+    "summary": "AI-suggested packages can still be malicious, suspicious, unmaintained, or mismatched with the intended dependency.",
+    "summary_ja": "AIに提案されたpackageでも、悪意あるpackage、不審なpackage、保守されていないpackage、意図と違う依存関係である可能性があります。",
+    "dangerous_actions": [
+      "Installing packages only because an AI assistant suggested them",
+      "Trusting package names without checking registry metadata or advisory sources",
+      "Ignoring lockfile changes after dependency updates",
+      "Adding dependencies without checking whether they are known malicious or suspicious"
+    ],
+    "dangerous_actions_ja": [
+      "AIアシスタントが提案したという理由だけでpackageを入れる",
+      "registry metadataやadvisory sourceを確認せずにpackage名だけで信頼する",
+      "依存関係更新後のlockfile差分を無視する",
+      "既知の悪意あるpackageや不審なpackageか確認せずに依存関係を追加する"
+    ],
+    "avoid_now": [
+      "Check package registry metadata before install",
+      "Search advisory sources such as OSV before trusting unfamiliar packages",
+      "Review lockfile changes after dependency updates",
+      "Prefer well-maintained packages with clear source repositories and history"
+    ],
+    "avoid_now_ja": [
+      "インストール前にpackage registry metadataを確認する",
+      "不明なpackageを信頼する前にOSVなどのadvisory sourceを確認する",
+      "依存関係更新後のlockfile差分を確認する",
+      "明確なsource repositoryと履歴がある保守されたpackageを優先する"
+    ],
+    "sources": [
+      {
+        "title": "Detecting Malicious Packages using the OSV API",
+        "url": "https://openssf.org/blog/2026/05/20/detecting-malicious-packages-using-the-osv-api/",
+        "publisher": "OpenSSF Blog",
+        "source_tier": "reference",
+        "source_type": "blog",
+        "published_at": "2026-05-20T15:56:01Z",
+        "checked_at": "2026-05-29",
+        "source_published_original": "Wed, 20 May 2026 15:56:01 +0000",
+        "source_time_precision": "datetime",
+        "source_published_at": "2026-05-20T15:56:01Z",
+        "source_published_date": "2026-05-20",
+        "source_timezone": "explicit-in-source",
+        "source_timezone_confidence": "explicit"
+      }
+    ],
+    "updated_at": "2026-05-29",
+    "ai_output": {
+      "risk_summary": "AI-suggested dependencies still need package-risk review before they are installed or merged.",
+      "do_not": [
+        "Installing packages only because an AI assistant suggested them",
+        "Trusting package names without checking registry metadata or advisory sources"
+      ],
+      "check_first": [
+        "Check package registry metadata before install",
+        "Search advisory sources such as OSV before trusting unfamiliar packages"
+      ],
+      "safe_actions": [
+        "Review lockfile changes after dependency updates",
+        "Prefer well-maintained packages with clear source repositories and history"
+      ],
+      "ask_user_before": [
+        "Installing new developer tooling or extensions",
+        "Adding or changing CI/CD workflows that can access secrets",
+        "Sending credentials to a package registry",
+        "Adding dependencies from unfamiliar registries or packages"
+      ],
+      "agent_instruction": "Summarize source trust, credential exposure risk, and safer alternatives. Ask for explicit approval before changing dependencies, extensions, registries, or CI/CD permissions.",
+      "checklist": [
+        "Checked source and publisher trust",
+        "Checked requested permissions and credential exposure",
+        "Reviewed configuration and lockfile changes",
+        "Used least privilege credentials",
+        "Asked for approval before risky changes"
+      ]
+    },
+    "ai_output_ja": {
+      "risk_summary": "AIに提案された依存関係でも、インストールやマージの前にpackage riskの確認が必要です。",
+      "do_not": [
+        "AIアシスタントが提案したという理由だけでpackageを入れる",
+        "registry metadataやadvisory sourceを確認せずにpackage名だけで信頼する"
+      ],
+      "check_first": [
+        "インストール前にpackage registry metadataを確認する",
+        "不明なpackageを信頼する前にOSVなどのadvisory sourceを確認する"
+      ],
+      "safe_actions": [
+        "依存関係更新後のlockfile差分を確認する",
+        "明確なsource repositoryと履歴がある保守されたpackageを優先する"
+      ],
+      "ask_user_before": [
+        "新しい開発ツールや拡張機能を追加する",
+        "シークレットにアクセスできるCI/CD workflowを追加・変更する",
+        "パッケージregistryへ認証情報を送る",
+        "不明なregistryやpackageから依存関係を追加する"
+      ],
+      "agent_instruction": "ソース信頼性、認証情報露出リスク、安全な代替案を要約し、依存関係・拡張機能・registry・CI/CD権限を変更する前に明示的な承認を得る。",
+      "checklist": [
+        "ソースとpublisherの信頼性を確認した",
+        "要求権限と認証情報露出を確認した",
+        "設定ファイルとlockfile差分を確認した",
+        "認証情報を最小権限にした",
+        "高リスク変更の前に承認を得た"
+      ]
+    },
+    "first_seen_at": "2026-05-29",
+    "checked_at": "2026-05-29",
+    "status": "active",
+    "freshness_label": "recent"
+  },
+  {
+    "id": "check-registry-urls-before-sending-package-credentials",
+    "title": "Check registry URLs before sending package credentials",
+    "title_ja": "パッケージ認証情報を送る前にregistry URLを確認する",
+    "severity": "high",
+    "categories": [
+      "supply-chain",
+      "secrets-tokens",
+      "tooling"
+    ],
+    "audience": [
+      "beginner",
+      "indie-dev",
+      "ai-coding"
+    ],
+    "summary": "Package credentials can be sent to unintended registry destinations when third-party or private registry URLs are not reviewed.",
+    "summary_ja": "third-party registryやprivate registryのURLを確認しないと、package認証情報が意図しない宛先に送られる可能性があります。",
+    "dangerous_actions": [
+      "Sending package registry credentials before checking the exact registry URL",
+      "Treating third-party registries as if they were official registries",
+      "Using broad tokens for package publishing or dependency access",
+      "Leaving registry configuration unreviewed in project files"
+    ],
+    "dangerous_actions_ja": [
+      "正確なregistry URLを確認せずにpackage registry認証情報を送る",
+      "third-party registryを公式registryと同じように扱う",
+      "package公開や依存取得に広い権限のトークンを使う",
+      "project files内のregistry設定を確認せず放置する"
+    ],
+    "avoid_now": [
+      "Confirm the exact registry URL before authentication",
+      "Keep package registry tokens scoped to the minimum needed permissions",
+      "Review project registry configuration before install or publish commands",
+      "Separate official, private, and third-party registry credentials"
+    ],
+    "avoid_now_ja": [
+      "認証前に正確なregistry URLを確認する",
+      "package registry tokenは必要最小限の権限にする",
+      "installやpublish commandの前にprojectのregistry設定を確認する",
+      "公式・private・third-party registryの認証情報を分ける"
+    ],
+    "sources": [
+      {
+        "title": "Security Advisory for Cargo (CVE-2026-5222)",
+        "url": "https://blog.rust-lang.org/2026/05/25/cve-2026-5222/",
+        "publisher": "Rust Blog",
+        "source_tier": "primary",
+        "source_type": "official-project-blog",
+        "published_at": "2026-05-25T00:00:00Z",
+        "checked_at": "2026-05-29",
+        "source_published_original": "2026-05-25T00:00:00+00:00",
+        "source_time_precision": "datetime",
+        "source_published_at": "2026-05-25T00:00:00Z",
+        "source_published_date": "2026-05-25",
+        "source_timezone": "explicit-in-source",
+        "source_timezone_confidence": "explicit"
+      }
+    ],
+    "updated_at": "2026-05-29",
+    "ai_output": {
+      "risk_summary": "Registry configuration mistakes can expose package credentials to unintended destinations.",
+      "do_not": [
+        "Sending package registry credentials before checking the exact registry URL",
+        "Treating third-party registries as if they were official registries"
+      ],
+      "check_first": [
+        "Confirm the exact registry URL before authentication",
+        "Keep package registry tokens scoped to the minimum needed permissions"
+      ],
+      "safe_actions": [
+        "Review project registry configuration before install or publish commands",
+        "Separate official, private, and third-party registry credentials"
+      ],
+      "ask_user_before": [
+        "Installing new developer tooling or extensions",
+        "Adding or changing CI/CD workflows that can access secrets",
+        "Sending credentials to a package registry",
+        "Adding dependencies from unfamiliar registries or packages"
+      ],
+      "agent_instruction": "Summarize source trust, credential exposure risk, and safer alternatives. Ask for explicit approval before changing dependencies, extensions, registries, or CI/CD permissions.",
+      "checklist": [
+        "Checked source and publisher trust",
+        "Checked requested permissions and credential exposure",
+        "Reviewed configuration and lockfile changes",
+        "Used least privilege credentials",
+        "Asked for approval before risky changes"
+      ]
+    },
+    "ai_output_ja": {
+      "risk_summary": "registry設定の誤りは、package認証情報を意図しない宛先へ露出させる可能性があります。",
+      "do_not": [
+        "正確なregistry URLを確認せずにpackage registry認証情報を送る",
+        "third-party registryを公式registryと同じように扱う"
+      ],
+      "check_first": [
+        "認証前に正確なregistry URLを確認する",
+        "package registry tokenは必要最小限の権限にする"
+      ],
+      "safe_actions": [
+        "installやpublish commandの前にprojectのregistry設定を確認する",
+        "公式・private・third-party registryの認証情報を分ける"
+      ],
+      "ask_user_before": [
+        "新しい開発ツールや拡張機能を追加する",
+        "シークレットにアクセスできるCI/CD workflowを追加・変更する",
+        "パッケージregistryへ認証情報を送る",
+        "不明なregistryやpackageから依存関係を追加する"
+      ],
+      "agent_instruction": "ソース信頼性、認証情報露出リスク、安全な代替案を要約し、依存関係・拡張機能・registry・CI/CD権限を変更する前に明示的な承認を得る。",
+      "checklist": [
+        "ソースとpublisherの信頼性を確認した",
+        "要求権限と認証情報露出を確認した",
+        "設定ファイルとlockfile差分を確認した",
+        "認証情報を最小権限にした",
+        "高リスク変更の前に承認を得た"
+      ]
+    },
+    "first_seen_at": "2026-05-29",
+    "checked_at": "2026-05-29",
+    "status": "active",
+    "freshness_label": "recent"
+  },
+  {
+    "id": "do-not-trust-third-party-package-registries-like-official",
+    "title": "Do not trust third-party package registries like official registries",
+    "title_ja": "サードパーティのパッケージregistryを公式registryと同じように信頼しない",
+    "severity": "high",
+    "categories": [
+      "supply-chain",
+      "malicious-packages",
+      "tooling"
+    ],
+    "audience": [
+      "beginner",
+      "indie-dev",
+      "ai-coding"
+    ],
+    "summary": "Packages from third-party registries should not be trusted with the same assumptions as official registry packages.",
+    "summary_ja": "third-party registryから取得したpackageは、公式registryのpackageと同じ前提で信頼しない方が安全です。",
+    "dangerous_actions": [
+      "Using third-party registry packages without checking the source",
+      "Assuming package contents match what the package name suggests",
+      "Ignoring registry configuration in project files",
+      "Skipping review of package source, tarball, or lockfile changes"
+    ],
+    "dangerous_actions_ja": [
+      "取得元を確認せずにthird-party registryのpackageを使う",
+      "package名が示す内容と実際の中身が一致すると決めつける",
+      "project files内のregistry設定を無視する",
+      "package source、tarball、lockfile差分の確認を省略する"
+    ],
+    "avoid_now": [
+      "Confirm whether a dependency comes from an official, private, or third-party registry",
+      "Review package source and lockfile changes before merging",
+      "Use isolated environments when testing unfamiliar registry sources",
+      "Avoid broad trust rules for third-party registries"
+    ],
+    "avoid_now_ja": [
+      "依存関係が公式・private・third-party registryのどこから来ているか確認する",
+      "マージ前にpackage sourceとlockfile差分を確認する",
+      "不明なregistry sourceを試すときは隔離環境を使う",
+      "third-party registryに広い信頼ルールを与えない"
+    ],
+    "sources": [
+      {
+        "title": "Security Advisory for Cargo (CVE-2026-5223)",
+        "url": "https://blog.rust-lang.org/2026/05/25/cve-2026-5223/",
+        "publisher": "Rust Blog",
+        "source_tier": "primary",
+        "source_type": "official-project-blog",
+        "published_at": "2026-05-25T00:00:00Z",
+        "checked_at": "2026-05-29",
+        "source_published_original": "2026-05-25T00:00:00+00:00",
+        "source_time_precision": "datetime",
+        "source_published_at": "2026-05-25T00:00:00Z",
+        "source_published_date": "2026-05-25",
+        "source_timezone": "explicit-in-source",
+        "source_timezone_confidence": "explicit"
+      }
+    ],
+    "updated_at": "2026-05-29",
+    "ai_output": {
+      "risk_summary": "Third-party registry packages can introduce unexpected source or package contents if trusted without review.",
+      "do_not": [
+        "Using third-party registry packages without checking the source",
+        "Assuming package contents match what the package name suggests"
+      ],
+      "check_first": [
+        "Confirm whether a dependency comes from an official, private, or third-party registry",
+        "Review package source and lockfile changes before merging"
+      ],
+      "safe_actions": [
+        "Use isolated environments when testing unfamiliar registry sources",
+        "Avoid broad trust rules for third-party registries"
+      ],
+      "ask_user_before": [
+        "Installing new developer tooling or extensions",
+        "Adding or changing CI/CD workflows that can access secrets",
+        "Sending credentials to a package registry",
+        "Adding dependencies from unfamiliar registries or packages"
+      ],
+      "agent_instruction": "Summarize source trust, credential exposure risk, and safer alternatives. Ask for explicit approval before changing dependencies, extensions, registries, or CI/CD permissions.",
+      "checklist": [
+        "Checked source and publisher trust",
+        "Checked requested permissions and credential exposure",
+        "Reviewed configuration and lockfile changes",
+        "Used least privilege credentials",
+        "Asked for approval before risky changes"
+      ]
+    },
+    "ai_output_ja": {
+      "risk_summary": "third-party registryのpackageは、確認せずに信頼すると想定外のsourceやpackage内容を取り込む可能性があります。",
+      "do_not": [
+        "取得元を確認せずにthird-party registryのpackageを使う",
+        "package名が示す内容と実際の中身が一致すると決めつける"
+      ],
+      "check_first": [
+        "依存関係が公式・private・third-party registryのどこから来ているか確認する",
+        "マージ前にpackage sourceとlockfile差分を確認する"
+      ],
+      "safe_actions": [
+        "不明なregistry sourceを試すときは隔離環境を使う",
+        "third-party registryに広い信頼ルールを与えない"
+      ],
+      "ask_user_before": [
+        "新しい開発ツールや拡張機能を追加する",
+        "シークレットにアクセスできるCI/CD workflowを追加・変更する",
+        "パッケージregistryへ認証情報を送る",
+        "不明なregistryやpackageから依存関係を追加する"
+      ],
+      "agent_instruction": "ソース信頼性、認証情報露出リスク、安全な代替案を要約し、依存関係・拡張機能・registry・CI/CD権限を変更する前に明示的な承認を得る。",
+      "checklist": [
+        "ソースとpublisherの信頼性を確認した",
+        "要求権限と認証情報露出を確認した",
+        "設定ファイルとlockfile差分を確認した",
+        "認証情報を最小権限にした",
+        "高リスク変更の前に承認を得た"
+      ]
+    },
+    "first_seen_at": "2026-05-29",
+    "checked_at": "2026-05-29",
+    "status": "active",
+    "freshness_label": "recent"
   }
 ]
