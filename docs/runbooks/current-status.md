@@ -1,7 +1,7 @@
 # Tripwire Current Status
 
 Status: public project status  
-Last updated: 2026-05-28
+Last updated: 2026-05-29
 
 ---
 
@@ -55,6 +55,7 @@ v0.1 release preparation
 - AGENTS.md / Cursor bundle foundation
 - AI-output validation report
 - AI-output docs/index
+- Local operator workflow foundation
 ```
 
 ---
@@ -93,5 +94,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-32: Add sitemap and robots
+PR-33: Add one-item local operation walkthrough
 ```
