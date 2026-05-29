@@ -1,0 +1,4 @@
+# Tripwire local operator data
+data/*.local.json
+reports/*.local.md
+reports/operator-workflow.local.md

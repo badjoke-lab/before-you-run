@@ -72,6 +72,29 @@ npm run ai-output:validate
 
 These workflows are local and do not use AI, fetch sources, publish cards, or modify `data/threats.json` automatically.
 
+
+## Local operator workflow
+
+Tripwire supports a local manual operator workflow for real review data.
+
+```bash
+npm run operator:setup
+npm run operator:run
+```
+
+`operator:setup` creates ignored local working files from tracked templates.
+
+`operator:run` runs the local review reports against those local files.
+
+Local operator files are not committed by default:
+
+```text
+data/*.local.json
+reports/*.local.md
+```
+
+This workflow does not fetch sources, use social APIs, run AI, process screenshots, publish cards, or modify `data/threats.json` automatically.
+
 ## Downloadable AI rules
 
 Reviewed category safety packs can be exported locally as Markdown AI rule files.
