@@ -53,6 +53,24 @@ Tripwire is defensive and educational. Public content should focus on:
 
 Tripwire should not publish offensive operational detail, unverified claims as facts, or private planning notes.
 
+## AI-output workflow
+
+Tripwire includes local AI-output workflows for defensive safety packs, downloadable AI rules, assistant bundle examples, and AI-output validation.
+
+See:
+
+- `docs/runbooks/ai-output-index.md`
+
+Main commands:
+
+```bash
+npm run packs:report
+npm run rules:build
+npm run bundles:build
+npm run ai-output:validate
+```
+
+These workflows are local and do not use AI, fetch sources, publish cards, or modify `data/threats.json` automatically.
 
 ## Downloadable AI rules
 
