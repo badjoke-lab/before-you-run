@@ -1,0 +1,39 @@
+[
+  {
+    "id": "walkthrough-verify-unknown-repo",
+    "queue_status": "needs-verification",
+    "priority": "medium",
+    "source_signal_id": "walkthrough-social-signal-unknown-repo",
+    "source_evidence_id": "walkthrough-evidence-unknown-repo",
+    "platform": "web",
+    "source_type": "signal",
+    "source_kind": "url-with-note",
+    "title": "Example verification item for unknown repository review",
+    "language": "en",
+    "created_at": "2026-05-29",
+    "last_reviewed_at": "2026-05-29",
+    "public_safe_summary": "Placeholder verification item. This is not ready for publication.",
+    "verification_needs": {
+      "needs_primary_source": true,
+      "needs_reference_source": false,
+      "needs_original_context": true,
+      "needs_duplicate_check": true,
+      "needs_safety_rewrite": false,
+      "needs_translation": false,
+      "needs_redaction_review": false
+    },
+    "verification_state": {
+      "primary_source_found": false,
+      "reference_source_found": true,
+      "original_context_checked": false,
+      "duplicate_checked": false,
+      "redaction_checked": true,
+      "safe_to_promote": false,
+      "do_not_publish_as_confirmed": true
+    },
+    "review_decision": "hold",
+    "decision_reason": "Example item needs stronger source and context confirmation before candidate promotion.",
+    "next_action": "Find or record a stronger source, then re-run local reports before considering publication.",
+    "notes": "Walkthrough placeholder. No API, scraping, OCR, or live fetch was performed."
+  }
+]
