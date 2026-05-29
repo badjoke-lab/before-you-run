@@ -103,6 +103,20 @@ npm run ai-output:validate
 
 This reads local example output samples and writes a Markdown validation report. It does not call AI, fetch sources, generate text, or publish anything automatically.
 
+## Sitemap and robots
+
+The static sitemap and robots files can be regenerated locally.
+
+```bash
+npm run sitemap:build
+```
+
+Use `SITE_URL` to generate the sitemap for a custom domain later:
+
+```bash
+SITE_URL="https://example.com" npm run sitemap:build
+```
+
 ## Technical direction
 
 The initial implementation is a static site using HTML, CSS, JavaScript, and JSON data files. Candidate collection and advisory-source integrations are planned for later versions.

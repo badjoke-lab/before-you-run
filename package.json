@@ -17,6 +17,7 @@
     "packs:report": "node scripts/build-category-safety-packs-report.mjs",
     "rules:build": "node scripts/build-downloadable-ai-rules.mjs",
     "bundles:build": "node scripts/build-assistant-bundles.mjs",
-    "ai-output:validate": "node scripts/build-ai-output-validation-report.mjs"
+    "ai-output:validate": "node scripts/build-ai-output-validation-report.mjs",
+    "sitemap:build": "node scripts/build-sitemap.mjs"
   }
 }
