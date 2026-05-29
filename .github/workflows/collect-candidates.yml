@@ -15,13 +15,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm run candidates:collect:review
+      - run: mkdir -p reports/generated
+      - run: node scripts/collect-candidates.mjs data/candidate-sources.json data/candidate-review-queue.generated.json reports/generated/candidate-digest.md reports/generated/candidate-collection-run.md
+      - run: node scripts/build-card-drafts.mjs data/candidate-review-queue.generated.json data/card-drafts.generated.json reports/generated/card-drafts.generated.md
       - uses: actions/upload-artifact@v4
         with:
           name: tripwire-candidate-review
           path: |
             data/candidate-review-queue.generated.json
             data/card-drafts.generated.json
-            reports/candidate-digest-*.md
-            reports/card-drafts.generated.md
-            reports/candidate-collection-run-*.md
+            reports/generated/candidate-digest.md
+            reports/generated/card-drafts.generated.md
+            reports/generated/candidate-collection-run.md
