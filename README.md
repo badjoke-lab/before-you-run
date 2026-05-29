@@ -128,7 +128,7 @@ This reads local example output samples and writes a Markdown validation report.
 
 ## Sitemap and robots
 
-The static sitemap and robots files can be regenerated locally.
+The static sitemap and robots files can be regenerated locally without changing runtime UI behavior.
 
 ```bash
 npm run sitemap:build
