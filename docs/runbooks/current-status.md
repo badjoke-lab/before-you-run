@@ -55,6 +55,7 @@ v0.1 release preparation
 - AGENTS.md / Cursor bundle foundation
 - AI-output validation report
 - AI-output docs/index
+- Sitemap and robots foundation
 - Local operator workflow foundation
 ```
 
@@ -94,5 +95,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-33: Add one-item local operation walkthrough
+PR-35: Add one-item local operation walkthrough
 ```
