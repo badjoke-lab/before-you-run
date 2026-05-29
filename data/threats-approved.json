@@ -48,7 +48,13 @@
         "source_tier": "reference",
         "source_type": "blog",
         "published_at": "unknown",
-        "checked_at": "2026-05-29"
+        "checked_at": "2026-05-29",
+        "source_published_original": "unknown",
+        "source_time_precision": "unknown",
+        "source_published_at": null,
+        "source_published_date": null,
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-29",
@@ -111,6 +117,10 @@
         "不要なシークレット・トークン露出がないことを確認した",
         "必要に応じて最小権限と隔離環境を使った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-29",
+    "checked_at": "2026-05-29",
+    "status": "active",
+    "freshness_label": "recent"
   }
 ]
