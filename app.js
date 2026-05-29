@@ -174,18 +174,24 @@
   };
 
   const openCardById = (id) => { const match = state.cards.find((card) => card.id === id); if (match) renderDetail(match); };
+  const fetchJsonOrEmpty = (path) => fetch(dataPath(path)).then((r) => (r.ok ? r.json() : [])).catch(() => []);
 
-  Promise.all([fetch(dataPath("data/threats.json")).then((r) => (r.ok ? r.json() : Promise.reject())), fetch(dataPath("data/categories.json")).then((r) => (r.ok ? r.json() : []))])
-    .then(([cards, categories]) => {
-      if (!Array.isArray(cards) || cards.length === 0) { emptyState.hidden = false; emptyState.textContent = labels.noData; return; }
-      state.cards = cards;
+  Promise.all([
+    fetchJsonOrEmpty("data/threats.json"),
+    fetchJsonOrEmpty("data/threats-approved.json"),
+    fetchJsonOrEmpty("data/categories.json")
+  ])
+    .then(([cards, approvedCards, categories]) => {
+      const allCards = [...(Array.isArray(cards) ? cards : []), ...(Array.isArray(approvedCards) ? approvedCards : [])];
+      if (allCards.length === 0) { emptyState.hidden = false; emptyState.textContent = labels.noData; return; }
+      state.cards = allCards;
       const catMap = new Map((Array.isArray(categories) ? categories : []).map((c) => [c.id, isJapanese ? c.name_ja || c.name : c.name]));
-      const categoryIds = Array.from(new Set(cards.flatMap((card) => listFor(card, "categories")))).sort();
-      const audiences = Array.from(new Set(cards.flatMap((card) => listFor(card, "audience")))).sort();
+      const categoryIds = Array.from(new Set(allCards.flatMap((card) => listFor(card, "categories")))).sort();
+      const audiences = Array.from(new Set(allCards.flatMap((card) => listFor(card, "audience")))).sort();
       setOptions(els.category, categoryIds.map((id) => ({ value: id, label: catMap.get(id) ? `${catMap.get(id)} (${id})` : id })), labels.categoryAll);
       setOptions(els.severity, ["high", "medium", "watch"].map((value) => ({ value, label: value })), labels.all);
       setOptions(els.audience, audiences.map((value) => ({ value, label: value })), labels.audienceAll);
-      setOptions(els.sourceType, ["primary", "reference", "signal"].map((value) => ({ value, label: value })), labels.sourceAll);
+      setOptions(els.sourceType, ["primary", "reference", "signal", "blog"].map((value) => ({ value, label: value })), labels.sourceAll);
       applyFilters(); renderList(); if (window.location.hash) openCardById(window.location.hash.replace("#", ""));
     })
     .catch(() => { emptyState.hidden = false; emptyState.textContent = labels.noCards; });

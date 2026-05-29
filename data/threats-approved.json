@@ -1,0 +1,116 @@
+[
+  {
+    "id": "check-dependencies-and-actions-before-trusting",
+    "title": "Check dependencies and GitHub Actions before trusting them",
+    "title_ja": "依存関係やGitHub Actionsを信頼する前に確認する",
+    "severity": "high",
+    "categories": [
+      "supply-chain",
+      "malicious-packages",
+      "secrets-tokens"
+    ],
+    "audience": [
+      "beginner",
+      "indie-dev",
+      "ai-coding"
+    ],
+    "summary": "Dependencies, GitHub Actions, and automation can expose secrets or run unsafe code if trusted without review.",
+    "summary_ja": "依存関係、GitHub Actions、自動化処理は、確認せずに信頼するとシークレット露出や危険なコード実行につながる可能性があります。",
+    "dangerous_actions": [
+      "Installing or updating dependencies without checking source trust",
+      "Adding GitHub Actions or third-party automation before reviewing permissions",
+      "Giving secrets or broad tokens to unreviewed workflows",
+      "Assuming popular open source packages are always safe"
+    ],
+    "dangerous_actions_ja": [
+      "ソース信頼性を確認せずに依存関係をインストール・更新する",
+      "権限を確認せずにGitHub Actionsや外部自動化を追加する",
+      "未確認のworkflowにシークレットや広い権限のトークンを渡す",
+      "有名なopen sourceパッケージなら常に安全だと決めつける"
+    ],
+    "avoid_now": [
+      "Review package source, maintainers, install scripts, and dependency changes before updating",
+      "Check workflow permissions before enabling secrets or tokens",
+      "Keep token permissions narrow and avoid broad repository or organization access",
+      "Use small dependency updates and review lockfile changes"
+    ],
+    "avoid_now_ja": [
+      "更新前にパッケージの入手元、maintainer、install scripts、依存関係差分を確認する",
+      "secretsやtokensを有効化する前にworkflow権限を確認する",
+      "トークン権限を最小限にし、リポジトリ全体・組織全体への広い権限を避ける",
+      "依存関係更新は小さく分け、lockfile差分を確認する"
+    ],
+    "sources": [
+      {
+        "title": "Securing the open source supply chain across GitHub",
+        "url": "https://github.blog/security/supply-chain-security/securing-the-open-source-supply-chain-across-github/",
+        "publisher": "GitHub Blog",
+        "source_tier": "reference",
+        "source_type": "blog",
+        "published_at": "unknown",
+        "checked_at": "2026-05-29"
+      }
+    ],
+    "updated_at": "2026-05-29",
+    "ai_output": {
+      "risk_summary": "Dependencies and automation can expose secrets or run unsafe code when trusted without review.",
+      "do_not": [
+        "Do not install or update dependencies from unreviewed sources without checking risk.",
+        "Do not give broad tokens or secrets to workflows, scripts, or actions you have not reviewed."
+      ],
+      "check_first": [
+        "Check package source, maintainer activity, install scripts, dependency changes, and requested permissions.",
+        "Check whether secrets, tokens, production systems, or deployment workflows are involved."
+      ],
+      "safe_actions": [
+        "Use least privilege tokens and avoid broad repository or organization permissions.",
+        "Review dependency updates in small batches and keep lockfile changes visible.",
+        "Run unfamiliar dependencies or automation in isolated environments before trusting them."
+      ],
+      "ask_user_before": [
+        "Installing or updating dependencies from unknown or newly changed packages",
+        "Adding GitHub Actions or third-party automation that can access secrets",
+        "Granting tokens, deploy keys, or repository-wide permissions",
+        "Running install scripts, build scripts, or postinstall hooks from unreviewed sources"
+      ],
+      "agent_instruction": "Before changing dependencies or automation, summarize the source, permissions, secret exposure risk, and safer alternative. Ask for explicit approval before proceeding.",
+      "checklist": [
+        "Checked source and maintainer trust",
+        "Reviewed dependency or workflow changes",
+        "Checked install scripts and automation side effects",
+        "Confirmed no unnecessary secret or token exposure",
+        "Used least privilege and isolation where possible"
+      ]
+    },
+    "ai_output_ja": {
+      "risk_summary": "依存関係や自動化処理は、確認せずに信頼するとシークレット露出や危険なコード実行につながる可能性があります。",
+      "do_not": [
+        "未確認ソースの依存関係をリスク確認なしでインストール・更新しない。",
+        "確認していないworkflow、script、actionに広い権限のトークンやシークレットを渡さない。"
+      ],
+      "check_first": [
+        "パッケージの入手元、maintainer状況、install scripts、依存関係差分、要求権限を確認する。",
+        "シークレット、トークン、本番環境、deploy workflowが関係するか確認する。"
+      ],
+      "safe_actions": [
+        "トークンは最小権限にし、リポジトリ全体・組織全体への広い権限を避ける。",
+        "依存関係更新は小さな単位で行い、lockfile差分を確認できるようにする。",
+        "不明な依存関係や自動化は、信頼する前に隔離環境で確認する。"
+      ],
+      "ask_user_before": [
+        "未知または最近変更されたパッケージのインストール・更新",
+        "シークレットへアクセスできるGitHub Actionsや外部自動化の追加",
+        "トークン、deploy key、リポジトリ全体権限の付与",
+        "未確認ソースのinstall scripts、build scripts、postinstall hooksの実行"
+      ],
+      "agent_instruction": "依存関係や自動化を変更する前に、ソース、権限、シークレット露出リスク、安全な代替案を要約し、実行前に明示的な承認を得る。",
+      "checklist": [
+        "ソースとmaintainerの信頼性を確認した",
+        "依存関係またはworkflowの変更内容を確認した",
+        "install scriptsと自動化の副作用を確認した",
+        "不要なシークレット・トークン露出がないことを確認した",
+        "必要に応じて最小権限と隔離環境を使った"
+      ]
+    }
+  }
+]
