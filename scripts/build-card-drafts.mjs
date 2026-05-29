@@ -12,6 +12,8 @@ const ALLOWED_STATUS = new Set([
 ]);
 const ALLOWED_SOURCE_TYPE = new Set(['primary', 'reference', 'signal']);
 const ALLOWED_SEVERITY = new Set(['high', 'medium', 'watch', 'unknown']);
+const ALLOWED_TIME_PRECISION = new Set(['datetime', 'date', 'month', 'unknown']);
+const ALLOWED_TIMEZONE_CONFIDENCE = new Set(['explicit', 'inferred', 'unknown']);
 
 const DEFAULT_INPUT = 'data/candidate-review-queue.example.json';
 const DEFAULT_OUTPUT_JSON = 'data/card-drafts.example.json';
@@ -33,6 +35,22 @@ function slugify(value) {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
     .slice(0, 64);
+}
+
+function isDateOnly(value) {
+  return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value);
+}
+
+function isUtcDateTime(value) {
+  return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(value);
+}
+
+function timeValueOrNull(value) {
+  return isDateOnly(value) || isUtcDateTime(value) ? value : null;
+}
+
+function dateOrToday(value) {
+  return isDateOnly(value) ? value : today;
 }
 
 function parseQueue(filePath) {
@@ -73,6 +91,12 @@ function parseQueue(filePath) {
     if (item.severity_hint != null && !ALLOWED_SEVERITY.has(item.severity_hint)) {
       fail(`${prefix} has invalid severity_hint: ${item.severity_hint}`);
     }
+    if (item.source_time_precision != null && !ALLOWED_TIME_PRECISION.has(item.source_time_precision)) {
+      fail(`${prefix} has invalid source_time_precision: ${item.source_time_precision}`);
+    }
+    if (item.source_timezone_confidence != null && !ALLOWED_TIMEZONE_CONFIDENCE.has(item.source_timezone_confidence)) {
+      fail(`${prefix} has invalid source_timezone_confidence: ${item.source_timezone_confidence}`);
+    }
   });
 
   return parsed;
@@ -80,6 +104,12 @@ function parseQueue(filePath) {
 
 function buildDraft(item) {
   const idBase = slugify(item.safe_card_angle || item.title || item.id || 'draft-card');
+  const sourcePublishedAt = timeValueOrNull(item.source_published_at);
+  const sourcePublishedDate = isDateOnly(item.source_published_date) ? item.source_published_date : null;
+  const publishedAt = item.published_at === 'unknown' ? 'unknown' : timeValueOrNull(item.published_at) || 'unknown';
+  const sourceTimePrecision = ALLOWED_TIME_PRECISION.has(item.source_time_precision) ? item.source_time_precision : 'unknown';
+  const sourceTimezoneConfidence = ALLOWED_TIMEZONE_CONFIDENCE.has(item.source_timezone_confidence) ? item.source_timezone_confidence : 'unknown';
+
   return {
     draft_id: `draft-${idBase}`,
     source_candidate_id: item.id,
@@ -109,6 +139,11 @@ function buildDraft(item) {
       '実行前にソース信頼性とコマンド/スクリプト挙動を確認する',
       '高リスク操作の前に隔離環境を使い、確認を取る'
     ],
+    first_seen_at: dateOrToday(item.first_seen_at),
+    checked_at: dateOrToday(item.checked_at),
+    updated_at: dateOrToday(item.updated_at),
+    status: 'active',
+    freshness_label: item.freshness_label || 'recent',
     draft_labels: {
       source_confidence: item.confidence || 'medium',
       source_freshness: item.freshness || 'new',
@@ -121,10 +156,16 @@ function buildDraft(item) {
         url: item.source_url,
         publisher: item.source_id || 'Manual candidate',
         source_type: item.source_type,
-        checked_at: today
+        published_at: publishedAt,
+        checked_at: dateOrToday(item.checked_at),
+        source_published_original: item.source_published_original || 'unknown',
+        source_time_precision: sourceTimePrecision,
+        source_published_at: sourcePublishedAt,
+        source_published_date: sourcePublishedDate,
+        source_timezone: item.source_timezone || null,
+        source_timezone_confidence: sourceTimezoneConfidence
       }
     ],
-    updated_at: today,
     ai_output: {
       risk_summary: item.summary,
       do_not: [
@@ -190,6 +231,11 @@ function buildReport(drafts, sourceLabel) {
       `- Source candidate: ${draft.source_candidate_id}`,
       `- Severity: ${draft.severity}`,
       `- Categories: ${draft.categories.join(', ')}`,
+      `- First seen: ${draft.first_seen_at}`,
+      `- Checked: ${draft.checked_at}`,
+      `- Updated: ${draft.updated_at}`,
+      `- Freshness label: ${draft.freshness_label}`,
+      `- Source time precision: ${draft.sources[0]?.source_time_precision || 'unknown'}`,
       `- Needs editorial review: ${draft.needs_editorial_review ? 'true' : 'false'}`,
       '',
       'Editorial notes:',

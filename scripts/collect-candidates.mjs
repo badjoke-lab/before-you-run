@@ -15,7 +15,6 @@ const runPath = process.argv[5] || DEFAULT_RUN;
 
 const STRONG_TERMS = [
   'signing key',
-  'rotation',
   'remote code execution',
   'vulnerability',
   'vulnerabilities',
@@ -23,26 +22,42 @@ const STRONG_TERMS = [
   'advisory',
   'advisories',
   'malware',
+  'malicious package',
+  'malicious packages',
   'supply chain',
+  'osv',
   'exposed',
   'scan for vulnerabilities',
   'credential',
+  'credentials',
   'token',
+  'tokens',
+  'secret',
+  'secrets',
   'permission',
+  'permissions',
   'package',
-  'dependency'
+  'dependency',
+  'dependencies',
+  'github actions',
+  'workflow',
+  'runner'
 ];
 
 const SUPPORT_TERMS = [
   'ai',
   'agent',
-  'workflow',
-  'runner',
-  'action',
   'repository',
   'github',
   'code',
-  'open source'
+  'open source',
+  'developer',
+  'npm',
+  'pypi',
+  'ruby',
+  'rust',
+  'node.js',
+  'nodejs'
 ];
 
 const NOISE_TERMS = [
@@ -53,7 +68,37 @@ const NOISE_TERMS = [
   'application security coverage',
   'detections',
   'quality, shared responsibility',
-  'for free'
+  'for free',
+  'announcing',
+  'roadmap',
+  'survey',
+  'newsletter'
+];
+
+const NON_DEVELOPER_CISA_TERMS = [
+  'ics advisory',
+  'medical advisory',
+  'industrial control systems',
+  'siemens',
+  'schneider electric',
+  'advantech',
+  'mitsubishi electric',
+  'hikvision',
+  'dahua',
+  'cctv',
+  'router',
+  'camera'
+];
+
+const RELEASE_ONLY_TERMS = [
+  'released',
+  'release',
+  'releases',
+  'stable',
+  'beta',
+  'version',
+  'minor',
+  'patch'
 ];
 
 function fail(message) {
@@ -123,14 +168,91 @@ function findTerms(haystack, terms) {
   return terms.filter((term) => haystack.includes(term));
 }
 
-function scoreItem(item) {
+function hasAny(haystack, terms) {
+  return terms.some((term) => haystack.includes(term));
+}
+
+function parseSourceTime(rawValue) {
+  const raw = String(rawValue || '').trim();
+  if (!raw) {
+    return {
+      published_at: 'unknown',
+      source_published_original: 'unknown',
+      source_time_precision: 'unknown',
+      source_published_at: null,
+      source_published_date: null,
+      source_timezone: null,
+      source_timezone_confidence: 'unknown'
+    };
+  }
+
+  const dateMatch = raw.match(/(\d{4})-(\d{2})-(\d{2})/);
+  const rfcDate = Date.parse(raw);
+  const hasTime = /\d{1,2}:\d{2}/.test(raw) || /T\d{2}:\d{2}/.test(raw);
+  const hasExplicitTimezone = /(?:Z|[+-]\d{2}:?\d{2}|\bUTC\b|\bGMT\b)/i.test(raw);
+
+  if (hasTime && hasExplicitTimezone && Number.isFinite(rfcDate)) {
+    const iso = new Date(rfcDate).toISOString().replace(/\.\d{3}Z$/, 'Z');
+    return {
+      published_at: iso,
+      source_published_original: raw,
+      source_time_precision: 'datetime',
+      source_published_at: iso,
+      source_published_date: iso.slice(0, 10),
+      source_timezone: hasExplicitTimezone ? 'explicit-in-source' : null,
+      source_timezone_confidence: 'explicit'
+    };
+  }
+
+  if (dateMatch) {
+    const date = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
+    return {
+      published_at: date,
+      source_published_original: raw,
+      source_time_precision: 'date',
+      source_published_at: null,
+      source_published_date: date,
+      source_timezone: null,
+      source_timezone_confidence: 'unknown'
+    };
+  }
+
+  if (Number.isFinite(rfcDate) && !hasTime) {
+    const date = new Date(rfcDate).toISOString().slice(0, 10);
+    return {
+      published_at: date,
+      source_published_original: raw,
+      source_time_precision: 'date',
+      source_published_at: null,
+      source_published_date: date,
+      source_timezone: null,
+      source_timezone_confidence: 'unknown'
+    };
+  }
+
+  return {
+    published_at: 'unknown',
+    source_published_original: raw,
+    source_time_precision: 'unknown',
+    source_published_at: null,
+    source_published_date: null,
+    source_timezone: null,
+    source_timezone_confidence: 'unknown'
+  };
+}
+
+function scoreItem(item, source) {
   const haystack = `${item.title} ${item.summary}`.toLowerCase();
   const strong = findTerms(haystack, STRONG_TERMS);
   const support = findTerms(haystack, SUPPORT_TERMS);
   const noise = findTerms(haystack, NOISE_TERMS);
-  const score = (strong.length * 3) + support.length - (noise.length * 4);
+  const cisaNoise = source.id === 'cisa-advisories' && hasAny(haystack, NON_DEVELOPER_CISA_TERMS);
+  const releaseOnly = ['ruby-news', 'rust-blog', 'nodejs-blog'].includes(source.id)
+    && hasAny(haystack, RELEASE_ONLY_TERMS)
+    && !hasAny(haystack, ['security', 'cve', 'vulnerability', 'advisory', 'malware', 'supply chain']);
+  const score = (strong.length * 3) + support.length - (noise.length * 4) - (cisaNoise ? 8 : 0) - (releaseOnly ? 8 : 0);
   const matched = [...new Set([...strong, ...support])];
-  return { score, matched, strong, support, noise };
+  return { score, matched, strong, support, noise, cisaNoise, releaseOnly };
 }
 
 function buildSummary(item) {
@@ -140,10 +262,11 @@ function buildSummary(item) {
 }
 
 function buildCandidate(item, source, index) {
-  const scored = scoreItem(item);
+  const scored = scoreItem(item, source);
+  const sourceTime = parseSourceTime(item.published);
   const id = `${source.id}-${slugify(item.title)}-${index + 1}`.slice(0, 96);
   const hasStrongSignal = scored.strong.length > 0;
-  const hasNoise = scored.noise.length > 0;
+  const hasNoise = scored.noise.length > 0 || scored.cisaNoise || scored.releaseOnly;
   const shouldDraft = hasStrongSignal && !hasNoise && scored.score >= 4;
   const status = shouldDraft ? 'candidate' : hasStrongSignal ? 'maybe-relevant' : 'rejected';
   const priority = scored.score >= 8 ? 'high' : scored.score >= 4 ? 'medium' : 'low';
@@ -152,8 +275,14 @@ function buildCandidate(item, source, index) {
   if (!hasStrongSignal) {
     blockingIssues.push('No strong card signal matched.');
   }
-  if (hasNoise) {
+  if (scored.noise.length > 0) {
     blockingIssues.push(`Likely non-card topic: ${scored.noise.join(', ')}.`);
+  }
+  if (scored.cisaNoise) {
+    blockingIssues.push('CISA item appears focused on non-developer hardware/ICS context.');
+  }
+  if (scored.releaseOnly) {
+    blockingIssues.push('Looks like a routine release post without a clear security/card angle.');
   }
 
   return {
@@ -166,7 +295,17 @@ function buildCandidate(item, source, index) {
     source_type: source.source_type || 'reference',
     language: source.language || 'en',
     collected_at: today,
-    source_published_at: item.published || 'unknown',
+    first_seen_at: today,
+    checked_at: today,
+    updated_at: today,
+    freshness_label: 'recent',
+    source_published_at: sourceTime.source_published_at,
+    source_published_date: sourceTime.source_published_date,
+    source_published_original: sourceTime.source_published_original,
+    source_time_precision: sourceTime.source_time_precision,
+    source_timezone: sourceTime.source_timezone,
+    source_timezone_confidence: sourceTime.source_timezone_confidence,
+    published_at: sourceTime.published_at,
     candidate_categories: Array.isArray(source.default_categories) && source.default_categories.length > 0 ? source.default_categories : ['needs-review'],
     matched_keywords: scored.matched,
     confidence: source.source_type === 'primary' ? 'high' : 'medium',
@@ -228,8 +367,11 @@ function buildDigest(candidates, sources, errors) {
       `- Review decision: ${c.review_decision}`,
       `- Source: ${c.source_id}`,
       `- URL: ${c.source_url}`,
+      `- Published: ${c.published_at}`,
+      `- Source time precision: ${c.source_time_precision}`,
       `- Confidence: ${c.confidence}`,
       `- Freshness: ${c.freshness}`,
+      `- Freshness label: ${c.freshness_label}`,
       `- Severity hint: ${c.severity_hint}`,
       `- Matched keywords: ${c.matched_keywords.length > 0 ? c.matched_keywords.join(', ') : 'none'}`,
       `- Blocking issues: ${c.blocking_issues.length > 0 ? c.blocking_issues.join(' | ') : 'none'}`,

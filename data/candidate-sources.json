@@ -17,7 +17,7 @@
     "source_type": "reference",
     "source_kind": "blog",
     "language": "en",
-    "limit": 8,
+    "limit": 6,
     "default_categories": ["tooling", "ai-coding-agents"],
     "trust_note": "Developer platform changelog. Filter strictly before publication."
   },
@@ -29,7 +29,7 @@
     "source_kind": "blog",
     "language": "en",
     "limit": 10,
-    "default_categories": ["supply-chain", "tooling"],
+    "default_categories": ["supply-chain", "malicious-packages", "tooling"],
     "trust_note": "Open-source ecosystem source. Review for beginner-safe card angles."
   },
   {
@@ -39,19 +39,19 @@
     "source_type": "primary",
     "source_kind": "official-advisory",
     "language": "en",
-    "limit": 10,
+    "limit": 8,
     "default_categories": ["tooling", "supply-chain"],
-    "trust_note": "Official public advisory feed. Summarize only defensive actions."
+    "trust_note": "Official public advisory feed. Summarize only defensive actions and prioritize developer-relevant items."
   },
   {
     "id": "pypi-blog",
     "name": "PyPI Blog",
-    "url": "https://blog.pypi.org/feeds/all.atom.xml",
+    "url": "https://blog.pypi.org/feed/",
     "source_type": "primary",
     "source_kind": "official-project-blog",
     "language": "en",
     "limit": 8,
-    "default_categories": ["supply-chain", "tooling"],
+    "default_categories": ["supply-chain", "malicious-packages", "tooling"],
     "trust_note": "Official Python Package Index blog. Review package and publishing safety items."
   },
   {
@@ -61,9 +61,9 @@
     "source_type": "primary",
     "source_kind": "official-project-blog",
     "language": "en",
-    "limit": 8,
+    "limit": 6,
     "default_categories": ["tooling", "supply-chain"],
-    "trust_note": "Official Node.js blog feed. Review release and tooling items before publication."
+    "trust_note": "Official Node.js blog feed. Review security, release, and tooling items before publication."
   },
   {
     "id": "ruby-news",
@@ -72,9 +72,9 @@
     "source_type": "primary",
     "source_kind": "official-project-news",
     "language": "en",
-    "limit": 8,
+    "limit": 6,
     "default_categories": ["tooling", "supply-chain"],
-    "trust_note": "Official Ruby news feed. Review update and dependency-safety angles."
+    "trust_note": "Official Ruby news feed. Draft only security/advisory/update-safety items."
   },
   {
     "id": "rust-blog",
@@ -83,8 +83,8 @@
     "source_type": "primary",
     "source_kind": "official-project-blog",
     "language": "en",
-    "limit": 8,
+    "limit": 6,
     "default_categories": ["tooling", "supply-chain"],
-    "trust_note": "Official Rust blog feed. Review project and dependency-safety guidance."
+    "trust_note": "Official Rust blog feed. Draft only security/advisory/update-safety items."
   }
 ]
