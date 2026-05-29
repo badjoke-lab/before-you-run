@@ -15,6 +15,16 @@
   if (!cardList || !emptyState || !detailPanel || !controls) return;
 
   const isJapanese = (root.lang || "").toLowerCase().startsWith("ja");
+  const timezoneStorageKey = "tripwire_timezone";
+  const timezoneOptions = [
+    { value: "UTC", label: "UTC" },
+    { value: "local", label: isJapanese ? "Local time" : "Local time" },
+    { value: "Asia/Tokyo", label: "Asia/Tokyo" },
+    { value: "America/New_York", label: "America/New_York" },
+    { value: "America/Los_Angeles", label: "America/Los_Angeles" },
+    { value: "Europe/London", label: "Europe/London" },
+    { value: "Europe/Berlin", label: "Europe/Berlin" }
+  ];
 
   const labels = isJapanese
     ? {
@@ -22,6 +32,8 @@
         severity: "重要度", categories: "カテゴリ", audience: "対象読者", source: "出典", summary: "概要",
         dangerousActions: "危険な行動", avoidNow: "今すぐ避けること", firstResponse: "すでに実行してしまった場合",
         checkFirst: "先に確認", sources: "出典一覧", updated: "更新日", noSource: "未設定",
+        sourcePublished: "ソース公開日", lastChecked: "最終確認", firstSeen: "初回記録", status: "状態",
+        timezone: "時刻表示", timezoneUnknown: "timezone unknown",
         noCards: "カードデータを読み込めませんでした。", noData: "表示できるカードがまだありません。",
         noMatch: "該当するカードがありません。キーワードを変えるか、フィルタを外してください。",
         resultCount: (shown, total) => `${total}件中${shown}件を表示`, details: "詳細を見る", related: "関連カード", shared: "共通カテゴリ",
@@ -35,6 +47,8 @@
         severity: "Severity", categories: "Categories", audience: "Audience", source: "Source", summary: "Summary",
         dangerousActions: "Dangerous actions", avoidNow: "Avoid now", firstResponse: "If you already did this",
         checkFirst: "Check first", sources: "Sources", updated: "Updated", noSource: "Not set",
+        sourcePublished: "Source published", lastChecked: "Last checked", firstSeen: "First seen", status: "Status",
+        timezone: "Timezone", timezoneUnknown: "timezone unknown",
         noCards: "Card data is not available yet.", noData: "No cards are available yet.",
         noMatch: "No matching cards found. Try another keyword or remove filters.",
         resultCount: (shown, total) => `Showing ${shown} of ${total} cards`, details: "View details", related: "Related cards", shared: "Shared categories",
@@ -44,8 +58,33 @@
         copyHeaders: { review: "# AI Safety Review", risk: "## Risk summary", doNot: "## Do not", checkFirst: "## Check first", safeActions: "## Safe actions", askFirst: "## Ask the user before", instruction: "## Instruction" }
       };
 
-  const els = { search: controls.querySelector("[data-card-search]"), category: controls.querySelector("[data-card-category]"), severity: controls.querySelector("[data-card-severity]"), audience: controls.querySelector("[data-card-audience]"), sourceType: controls.querySelector("[data-card-source-type]"), reset: controls.querySelector("[data-card-reset]"), count: document.querySelector("[data-card-count]") };
-  const state = { cards: [], filtered: [], categoryLabels: new Map() };
+  const getLocalTimezone = () => {
+    try {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone || "UTC";
+    } catch (_err) {
+      return "UTC";
+    }
+  };
+
+  const readTimezonePreference = () => {
+    try {
+      const value = window.localStorage && window.localStorage.getItem(timezoneStorageKey);
+      return timezoneOptions.some((option) => option.value === value) ? value : "UTC";
+    } catch (_err) {
+      return "UTC";
+    }
+  };
+
+  const saveTimezonePreference = (value) => {
+    try {
+      if (window.localStorage) window.localStorage.setItem(timezoneStorageKey, value);
+    } catch (_err) {
+      // Ignore storage failures.
+    }
+  };
+
+  const els = { search: controls.querySelector("[data-card-search]"), category: controls.querySelector("[data-card-category]"), severity: controls.querySelector("[data-card-severity]"), audience: controls.querySelector("[data-card-audience]"), sourceType: controls.querySelector("[data-card-source-type]"), reset: controls.querySelector("[data-card-reset]"), count: document.querySelector("[data-card-count]"), timezone: null };
+  const state = { cards: [], filtered: [], categoryLabels: new Map(), timezone: readTimezonePreference() };
 
   const dataPath = (path) => new URL(isJapanese ? `../${path}` : path, window.location.href);
   const textFor = (card, key) => (isJapanese ? card[`${key}_ja`] || card[key] : card[key]) || "";
@@ -56,6 +95,65 @@
 
   const createOption = (value, label) => Object.assign(document.createElement("option"), { value, textContent: label });
   const setOptions = (select, options, firstLabel) => { if (!select) return; select.textContent = ""; select.append(createOption("all", firstLabel)); options.forEach((opt) => select.append(createOption(opt.value, opt.label))); };
+
+  const activeTimezone = () => (state.timezone === "local" ? getLocalTimezone() : state.timezone || "UTC");
+  const isDateOnly = (value) => typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value);
+
+  const formatTimeValue = (value) => {
+    if (!value) return labels.noSource;
+    if (isDateOnly(value)) return value;
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return String(value);
+    try {
+      const parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: activeTimezone(),
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+        timeZoneName: "short"
+      }).formatToParts(date).reduce((acc, part) => {
+        acc[part.type] = part.value;
+        return acc;
+      }, {});
+      return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute} ${parts.timeZoneName || activeTimezone()}`;
+    } catch (_err) {
+      return String(value);
+    }
+  };
+
+  const formatSourcePublished = (source) => {
+    if (!source) return labels.noSource;
+    if (source.source_timezone_confidence === "unknown" && source.source_published_original) {
+      return `${source.source_published_original} (${labels.timezoneUnknown})`;
+    }
+    return formatTimeValue(source.source_published_at || source.source_published_date || source.published_at || source.source_published_original);
+  };
+
+  const addTimezoneControl = () => {
+    const label = document.createElement("label");
+    label.textContent = `${labels.timezone} `;
+    const select = document.createElement("select");
+    select.dataset.cardTimezone = "";
+    timezoneOptions.forEach((option) => select.append(createOption(option.value, option.label)));
+    select.value = state.timezone;
+    label.append(select);
+    if (els.reset && els.reset.parentNode === controls) {
+      controls.insertBefore(label, els.reset);
+    } else {
+      controls.append(label);
+    }
+    els.timezone = select;
+    select.addEventListener("change", () => {
+      state.timezone = select.value || "UTC";
+      saveTimezonePreference(state.timezone);
+      renderList();
+      const id = window.location.hash.replace("#", "");
+      if (id) openCardById(id);
+    });
+  };
 
   const formatBullets = (items, prefix = "- ") => items.map((v) => `${prefix}${v}`).join("\n");
   const aiDataFor = (card) => (isJapanese ? card.ai_output_ja || card.ai_output : card.ai_output);
@@ -114,9 +212,24 @@
       }
       const meta = [source.publisher, source.source_type].filter(Boolean).join(" / ");
       if (meta) item.append(Object.assign(document.createElement("span"), { textContent: ` (${meta})` }));
+      const timeMeta = [
+        `${labels.sourcePublished}: ${formatSourcePublished(source)}`,
+        `${labels.lastChecked}: ${formatTimeValue(source.checked_at)}`
+      ].filter(Boolean).join(" / ");
+      item.append(Object.assign(document.createElement("small"), { className: "source-time-meta", textContent: ` ${timeMeta}` }));
       list.append(item);
     });
     section.append(list); container.append(section);
+  };
+
+  const appendTimeSection = (container, card) => {
+    const items = [
+      `${labels.updated}: ${formatTimeValue(card.updated_at)}`,
+      `${labels.firstSeen}: ${formatTimeValue(card.first_seen_at)}`,
+      `${labels.lastChecked}: ${formatTimeValue(card.checked_at || (card.sources && card.sources[0] && card.sources[0].checked_at))}`,
+      `${labels.status}: ${card.status || card.freshness_label || labels.noSource}`
+    ];
+    appendListSection(container, labels.updated, items);
   };
 
   const addAiPanel = (card) => {
@@ -154,8 +267,9 @@
     const head = document.createElement("div"); head.className = "section-heading";
     const titleWrap = document.createElement("div");
     titleWrap.append(Object.assign(document.createElement("h3"), { textContent: textFor(card, "title") }), Object.assign(document.createElement("p"), { textContent: textFor(card, "summary") }));
-    head.append(titleWrap, Object.assign(document.createElement("p"), { className: "result-count", textContent: `${labels.updated}: ${card.updated_at || labels.noSource}` }));
+    head.append(titleWrap, Object.assign(document.createElement("p"), { className: "result-count", textContent: `${labels.updated}: ${formatTimeValue(card.updated_at)}` }));
     detailPanel.append(head);
+    appendTimeSection(detailPanel, card);
     appendListSection(detailPanel, labels.categories, listFor(card, "categories").map(categoryLabel));
     appendListSection(detailPanel, labels.audience, listFor(card, "audience"));
     appendListSection(detailPanel, labels.dangerousActions, listFor(card, isJapanese ? "dangerous_actions_ja" : "dangerous_actions"));
@@ -188,7 +302,11 @@
       const item = Object.assign(document.createElement("article"), { className: "threat-card flow" });
       item.append(Object.assign(document.createElement("h3"), { className: "threat-card__title", textContent: textFor(card, "title") }));
       const meta = Object.assign(document.createElement("div"), { className: "threat-card__meta" });
-      meta.append(Object.assign(document.createElement("span"), { className: "label label--severity", textContent: `${labels.severity}: ${card.severity || labels.noSource}` }), Object.assign(document.createElement("span"), { className: "label", textContent: `${labels.categories}: ${listFor(card, "categories").map(categoryLabel).join(", ") || labels.noSource}` }));
+      meta.append(
+        Object.assign(document.createElement("span"), { className: "label label--severity", textContent: `${labels.severity}: ${card.severity || labels.noSource}` }),
+        Object.assign(document.createElement("span"), { className: "label", textContent: `${labels.categories}: ${listFor(card, "categories").map(categoryLabel).join(", ") || labels.noSource}` }),
+        Object.assign(document.createElement("span"), { className: "label", textContent: `${labels.updated}: ${formatTimeValue(card.updated_at)}` })
+      );
       item.append(meta, Object.assign(document.createElement("p"), { className: "threat-card__summary", textContent: textFor(card, "summary") }));
       const button = Object.assign(document.createElement("button"), { type: "button", textContent: labels.details }); button.dataset.cardOpen = card.id; item.append(button);
       cardList.append(item);
@@ -197,6 +315,8 @@
 
   const openCardById = (id) => { const match = state.cards.find((card) => card.id === id); if (match) renderDetail(match); };
   const fetchJsonOrEmpty = (path) => fetch(dataPath(path)).then((r) => (r.ok ? r.json() : [])).catch(() => []);
+
+  addTimezoneControl();
 
   Promise.all([
     fetchJsonOrEmpty("data/threats.json"),
