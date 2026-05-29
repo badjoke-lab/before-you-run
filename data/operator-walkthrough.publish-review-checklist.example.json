@@ -1,0 +1,44 @@
+[
+  {
+    "id": "walkthrough-publish-review-unknown-repo",
+    "source_candidate_id": "walkthrough-manual-intake-unknown-repo",
+    "draft_id": "walkthrough-draft-unknown-repo",
+    "target_card_id": "review-unknown-repositories-before-running-scripts",
+    "target_title": "Review unknown repositories before running scripts",
+    "language": "en",
+    "review_status": "ready-for-final-review",
+    "reviewed_at": "2026-05-29",
+    "reviewer": "manual-review",
+    "gates": {
+      "source_checked": false,
+      "source_url_present": true,
+      "duplicate_checked": false,
+      "freshness_checked": true,
+      "severity_checked": true,
+      "credibility_checked": true,
+      "safety_rewrite_checked": true,
+      "translation_checked": true,
+      "ai_output_checked": true,
+      "unsafe_detail_removed": true
+    },
+    "source_summary": {
+      "source_count": 1,
+      "primary_sources": 0,
+      "reference_sources": 1,
+      "signal_sources": 1,
+      "needs_stronger_source": true,
+      "source_notes": "Walkthrough example only. A stronger source is needed before publication."
+    },
+    "editorial_summary": {
+      "public_safe": true,
+      "beginner_safe": true,
+      "contains_unverified_claims": false,
+      "contains_operational_detail": false,
+      "needs_manual_copyedit": true,
+      "editorial_notes": "Example shows a hold decision, not an approved publication."
+    },
+    "decision": "hold-for-stronger-source",
+    "decision_reason": "The item is useful as a defensive topic, but publication should wait for stronger source confirmation.",
+    "next_action": "Keep the item local or in review until stronger source/context checks are complete."
+  }
+]
