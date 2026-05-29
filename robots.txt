@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tripwire-3gk.pages.dev/sitemap.xml
