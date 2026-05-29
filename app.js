@@ -45,12 +45,14 @@
       };
 
   const els = { search: controls.querySelector("[data-card-search]"), category: controls.querySelector("[data-card-category]"), severity: controls.querySelector("[data-card-severity]"), audience: controls.querySelector("[data-card-audience]"), sourceType: controls.querySelector("[data-card-source-type]"), reset: controls.querySelector("[data-card-reset]"), count: document.querySelector("[data-card-count]") };
-  const state = { cards: [], filtered: [] };
+  const state = { cards: [], filtered: [], categoryLabels: new Map() };
 
   const dataPath = (path) => new URL(isJapanese ? `../${path}` : path, window.location.href);
   const textFor = (card, key) => (isJapanese ? card[`${key}_ja`] || card[key] : card[key]) || "";
   const listFor = (card, key) => (Array.isArray(card[key]) ? card[key] : []).map((x) => String(x));
   const normalize = (value) => String(value || "").toLowerCase();
+  const titleCase = (value) => String(value || "").split("-").map((part) => part ? `${part[0].toUpperCase()}${part.slice(1)}` : part).join(" ");
+  const categoryLabel = (id) => state.categoryLabels.get(id) || titleCase(id);
 
   const createOption = (value, label) => Object.assign(document.createElement("option"), { value, textContent: label });
   const setOptions = (select, options, firstLabel) => { if (!select) return; select.textContent = ""; select.append(createOption("all", firstLabel)); options.forEach((opt) => select.append(createOption(opt.value, opt.label))); };
@@ -97,6 +99,26 @@
     section.append(list); container.append(section);
   };
 
+  const appendSourceSection = (container, sources) => {
+    if (!Array.isArray(sources) || sources.length === 0) return;
+    const section = document.createElement("section"); section.className = "detail-section flow";
+    section.append(Object.assign(document.createElement("h4"), { textContent: labels.sources }));
+    const list = document.createElement("ul"); list.className = "detail-list";
+    sources.forEach((source) => {
+      const item = document.createElement("li");
+      const title = source.title || source.publisher || labels.noSource;
+      if (source.url) {
+        item.append(Object.assign(document.createElement("a"), { href: source.url, textContent: title, target: "_blank", rel: "noreferrer" }));
+      } else {
+        item.append(title);
+      }
+      const meta = [source.publisher, source.source_type].filter(Boolean).join(" / ");
+      if (meta) item.append(Object.assign(document.createElement("span"), { textContent: ` (${meta})` }));
+      list.append(item);
+    });
+    section.append(list); container.append(section);
+  };
+
   const addAiPanel = (card) => {
     const ai = aiDataFor(card);
     const panel = document.createElement("section"); panel.className = "detail-section flow ai-output-panel";
@@ -134,19 +156,19 @@
     titleWrap.append(Object.assign(document.createElement("h3"), { textContent: textFor(card, "title") }), Object.assign(document.createElement("p"), { textContent: textFor(card, "summary") }));
     head.append(titleWrap, Object.assign(document.createElement("p"), { className: "result-count", textContent: `${labels.updated}: ${card.updated_at || labels.noSource}` }));
     detailPanel.append(head);
-    appendListSection(detailPanel, labels.categories, listFor(card, "categories"));
+    appendListSection(detailPanel, labels.categories, listFor(card, "categories").map(categoryLabel));
     appendListSection(detailPanel, labels.audience, listFor(card, "audience"));
     appendListSection(detailPanel, labels.dangerousActions, listFor(card, isJapanese ? "dangerous_actions_ja" : "dangerous_actions"));
     appendListSection(detailPanel, labels.avoidNow, listFor(card, isJapanese ? "avoid_now_ja" : "avoid_now"));
     appendListSection(detailPanel, labels.firstResponse, listFor(card, isJapanese ? "if_you_already_did_ja" : "if_you_already_did"));
     appendListSection(detailPanel, labels.checkFirst, listFor(card, isJapanese ? "check_first_ja" : "check_first"));
-    appendListSection(detailPanel, labels.sources, (card.sources || []).map((s) => `${s.publisher || labels.noSource} (${s.source_type || labels.noSource})`));
+    appendSourceSection(detailPanel, card.sources || []);
     addAiPanel(card);
   };
 
   const applyFilters = () => {
     const query = normalize(els.search && els.search.value).trim(); const category = normalize(els.category && els.category.value); const severity = normalize(els.severity && els.severity.value); const audience = normalize(els.audience && els.audience.value); const sourceType = normalize(els.sourceType && els.sourceType.value);
-    const getSearchBlob = (card) => [card.title, card.title_ja, card.summary, card.summary_ja, ...(card.categories || []), ...(card.audience || []), ...(card.dangerous_actions || []), ...(card.dangerous_actions_ja || []), ...(card.avoid_now || []), ...(card.avoid_now_ja || []), ...((card.sources || []).flatMap((s) => [s.publisher, s.source_type]))].filter(Boolean).join(" ").toLowerCase();
+    const getSearchBlob = (card) => [card.title, card.title_ja, card.summary, card.summary_ja, ...(card.categories || []).map(categoryLabel), ...(card.categories || []), ...(card.audience || []), ...(card.dangerous_actions || []), ...(card.dangerous_actions_ja || []), ...(card.avoid_now || []), ...(card.avoid_now_ja || []), ...((card.sources || []).flatMap((s) => [s.title, s.publisher, s.source_type]))].filter(Boolean).join(" ").toLowerCase();
     state.filtered = state.cards.filter((card) => {
       const categoryValues = listFor(card, "categories").map(normalize); const audienceValues = listFor(card, "audience").map(normalize); const sourceValues = (card.sources || []).map((s) => normalize(s.source_type));
       if (query && !getSearchBlob(card).includes(query)) return false;
@@ -166,7 +188,7 @@
       const item = Object.assign(document.createElement("article"), { className: "threat-card flow" });
       item.append(Object.assign(document.createElement("h3"), { className: "threat-card__title", textContent: textFor(card, "title") }));
       const meta = Object.assign(document.createElement("div"), { className: "threat-card__meta" });
-      meta.append(Object.assign(document.createElement("span"), { className: "label label--severity", textContent: `${labels.severity}: ${card.severity || labels.noSource}` }), Object.assign(document.createElement("span"), { className: "label", textContent: `${labels.categories}: ${listFor(card, "categories").join(", ") || labels.noSource}` }));
+      meta.append(Object.assign(document.createElement("span"), { className: "label label--severity", textContent: `${labels.severity}: ${card.severity || labels.noSource}` }), Object.assign(document.createElement("span"), { className: "label", textContent: `${labels.categories}: ${listFor(card, "categories").map(categoryLabel).join(", ") || labels.noSource}` }));
       item.append(meta, Object.assign(document.createElement("p"), { className: "threat-card__summary", textContent: textFor(card, "summary") }));
       const button = Object.assign(document.createElement("button"), { type: "button", textContent: labels.details }); button.dataset.cardOpen = card.id; item.append(button);
       cardList.append(item);
@@ -185,10 +207,10 @@
       const allCards = [...(Array.isArray(cards) ? cards : []), ...(Array.isArray(approvedCards) ? approvedCards : [])];
       if (allCards.length === 0) { emptyState.hidden = false; emptyState.textContent = labels.noData; return; }
       state.cards = allCards;
-      const catMap = new Map((Array.isArray(categories) ? categories : []).map((c) => [c.id, isJapanese ? c.name_ja || c.name : c.name]));
+      state.categoryLabels = new Map((Array.isArray(categories) ? categories : []).map((c) => [c.id, isJapanese ? c.label_ja || c.label || c.name_ja || c.name : c.label || c.name]));
       const categoryIds = Array.from(new Set(allCards.flatMap((card) => listFor(card, "categories")))).sort();
       const audiences = Array.from(new Set(allCards.flatMap((card) => listFor(card, "audience")))).sort();
-      setOptions(els.category, categoryIds.map((id) => ({ value: id, label: catMap.get(id) ? `${catMap.get(id)} (${id})` : id })), labels.categoryAll);
+      setOptions(els.category, categoryIds.map((id) => ({ value: id, label: categoryLabel(id) })), labels.categoryAll);
       setOptions(els.severity, ["high", "medium", "watch"].map((value) => ({ value, label: value })), labels.all);
       setOptions(els.audience, audiences.map((value) => ({ value, label: value })), labels.audienceAll);
       setOptions(els.sourceType, ["primary", "reference", "signal", "blog"].map((value) => ({ value, label: value })), labels.sourceAll);
