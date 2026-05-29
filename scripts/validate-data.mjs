@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 
 const errors = [];
+let totalCardCount = 0;
 
 function addError(message) {
   errors.push(message);
@@ -46,8 +47,8 @@ function validateAiOutput(value, path) {
   if (!isNonEmptyArray(value.checklist)) addError(`${path}.checklist is required`);
 }
 
-function validateThreats() {
-  const path = "data/threats.json";
+function validateThreatArray(path, options = {}) {
+  const { validateCardShape = true } = options;
   const data = readJson(path);
   if (data === null) return;
 
@@ -56,11 +57,13 @@ function validateThreats() {
     return;
   }
 
-  if (data.length < 1) addError(`${path} must contain at least one card`);
+  totalCardCount += data.length;
+
+  if (!validateCardShape) return;
 
   const ids = new Set();
   const allowedSeverity = new Set(["high", "medium", "watch"]);
-  const allowedSourceTypes = new Set(["primary", "reference", "signal"]);
+  const allowedSourceTypes = new Set(["primary", "reference", "signal", "blog", "official-advisory", "official-project-blog", "reference"]);
 
   data.forEach((card, i) => {
     const p = `${path}[${i}]`;
@@ -103,7 +106,7 @@ function validateThreats() {
         if (!isNonEmptyString(source.url)) addError(`${sp}.url is required`);
         if (!isNonEmptyString(source.publisher)) addError(`${sp}.publisher is required`);
         if (!allowedSourceTypes.has(source.source_type)) {
-          addError(`${sp}.source_type must be one of: primary, reference, signal`);
+          addError(`${sp}.source_type must be one of: primary, reference, signal, blog, official-advisory, official-project-blog`);
         }
       });
     }
@@ -113,6 +116,15 @@ function validateThreats() {
       validateAiOutput(card.ai_output_ja, `${p}.ai_output_ja`);
     }
   });
+}
+
+function validateThreats() {
+  validateThreatArray("data/threats.json");
+  validateThreatArray("data/threats-approved.json");
+
+  if (totalCardCount < 1) {
+    addError("data/threats.json and data/threats-approved.json must contain at least one card in total");
+  }
 }
 
 function validateCategories() {
@@ -180,7 +192,6 @@ function validateSourceTiers() {
     addError(`${path} missing required id: ${id}`);
   }
 }
-
 
 function validateSignalLabels() {
   const path = "data/signal-labels.json";
