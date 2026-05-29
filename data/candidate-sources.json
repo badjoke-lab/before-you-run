@@ -44,17 +44,6 @@
     "trust_note": "Official public advisory feed. Summarize only defensive actions and prioritize developer-relevant items."
   },
   {
-    "id": "pypi-blog",
-    "name": "PyPI Blog",
-    "url": "https://blog.pypi.org/feed/",
-    "source_type": "primary",
-    "source_kind": "official-project-blog",
-    "language": "en",
-    "limit": 8,
-    "default_categories": ["supply-chain", "malicious-packages", "tooling"],
-    "trust_note": "Official Python Package Index blog. Review package and publishing safety items."
-  },
-  {
     "id": "nodejs-blog",
     "name": "Node.js Blog",
     "url": "https://nodejs.org/en/feed/blog.xml",
@@ -74,7 +63,7 @@
     "language": "en",
     "limit": 6,
     "default_categories": ["tooling", "supply-chain"],
-    "trust_note": "Official Ruby news feed. Draft only security/advisory/update-safety items."
+    "trust_note": "Official Ruby news feed. Draft only direct security advisories."
   },
   {
     "id": "rust-blog",
@@ -85,6 +74,6 @@
     "language": "en",
     "limit": 6,
     "default_categories": ["tooling", "supply-chain"],
-    "trust_note": "Official Rust blog feed. Draft only security/advisory/update-safety items."
+    "trust_note": "Official Rust blog feed. Draft only direct security advisories."
   }
 ]
