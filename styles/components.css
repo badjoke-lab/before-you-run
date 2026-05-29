@@ -101,6 +101,36 @@
   color: var(--color-muted);
 }
 
+.display-settings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  align-items: center;
+  margin-top: calc(-1 * var(--space-2));
+}
+
+.display-settings:empty {
+  display: none;
+}
+
+.timezone-control {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  color: var(--color-muted);
+}
+
+.timezone-control select {
+  font: inherit;
+  min-width: 12rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
 .filter-panel {
   display: grid;
   gap: var(--space-3);
