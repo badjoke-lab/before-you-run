@@ -1,0 +1,39 @@
+[
+  {
+    "id": "walkthrough-evidence-unknown-repo",
+    "evidence_type": "url-with-note",
+    "evidence_status": "needs-context",
+    "source_context": "manual-social-signal",
+    "related_signal_id": "walkthrough-social-signal-unknown-repo",
+    "related_candidate_id": "walkthrough-manual-intake-unknown-repo",
+    "platform": "web",
+    "language": "en",
+    "collected_at": "2026-05-29",
+    "observed_at": "2026-05-29",
+    "title": "Example evidence note for unknown repository review",
+    "public_safe_summary": "Placeholder evidence note for a review workflow example.",
+    "screenshot_reference": "",
+    "source_url": "https://example.com/developer-safety-note",
+    "capture_notes": "Example only. No image file is processed or committed.",
+    "redaction": {
+      "needs_redaction": false,
+      "possible_personal_data": false,
+      "possible_secret_data": false,
+      "redaction_notes": "No real private data is included in this placeholder."
+    },
+    "context_review": {
+      "needs_original_source_check": true,
+      "needs_date_check": true,
+      "needs_thread_context": false,
+      "needs_translation": false,
+      "context_notes": "Operator should confirm source date and context before publication."
+    },
+    "verification": {
+      "primary_source_found": false,
+      "reference_source_found": true,
+      "do_not_publish_as_confirmed": true,
+      "verification_notes": "This is a placeholder review item."
+    },
+    "notes": "Walkthrough placeholder evidence."
+  }
+]
