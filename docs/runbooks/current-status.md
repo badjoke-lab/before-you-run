@@ -54,6 +54,7 @@ v0.1 release preparation
 - Downloadable AI rules foundation
 - AGENTS.md / Cursor bundle foundation
 - AI-output validation report
+- AI-output docs/index
 ```
 
 ---
@@ -92,5 +93,5 @@ Tripwire should not publish detailed harmful instructions, private planning note
 ## Next technical step
 
 ```text
-PR-31: Add AI-output docs/index
+PR-32: Add sitemap and robots
 ```

@@ -17,3 +17,8 @@ The build reads `data/category-safety-packs.example.json`, exports reviewed pack
 - `reports/downloadable-ai-rules.example.md`
 
 The workflow does not use AI generation, network access, scraping, automatic publication, or automatic edits to `data/threats.json`.
+
+## See also
+
+- `docs/runbooks/ai-output-index.md`
+- `docs/runbooks/downloadable-ai-rules.md`
