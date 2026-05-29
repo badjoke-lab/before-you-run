@@ -39,7 +39,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -100,7 +105,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "check-install-scripts-first",
@@ -142,7 +151,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -203,7 +217,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "keep-secrets-out-of-prompts",
@@ -245,7 +263,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -306,7 +329,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "avoid-unknown-terminal-commands",
@@ -347,7 +374,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -408,7 +440,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "job-test-repo-untrusted",
@@ -450,7 +486,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -511,7 +552,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "review-curl-pipe-shell",
@@ -552,7 +597,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -613,7 +663,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "review-actions-before-secrets",
@@ -655,7 +709,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -716,7 +775,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "avoid-broad-github-tokens",
@@ -757,7 +820,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -818,7 +886,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "never-share-wallet-seed",
@@ -860,7 +932,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -921,7 +998,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "review-editor-extensions",
@@ -963,7 +1044,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -1024,7 +1110,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "check-postinstall-prepare",
@@ -1065,7 +1155,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -1126,7 +1221,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "dont-upload-env-files",
@@ -1168,7 +1267,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -1229,7 +1333,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "avoid-unknown-npx",
@@ -1271,7 +1379,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -1332,7 +1445,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "review-dockerfiles-first",
@@ -1373,7 +1490,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -1434,7 +1556,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "limit-oauth-app-access",
@@ -1476,7 +1602,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -1537,7 +1668,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "fake-captcha-warning",
@@ -1578,7 +1713,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -1639,7 +1779,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "verify-urgent-security-dms",
@@ -1680,7 +1824,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -1741,7 +1890,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "review-browser-extension-perms",
@@ -1782,7 +1935,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -1843,7 +2001,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "avoid-sensitive-host-script-runs",
@@ -1885,7 +2047,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -1946,7 +2113,11 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   },
   {
     "id": "rotate-exposed-tokens-fast",
@@ -1987,7 +2158,12 @@
         "source_tier": "project",
         "source_type": "reference",
         "published_at": "2026-05-28",
-        "checked_at": "2026-05-28"
+        "checked_at": "2026-05-28",
+        "source_published_original": "2026-05-28",
+        "source_time_precision": "date",
+        "source_published_date": "2026-05-28",
+        "source_timezone": null,
+        "source_timezone_confidence": "unknown"
       }
     ],
     "updated_at": "2026-05-28",
@@ -2048,6 +2224,10 @@
         "必要に応じて隔離/最小権限を適用した",
         "実行前にユーザー確認を行った"
       ]
-    }
+    },
+    "first_seen_at": "2026-05-28",
+    "checked_at": "2026-05-28",
+    "status": "active",
+    "freshness_label": "recent"
   }
 ]
