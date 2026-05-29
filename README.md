@@ -74,6 +74,17 @@ npm run bundles:build
 
 This writes AGENTS.example.md, cursor-rules.example.md, a manifest, and a report. It does not use AI, fetch sources, install editor config, or publish anything automatically.
 
+
+## AI-output validation report
+
+A local AI-output validation report is available for reviewing example assistant outputs.
+
+```bash
+npm run ai-output:validate
+```
+
+This reads local example output samples and writes a Markdown validation report. It does not call AI, fetch sources, generate text, or publish anything automatically.
+
 ## Technical direction
 
 The initial implementation is a static site using HTML, CSS, JavaScript, and JSON data files. Candidate collection and advisory-source integrations are planned for later versions.

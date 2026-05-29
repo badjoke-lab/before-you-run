@@ -1,0 +1,22 @@
+{
+  "required": [
+    "id",
+    "source_type",
+    "category_id",
+    "language",
+    "sample_status",
+    "reviewed_at",
+    "title",
+    "output_text",
+    "expected_result",
+    "review_notes"
+  ],
+  "optional": [
+    "source_path"
+  ],
+  "allowed_values": {
+    "source_type": ["assistant-bundle", "downloadable-rule", "manual-sample", "other"],
+    "sample_status": ["example", "reviewed", "needs-review", "archived"],
+    "expected_result": ["pass", "needs-review", "fail"]
+  }
+}
