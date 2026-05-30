@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tripwire-3gk.pages.dev/sitemap.xml
+Sitemap: https://before-you-run.pages.dev/sitemap.xml
