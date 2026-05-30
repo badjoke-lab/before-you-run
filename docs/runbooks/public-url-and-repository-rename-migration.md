@@ -1,4 +1,4 @@
-# Public URL and repository rename migration note
+# Public URL migration note
 
 Status: planning note  
 Last updated: 2026-05-30
@@ -7,8 +7,8 @@ Last updated: 2026-05-30
 
 ## Purpose
 
-This note records the remaining public URL and repository rename migration plan after PR #51.
-It is intentionally public-safe and does not perform any migration work.
+This note records the remaining public URL migration plan after the repository rename to `badjoke-lab/before-you-run`.
+It is intentionally public-safe and does not perform any hosting migration work.
 
 ---
 
@@ -20,11 +20,20 @@ The public product name is **Before You Run**.
 
 ```text
 - the previous provisional name
-- the current repository identifier
 - the existing Cloudflare Pages URL while it is still in use
 ```
 
 Do not introduce Tripwire as a new public product name in user-facing copy.
+
+---
+
+## Completed manual migration steps
+
+The repository has been renamed to:
+
+```text
+badjoke-lab/before-you-run
+```
 
 ---
 
@@ -33,12 +42,11 @@ Do not introduce Tripwire as a new public product name in user-facing copy.
 These steps are intentionally deferred and must be handled manually in a later migration:
 
 ```text
-- Rename the repository.
 - Change the Cloudflare Pages project or public Pages URL.
 - Choose and confirm the final public URL.
 ```
 
-This note does not rename the repository, change Cloudflare Pages settings, or change the public runtime behavior.
+This note does not change Cloudflare Pages settings or the public runtime behavior.
 
 ---
 
