@@ -1,15 +1,16 @@
 # Pre-migration smoke check
 
-This runbook records the checks to complete before any Pages project or public URL migration for Before You Run.
+This runbook records the checks completed before the public Pages URL migration for Before You Run.
 
 ## Naming boundary
 
 - Public product name: Before You Run
 - Previous provisional name: Tripwire
 - Current repository identifier: badjoke-lab/before-you-run
-- Current public Pages URL: https://tripwire-3gk.pages.dev/
+- Current public Pages URL: https://before-you-run.pages.dev/
+- Previous Pages URL: https://tripwire-3gk.pages.dev/
 
-Do not treat the current Pages URL as the final public brand.
+Use `https://before-you-run.pages.dev/` as the canonical public Pages URL. Keep the previous Pages URL available where possible until redirects or deprecation are handled separately.
 
 ## Before changing URLs
 

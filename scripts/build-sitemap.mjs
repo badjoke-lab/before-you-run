@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const DEFAULT_SITE_URL = "https://tripwire-3gk.pages.dev";
+const DEFAULT_SITE_URL = "https://before-you-run.pages.dev";
 const LASTMOD = "2026-05-29";
 const CHANGEFREQ = "weekly";
 const SITEMAP_PATH = "sitemap.xml";
@@ -131,7 +131,7 @@ function renderRobots(baseUrl) {
 
 function renderReport(baseUrl, urls) {
   return `${[
-    "# Tripwire Sitemap Report",
+    "# Before You Run Sitemap Report",
     "",
     `Base URL: ${baseUrl}  `,
     "Network access: false",
