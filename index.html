@@ -1,2 +1,112 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Before You Run</title><meta name="description" content="Developer safety cards for source-linked warnings and AI/agent safety prompts." /><meta property="og:title" content="Before You Run" /><meta property="og:description" content="Developer safety cards for source-linked warnings and AI/agent safety prompts." /><meta property="og:type" content="website" /><meta name="twitter:card" content="summary" /><link rel="stylesheet" href="styles/theme.css" /><link rel="stylesheet" href="styles/base.css" /><link rel="stylesheet" href="styles/layout.css" /><link rel="stylesheet" href="styles/components.css" /><link rel="stylesheet" href="styles/utilities.css" /><script src="app.js" defer></script><script src="timezone-layout.js" defer></script></head><body><a class="skip-link" href="#main-content">Skip to main content</a><header class="site-header"><div class="wrapper cluster header-inner"><a href="/" class="site-title">Before You Run</a><nav aria-label="Primary"><ul class="nav-list cluster" role="list"><li><a href="/">Home</a></li><li><a href="/cards/">Cards</a></li><li><a href="/categories/">Categories</a></li><li><a href="/checklists.html">Checklists</a></li><li><a href="/commands.html">Commands</a></li><li><a href="/after-incident.html">After Incident</a></li><li><a href="/sources.html">Sources</a></li><li><a href="/ai-rules/">AI Rules</a></li><li><a href="/ja/" lang="ja">Japanese</a></li></ul></nav></div></header><main id="main-content" class="site-main"><div class="wrapper stack"><section class="hero stack"><p class="badge">v0.1 MVP foundation</p><h1>Before You Run</h1><p>Developer safety cards for source-linked warnings and AI/agent safety prompts.</p></section><section class="panel flow" aria-labelledby="tracks-title"><h2 id="tracks-title">What Before You Run tracks</h2><p>Before You Run highlights development actions that can cause stability or trust problems if handled carelessly.</p></section><section class="panel flow" aria-labelledby="cards-preview-title"><div class="section-heading"><div><p class="badge">Preview</p><h2 id="cards-preview-title">Risky-action cards</h2></div><p class="section-note">Seed cards for the v0.1 data model.</p></div><section class="display-settings" aria-label="Display settings" data-timezone-controls></section><section class="panel flow" aria-labelledby="card-controls-title"><div class="section-heading"><div><p class="badge">Explore</p><h3 id="card-controls-title">Find risky-action cards</h3></div><p class="section-note">Search and filter the seed card data.</p></div><form class="filter-panel" data-card-controls><label>Search <input type="search" data-card-search placeholder="Search cards..." /></label><label>Category <select data-card-category></select></label><label>Severity <select data-card-severity></select></label><label>Audience <select data-card-audience></select></label><label>Source type <select data-card-source-type></select></label><button type="button" data-card-reset>Reset filters</button></form><p class="result-count" data-card-count></p></section><div id="card-list" class="card-grid" data-card-list></div><p class="empty-state" data-card-empty hidden>Card data is not available yet.</p></section><section class="panel flow" data-card-detail hidden></section></div></main><footer class="site-footer"><div class="wrapper cluster footer-inner"><p>&copy; <span data-current-year>2026</span> Before You Run</p><p><a href="/ja/" lang="ja">日本語ページ</a></p></div></footer></body></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Before You Run</title>
+    <meta
+      name="description"
+      content="Developer safety cards for risky actions, source-linked warnings, and AI/agent safety prompts."
+    />
+    <meta property="og:title" content="Before You Run" />
+    <meta
+      property="og:description"
+      content="Developer safety cards for risky actions, source-linked warnings, and AI/agent safety prompts."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/utilities.css" />
+    <script src="app.js" defer></script>
+    <script src="timezone-layout.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="wrapper cluster header-inner">
+        <a href="/" class="site-title">Before You Run</a>
+        <nav aria-label="Primary">
+          <ul class="nav-list cluster" role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/cards/">Cards</a></li>
+            <li><a href="/categories/">Categories</a></li>
+            <li><a href="/checklists.html">Checklists</a></li>
+            <li><a href="/commands.html">Commands</a></li>
+            <li><a href="/after-incident.html">After Incident</a></li>
+            <li><a href="/sources.html">Sources</a></li>
+            <li><a href="/ai-rules/">AI Rules</a></li>
+            <li><a href="/ja/" lang="ja">Japanese</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="site-main">
+      <div class="wrapper stack">
+        <section class="hero stack">
+          <p class="badge">v0.1 MVP foundation</p>
+          <h1>Before You Run</h1>
+          <p>
+            Developer safety cards for risky actions, source-linked warnings, and AI/agent safety prompts.
+          </p>
+        </section>
+
+        <section class="panel flow" aria-labelledby="tracks-title">
+          <h2 id="tracks-title">What Before You Run tracks</h2>
+          <p>
+            Before You Run highlights development actions that can cause security, stability, or trust problems if handled carelessly.
+          </p>
+        </section>
+
+        <section class="panel flow" aria-labelledby="cards-preview-title">
+          <div class="section-heading">
+            <div>
+              <p class="badge">Preview</p>
+              <h2 id="cards-preview-title">Risky-action cards</h2>
+            </div>
+            <p class="section-note">Seed cards for the v0.1 data model.</p>
+          </div>
+
+          <section class="display-settings" aria-label="Display settings" data-timezone-controls></section>
+
+          <section class="panel flow" aria-labelledby="card-controls-title">
+            <div class="section-heading">
+              <div>
+                <p class="badge">Explore</p>
+                <h3 id="card-controls-title">Find risky-action cards</h3>
+              </div>
+              <p class="section-note">Search and filter the seed card data.</p>
+            </div>
+
+            <form class="filter-panel" data-card-controls>
+              <label>Search <input type="search" data-card-search placeholder="Search cards..." /></label>
+              <label>Category <select data-card-category></select></label>
+              <label>Severity <select data-card-severity></select></label>
+              <label>Audience <select data-card-audience></select></label>
+              <label>Source type <select data-card-source-type></select></label>
+              <button type="button" data-card-reset>Reset filters</button>
+            </form>
+
+            <p class="result-count" data-card-count></p>
+          </section>
+
+          <div id="card-list" class="card-grid" data-card-list></div>
+          <p class="empty-state" data-card-empty hidden>Card data is not available yet.</p>
+        </section>
+
+        <section class="panel flow" data-card-detail hidden></section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrapper cluster footer-inner">
+        <p>&copy; <span data-current-year>2026</span> Before You Run</p>
+        <p><a href="/ja/" lang="ja">日本語ページ</a></p>
+      </div>
+    </footer>
+  </body>
+</html>

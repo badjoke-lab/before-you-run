@@ -1,4 +1,4 @@
-# Tripwire Current Status
+# Before You Run Current Status
 
 Status: public project status  
 Last updated: 2026-05-29
@@ -7,7 +7,7 @@ Last updated: 2026-05-29
 
 ## Project overview
 
-Tripwire is a provisional developer-safety information project for beginner and indie developers.
+Before You Run is a developer-safety information project for beginner and indie developers.
 
 The v0.1 MVP is designed around public-safe risky-action cards. Each card explains what to avoid, what to check first, safer alternatives, and source links.
 
@@ -64,7 +64,7 @@ v0.1 release preparation
 
 ## Current public content boundary
 
-Tripwire may publish:
+Before You Run may publish:
 
 ```text
 - Risk categories
@@ -78,7 +78,7 @@ Tripwire may publish:
 - AI or agent safety prompts for safer development workflows
 ```
 
-Tripwire should not publish detailed harmful instructions, private planning notes, or unverified claims as facts.
+Before You Run should not publish detailed harmful instructions, private planning notes, or unverified claims as facts.
 
 ---
 

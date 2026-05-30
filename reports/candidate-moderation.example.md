@@ -1,4 +1,4 @@
-# Tripwire Candidate Moderation Report
+# Before You Run Candidate Moderation Report
 
 Input: data/manual-intake.example.json  
 Network access: false

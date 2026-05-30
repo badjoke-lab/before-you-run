@@ -1,13 +1,13 @@
-# Tripwire Time Policy
+# Before You Run Time Policy
 
 Status: Draft
 Document type: MVP specification addendum
-Applies to: Tripwire v0.1 and later
+Applies to: Before You Run v0.1 and later
 Last updated: 2026-05-29
 
 ## Core policy
 
-Tripwire stores internal timestamps in UTC ISO 8601 format.
+Before You Run stores internal timestamps in UTC ISO 8601 format.
 
 Default display timezone is UTC.
 
@@ -53,7 +53,7 @@ The timezone setting does not require login, GPS, IP location, or server-side us
 
 ## Conversion rules
 
-Tripwire-generated timestamps may be converted to the selected display timezone.
+Before You Run-generated timestamps may be converted to the selected display timezone.
 
 Source timestamps may be converted only when the original timezone is known.
 

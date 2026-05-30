@@ -7,7 +7,7 @@ Last updated: 2026-05-28
 
 ## Purpose
 
-The screenshot/manual evidence flow gives Tripwire reviewers a public-safe way to record references to screenshots and manually observed evidence notes during Phase 3 review.
+The screenshot/manual evidence flow gives Before You Run reviewers a public-safe way to record references to screenshots and manually observed evidence notes during Phase 3 review.
 
 This workflow is for local review notes only. Screenshot references and manual notes can help reviewers remember what was observed, but they are not confirmation of a claim by themselves.
 

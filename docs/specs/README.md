@@ -1,6 +1,6 @@
-# Tripwire Specs
+# Before You Run Specs
 
-This directory contains public-safe MVP specification documents for Tripwire.
+This directory contains public-safe MVP specification documents for Before You Run.
 
 ## Core documents
 
@@ -9,4 +9,4 @@ This directory contains public-safe MVP specification documents for Tripwire.
 
 ## Time policy summary
 
-Tripwire stores internal timestamps in UTC ISO 8601 format, displays UTC by default, and allows users to choose a display timezone. Source times preserve their original precision, and date-only source values remain date-only.
+Before You Run stores internal timestamps in UTC ISO 8601 format, displays UTC by default, and allows users to choose a display timezone. Source times preserve their original precision, and date-only source values remain date-only.

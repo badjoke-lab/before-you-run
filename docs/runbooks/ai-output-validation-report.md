@@ -2,9 +2,9 @@
 
 ## Purpose
 
-The AI-output validation report provides a local review gate for example assistant outputs before they are reused in Tripwire docs, downloadable bundles, or public guidance.
+The AI-output validation report provides a local review gate for example assistant outputs before they are reused in Before You Run docs, downloadable bundles, or public guidance.
 
-Use it to check whether example AI-facing text stays inside Tripwire's defensive, public-safe content boundary.
+Use it to check whether example AI-facing text stays inside Before You Run's defensive, public-safe content boundary.
 
 ## What the report does
 

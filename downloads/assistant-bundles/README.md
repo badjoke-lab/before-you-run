@@ -1,6 +1,6 @@
-# Tripwire Assistant Bundles
+# Before You Run Assistant Bundles
 
-This directory contains local example assistant configuration bundles generated from reviewed Tripwire downloadable AI rules.
+This directory contains local example assistant configuration bundles generated from reviewed Before You Run downloadable AI rules.
 
 Generate the examples with:
 

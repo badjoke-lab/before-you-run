@@ -1,4 +1,4 @@
-# Tripwire Publish Review Report
+# Before You Run Publish Review Report
 
 Input: data/publish-review-checklist.example.json  
 Network access: false  

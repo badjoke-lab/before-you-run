@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The candidate moderation report is a local decision-aid document for Tripwire Phase 2 operations. It helps reviewers triage manual intake items and decide whether each item should be accepted, held, rejected, translated, source-checked, or safety-rewritten.
+The candidate moderation report is a local decision-aid document for Before You Run Phase 2 operations. It helps reviewers triage manual intake items and decide whether each item should be accepted, held, rejected, translated, source-checked, or safety-rewritten.
 
 ## Boundaries
 

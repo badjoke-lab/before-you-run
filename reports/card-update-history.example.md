@@ -1,4 +1,4 @@
-# Tripwire Card Update History Report
+# Before You Run Card Update History Report
 
 Input: data/card-update-history.example.json  
 Network access: false

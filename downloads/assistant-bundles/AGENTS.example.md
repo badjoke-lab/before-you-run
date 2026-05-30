@@ -1,6 +1,6 @@
-# Tripwire Assistant Rules
+# Before You Run Assistant Rules
 
-Generated from reviewed Tripwire AI rules.
+Generated from reviewed Before You Run AI rules.
 
 Network access: false  
 AI generation: false  

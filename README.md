@@ -4,11 +4,13 @@ Before You Run is a developer-safety information project for beginner and indie 
 
 Previous provisional name: Tripwire.
 
+The project focuses on public-safe risky-action cards: what to avoid, what to check first, safer alternatives, source links, and AI/agent safety prompts for development workflows.
+
 ## Current status
 
 Current phase: v0.1 MVP release preparation.
 
-The repository currently includes the v0.1 static site foundation, data-driven safety cards, search/filter/detail behavior, AI/agent copy actions, utility pages, license files, and JSON validation.
+The repository currently includes the v0.1 static site foundation, data-driven risky-action cards, search/filter/detail behavior, AI/agent copy actions, utility pages, license files, and JSON validation.
 
 The public MVP specification is available at:
 
@@ -23,7 +25,7 @@ The v0.1 MVP provides:
 ```text
 - English root page
 - Japanese /ja/ page
-- Safety card list
+- Risky-action card list
 - Card detail view
 - Search and filters
 - Source URL display
@@ -39,24 +41,300 @@ The v0.1 MVP provides:
 
 ## Public content boundary
 
-Before You Run is defensive and educational. Public content should focus on beginner-safe explanations, what to check first, safer alternatives, source links, confidence/freshness/severity labels, and public-safe summaries.
+Before You Run is defensive and educational. Public content should focus on:
+
+```text
+- Risk categories
+- Beginner-safe explanations
+- What to avoid
+- Safer alternatives
+- Source links
+- Confidence / freshness / severity labels
+- Public-safe summaries
+```
 
 Before You Run should not publish offensive operational detail, unverified claims as facts, or private planning notes.
 
-## Local commands
+## AI-output workflow
+
+Before You Run includes local AI-output workflows for defensive safety packs, downloadable AI rules, assistant bundle examples, and AI-output validation.
+
+See:
+
+- `docs/runbooks/ai-output-index.md`
+
+Main commands:
 
 ```bash
-npm run check
-node --check app.js
+npm run packs:report
+npm run rules:build
+npm run bundles:build
+npm run ai-output:validate
+```
+
+These workflows are local and do not use AI, fetch sources, publish cards, or modify `data/threats.json` automatically.
+
+
+## Local operator workflow
+
+Before You Run supports a local manual operator workflow for real review data.
+
+```bash
+npm run operator:setup
+npm run operator:run
+```
+
+`operator:setup` creates ignored local working files from tracked templates.
+
+`operator:run` runs the local review reports against those local files.
+
+Local operator files are not committed by default:
+
+```text
+data/*.local.json
+reports/*.local.md
+```
+
+This workflow does not fetch sources, use social APIs, run AI, process screenshots, publish cards, or modify `data/threats.json` automatically.
+
+## One-item local workflow walkthrough
+
+A tracked one-item walkthrough is available to demonstrate the local review flow without using real claims or private data.
+
+Command: npm run walkthrough:run
+
+This runs the local review pipeline against safe placeholder walkthrough data and writes ignored local walkthrough reports. It does not modify public card data or publish cards.
+## Downloadable AI rules
+
+Reviewed category safety packs can be exported locally as Markdown AI rule files.
+
+```bash
+npm run rules:build
+```
+
+This reads local reviewed safety pack examples and writes Markdown rule files plus a manifest. It does not use AI, fetch sources, modify cards, or publish anything automatically.
+
+## Assistant bundles
+
+Reviewed downloadable AI rules can be combined into local assistant bundle examples.
+
+```bash
+npm run bundles:build
+```
+
+This writes AGENTS.example.md, cursor-rules.example.md, a manifest, and a report. It does not use AI, fetch sources, install editor config, or publish anything automatically.
+
+
+## AI-output validation report
+
+A local AI-output validation report is available for reviewing example assistant outputs.
+
+```bash
+npm run ai-output:validate
+```
+
+This reads local example output samples and writes a Markdown validation report. It does not call AI, fetch sources, generate text, or publish anything automatically.
+
+## Sitemap and robots
+
+The static sitemap and robots files can be regenerated locally without changing runtime UI behavior.
+
+```bash
+npm run sitemap:build
+```
+
+Use `SITE_URL` to generate the sitemap for a custom domain later:
+
+```bash
+SITE_URL="https://example.com" npm run sitemap:build
 ```
 
 ## Technical direction
 
 The initial implementation is a static site using HTML, CSS, JavaScript, and JSON data files. Candidate collection and advisory-source integrations are planned for later versions.
 
+## Candidate source metadata
+
+Before You Run includes public-safe source metadata for future candidate collection. Automated collection is not active in v0.1.
+
+
+## Candidate digest skeleton
+
+A local manual candidate digest builder is available for future v0.2 workflows.
+
+```bash
+npm run digest:build
+```
+
+This uses example candidate data and does not fetch external sources.
+
+## Candidate review queue
+
+A local review queue example is available for future v0.2 workflows.
+
+```bash
+npm run queue:digest
+```
+
+This generates a review digest from local example data only.
+
+
+## Card draft pipeline
+
+A local candidate-to-card draft builder is available for future v0.2 workflows.
+
+```bash
+npm run drafts:build
+```
+
+This creates draft card JSON and a Markdown report from local review queue example data. Drafts are not published automatically.
+
+
+
+
+## Intake runner skeleton
+
+A local no-network intake runner skeleton is available for future Phase 2 workflows.
+
+```bash
+npm run intake:run
+```
+
+This processes local example intake data only. It does not fetch RSS feeds or call external APIs.
+
+## Manual intake format
+
+Before You Run includes a local manual intake format for URLs, article notes, social links, screenshot references, and manual notes.
+
+```bash
+npm run intake:run
+```
+
+Manual intake data is local example data only and does not publish candidates or cards automatically.
+
+## Candidate moderation report
+
+A local candidate moderation report builder is available for Phase 2 review workflows.
+
+```bash
+npm run moderation:report
+```
+
+This reads local manual intake example data and writes a Markdown moderation report. It does not publish candidates or cards.
+
+
+## Freshness / severity helper
+
+A local freshness and severity helper report is available for Phase 2 review workflows.
+
+```bash
+npm run freshness:report
+```
+
+This reads local manual intake example data and writes a Markdown helper report. It does not verify truth, fetch sources, or publish candidates/cards.
+
+
+## Duplicate detection
+
+A local duplicate detection report is available for manual intake review.
+
+```bash
+npm run duplicates:report
+```
+
+This checks local manual intake data only and does not fetch external sources.
+
+
+## Source credibility helper
+
+A local source credibility helper report is available for Phase 2 review workflows.
+
+```bash
+npm run credibility:report
+```
+
+This reads local manual intake example data and writes a Markdown helper report. It does not verify truth, fetch sources, or publish candidates/cards.
+
+
+## Card update history
+
+A local card update history report is available for Phase 2 editorial workflows.
+
+```bash
+npm run history:report
+```
+
+This reads local example update history data and writes a Markdown report. It does not modify published cards automatically.
+
+
+## Publish review workflow
+
+A local publish review report is available for Phase 2 editorial workflows.
+
+```bash
+npm run publish:report
+```
+
+This reads local example publish review data and writes a Markdown report. It does not publish or modify cards automatically.
+
+## Manual social signal ingestion
+
+A local manual social signal report is available for Phase 3 workflows covering X, Bluesky, Mastodon, and other manually collected social signals.
+
+```bash
+npm run social:report
+```
+
+This reads local example social signal data and writes a Markdown report. It does not use social APIs, perform live fetches, scrape websites, or publish candidates/cards automatically. Social signals do not publish cards automatically.
+
+## Screenshot / manual evidence flow
+
+A local evidence report is available for screenshot references and manual evidence notes.
+
+```bash
+npm run evidence:report
+```
+
+This reads local example evidence data and writes a Markdown report. It does not process images, run OCR, fetch sources, or publish candidates/cards automatically.
+
+
+## Signal verification queue
+
+A local signal verification queue report is available for Phase 3 workflows.
+
+```bash
+npm run verify:report
+```
+
+This reads local example verification queue data and writes a Markdown report. It does not fetch sources, use social APIs, process images, or publish candidates/cards automatically.
+
+
+## Category safety packs
+
+A local category safety pack report is available for Phase 4 AI-facing defensive guidance workflows.
+
+```bash
+npm run packs:report
+```
+
+This reads local example safety pack data and writes a Markdown report. It does not use AI, fetch sources, publish cards, or generate downloadable bundles automatically.
+
+## Signal labels
+
+Before You Run includes confidence, freshness, and severity-hint label definitions for candidate review workflows. These labels are editorial aids and do not automatically publish or confirm candidate items.
+
 ## License
 
 ```text
 Code: MIT License
-Editorial content, cards, translations, checklists, incident guides, and AI safety rules: CC BY-NC 4.0
+Editorial content, threat cards, translations, checklists, incident guides, and AI safety rules: CC BY-NC 4.0
+```
+
+## Validation
+
+Run:
+
+```bash
+npm run check
+node --check app.js
 ```

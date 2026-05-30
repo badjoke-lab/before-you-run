@@ -7,7 +7,7 @@ Last updated: 2026-05-28
 
 ## Purpose
 
-Tripwire assistant bundles provide reviewable AGENTS.md and Cursor rules examples for defensive AI-assistant configuration. The examples combine reviewed downloadable AI rules into local files that can be inspected before any manual use in a real assistant or editor setup.
+Before You Run assistant bundles provide reviewable AGENTS.md and Cursor rules examples for defensive AI-assistant configuration. The examples combine reviewed downloadable AI rules into local files that can be inspected before any manual use in a real assistant or editor setup.
 
 ---
 

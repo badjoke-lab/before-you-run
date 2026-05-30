@@ -7,7 +7,7 @@ Last updated: 2026-05-28
 
 ## Purpose
 
-Manual social signal ingestion gives Tripwire reviewers a public-safe way to record X, Bluesky, Mastodon, and other SNS-derived observations as low-tier signal inputs before any candidate or card review. It is intended for early triage only: a social post, link, screenshot reference, or manual note may suggest that an item deserves review, but it does not confirm that the underlying claim is true.
+Manual social signal ingestion gives Before You Run reviewers a public-safe way to record X, Bluesky, Mastodon, and other SNS-derived observations as low-tier signal inputs before any candidate or card review. It is intended for early triage only: a social post, link, screenshot reference, or manual note may suggest that an item deserves review, but it does not confirm that the underlying claim is true.
 
 This workflow supports local editorial organization without adding automated social collection.
 

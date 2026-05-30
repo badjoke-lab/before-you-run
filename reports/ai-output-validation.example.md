@@ -1,4 +1,4 @@
-# Tripwire AI Output Validation Report
+# Before You Run AI Output Validation Report
 
 Input: data/ai-output-samples.example.json  
 Network access: false  

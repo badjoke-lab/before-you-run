@@ -1,4 +1,4 @@
-# Tripwire Signal Verification Queue Report
+# Before You Run Signal Verification Queue Report
 
 Input: data/signal-verification-queue.example.json  
 Network access: false  

@@ -1,4 +1,4 @@
-# Tripwire Category Safety Packs Report
+# Before You Run Category Safety Packs Report
 
 Input: data/category-safety-packs.example.json  
 Network access: false  

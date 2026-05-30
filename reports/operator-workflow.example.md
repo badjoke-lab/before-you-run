@@ -1,4 +1,4 @@
-# Tripwire Local Operator Workflow Report
+# Before You Run Local Operator Workflow Report
 
 Network access: false  
 AI generation: false  

@@ -7,7 +7,7 @@ Network access: false
 
 ## Purpose
 
-The source credibility helper gives Tripwire reviewers a local Markdown report for manual intake items before those items move into candidate review.
+The source credibility helper gives Before You Run reviewers a local Markdown report for manual intake items before those items move into candidate review.
 
 The helper is an editorial aid. It highlights source type, source kind, confidence, and source-check warnings so reviewers can decide whether an item needs stronger source checking.
 

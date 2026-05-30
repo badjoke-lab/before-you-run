@@ -1,4 +1,4 @@
-# Tripwire Downloadable AI Rules Report
+# Before You Run Downloadable AI Rules Report
 
 Input: data/category-safety-packs.example.json  
 Output directory: downloads/ai-rules  

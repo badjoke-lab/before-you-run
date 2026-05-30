@@ -1,4 +1,4 @@
-# Tripwire Source Credibility Report
+# Before You Run Source Credibility Report
 
 Input: data/manual-intake.example.json  
 Network access: false

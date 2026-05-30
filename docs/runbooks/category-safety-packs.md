@@ -7,7 +7,7 @@ Last updated: 2026-05-28
 
 ## Purpose
 
-Category safety packs are local, AI-facing defensive guidance bundles for Tripwire category workflows. They describe how an AI assistant should discuss a risk category in beginner-safe, public-safe language.
+Category safety packs are local, AI-facing defensive guidance bundles for Before You Run category workflows. They describe how an AI assistant should discuss a risk category in beginner-safe, public-safe language.
 
 The packs are intended to support future reviewed AI rule exports. They are not final downloadable bundles in this PR.
 

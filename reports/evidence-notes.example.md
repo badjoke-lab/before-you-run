@@ -1,4 +1,4 @@
-# Tripwire Screenshot / Manual Evidence Report
+# Before You Run Screenshot / Manual Evidence Report
 
 Input: data/evidence-notes.example.json  
 Network access: false  

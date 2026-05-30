@@ -1,4 +1,4 @@
-# Tripwire Candidate Digest
+# Before You Run Candidate Digest
 
 Date: 2026-05-28  
 Source: data/manual-candidates.example.json

@@ -1,4 +1,4 @@
-# Tripwire Assistant Bundles Report
+# Before You Run Assistant Bundles Report
 
 Input manifest: downloads/ai-rules/manifest.example.json  
 Output directory: downloads/assistant-bundles  

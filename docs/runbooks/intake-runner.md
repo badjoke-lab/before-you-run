@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This intake runner is a local, no-network skeleton for Tripwire Phase 2 preparation.
+This intake runner is a local, no-network skeleton for Before You Run Phase 2 preparation.
 
 It reads local manual intake example items and produces local example run outputs only.
 

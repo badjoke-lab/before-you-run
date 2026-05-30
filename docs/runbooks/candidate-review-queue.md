@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The candidate review queue is a local, public-safe staging format for manually collected candidate items in Tripwire v0.2 planning.
+The candidate review queue is a local, public-safe staging format for manually collected candidate items in Before You Run v0.2 planning.
 
 It helps reviewers evaluate whether a candidate can become a defensive card draft without exposing unsafe detail.
 
@@ -68,7 +68,7 @@ A candidate is publishable only after:
 - source quality is verified (especially for signal-only inputs),
 - wording is defensive and beginner-safe,
 - summary avoids unsafe operational detail,
-- relevance maps clearly to a Tripwire what-to-avoid card,
+- relevance maps clearly to a Before You Run what-to-avoid card,
 - confidence/freshness/severity labels are coherent.
 
 ## What blocks publication

@@ -7,7 +7,7 @@ Last updated: 2026-05-29
 
 ## Purpose
 
-Tripwire publishes a static `sitemap.xml` and `robots.txt` to make public pages easier for search and discovery tools to find.
+Before You Run publishes a static `sitemap.xml` and `robots.txt` to make public pages easier for search and discovery tools to find.
 
 The sitemap lists the public static pages that are intended for discovery. The robots file allows crawling and points crawlers to the sitemap URL.
 
@@ -21,7 +21,7 @@ The current default base URL is the temporary Cloudflare Pages URL:
 https://tripwire-3gk.pages.dev
 ```
 
-When Tripwire adds a custom domain, set `SITE_URL` while rebuilding the files.
+When Before You Run adds a custom domain, set `SITE_URL` while rebuilding the files.
 
 ```bash
 SITE_URL="https://example.com" npm run sitemap:build

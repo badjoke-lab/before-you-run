@@ -1,6 +1,6 @@
-# Tripwire downloadable AI rules
+# Before You Run downloadable AI rules
 
-This directory contains example Markdown AI rule files generated locally from reviewed Tripwire category safety packs.
+This directory contains example Markdown AI rule files generated locally from reviewed Before You Run category safety packs.
 
 The generated files are intended to help AI assistants provide defensive, beginner-safe guidance. They are public-safe examples only and are not a replacement for human review.
 
