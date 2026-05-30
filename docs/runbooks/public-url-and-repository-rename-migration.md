@@ -1,14 +1,14 @@
 # Public URL migration note
 
-Status: planning note  
+Status: active migration note  
 Last updated: 2026-05-30
 
 ---
 
 ## Purpose
 
-This note records the remaining public URL migration plan after the repository rename to `badjoke-lab/before-you-run`.
-It is intentionally public-safe and does not perform any hosting migration work.
+This note records the public URL migration after the repository rename to `badjoke-lab/before-you-run` and the creation of the new Cloudflare Pages URL.
+It is intentionally public-safe and does not change hosting settings by itself.
 
 ---
 
@@ -20,7 +20,7 @@ The public product name is **Before You Run**.
 
 ```text
 - the previous provisional name
-- the existing Cloudflare Pages URL while it is still in use
+- the previous Cloudflare Pages URL while it is still reachable
 ```
 
 Do not introduce Tripwire as a new public product name in user-facing copy.
@@ -35,24 +35,36 @@ The repository has been renamed to:
 badjoke-lab/before-you-run
 ```
 
----
-
-## Deferred manual migration steps
-
-These steps are intentionally deferred and must be handled manually in a later migration:
+The canonical public Pages URL is now:
 
 ```text
-- Change the Cloudflare Pages project or public Pages URL.
-- Choose and confirm the final public URL.
+https://before-you-run.pages.dev/
+```
+
+The previous Pages URL was:
+
+```text
+https://tripwire-3gk.pages.dev/
+```
+
+---
+
+## Remaining manual migration steps
+
+These steps are intentionally deferred and must be handled separately:
+
+```text
+- Decide whether the previous Pages URL should remain available or redirect elsewhere.
+- If a custom domain is added later, update canonical references after it is confirmed.
 ```
 
 This note does not change Cloudflare Pages settings or the public runtime behavior.
 
 ---
 
-## Pre-change URL smoke check
+## Post-change URL smoke check
 
-Before any public URL or Pages URL change, verify that the current site loads at these paths:
+After any public URL or Pages URL change, verify that the current site loads at these paths:
 
 ```text
 /
@@ -67,6 +79,4 @@ Record the checked URL, date, and result in the later migration PR or manual mig
 
 ## Sitemap and robots timing
 
-Do not regenerate `sitemap.xml` or `robots.txt` during this planning step.
-
-Regenerate the sitemap and robots files only after the final public URL is chosen and ready to be used as the canonical public URL.
+Use `https://before-you-run.pages.dev/` for `sitemap.xml`, `robots.txt`, and generated sitemap reports until a custom domain is confirmed.
