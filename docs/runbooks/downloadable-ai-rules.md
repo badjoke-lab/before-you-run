@@ -7,7 +7,7 @@ Last updated: 2026-05-28
 
 ## Purpose
 
-Downloadable AI rules provide a local Markdown export format for reviewed Tripwire category safety packs. The files are meant to help AI assistants keep guidance defensive, beginner-safe, and aligned with reviewed safety boundaries.
+Downloadable AI rules provide a local Markdown export format for reviewed Before You Run category safety packs. The files are meant to help AI assistants keep guidance defensive, beginner-safe, and aligned with reviewed safety boundaries.
 
 Generated rules are public-safe examples and are not a replacement for human review.
 

@@ -1,4 +1,4 @@
-# Tripwire Manual Social Signal Report
+# Before You Run Manual Social Signal Report
 
 Input: data/social-signals.example.json  
 Network access: false  

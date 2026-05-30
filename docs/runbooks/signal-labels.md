@@ -7,7 +7,7 @@ Last updated: 2026-05-28
 
 ## Purpose
 
-Tripwire uses three optional signal labels in candidate workflows:
+Before You Run uses three optional signal labels in candidate workflows:
 
 - **confidence**
 - **freshness**

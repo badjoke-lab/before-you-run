@@ -1,6 +1,6 @@
 # Manual Intake File Format
 
-This runbook defines how to prepare local manual intake JSON files for Tripwire Phase 2 workflows.
+This runbook defines how to prepare local manual intake JSON files for Before You Run Phase 2 workflows.
 
 ## Purpose
 
@@ -83,7 +83,7 @@ Optional fields are useful for moderation handoff:
 
 ## Screenshot handling
 
-Tripwire does not process screenshots automatically in this workflow. If a screenshot is relevant, store it manually and reference it with `screenshot_reference`.
+Before You Run does not process screenshots automatically in this workflow. If a screenshot is relevant, store it manually and reference it with `screenshot_reference`.
 
 ## Review flags
 

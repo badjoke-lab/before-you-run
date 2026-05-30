@@ -2,7 +2,7 @@
 
 ## Scope
 
-Tripwire v0.2 candidate collection is not active yet. This runbook and related metadata are preparation only.
+Before You Run v0.2 candidate collection is not active yet. This runbook and related metadata are preparation only.
 
 ## Purpose
 

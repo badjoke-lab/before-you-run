@@ -1,4 +1,4 @@
-# Tripwire Cursor Rules Example
+# Before You Run Cursor Rules Example
 
 Use these rules as a reviewable starting point before copying into editor-specific configuration.
 

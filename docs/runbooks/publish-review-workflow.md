@@ -7,7 +7,7 @@ Last updated: 2026-05-28
 
 ## Purpose
 
-The publish/review workflow is the final local editorial gate before a draft or candidate is manually promoted into published Tripwire card data.
+The publish/review workflow is the final local editorial gate before a draft or candidate is manually promoted into published Before You Run card data.
 
 This workflow helps reviewers confirm that candidate material is sourced, public-safe, non-duplicative, fresh enough to be useful, severity-checked, credible, translation-reviewed when needed, and free of unchecked AI output before any manual publication step.
 

@@ -1,6 +1,6 @@
 # Candidate Digest (Manual Skeleton)
 
-This runbook describes the local/manual candidate digest skeleton for Tripwire v0.2 planning.
+This runbook describes the local/manual candidate digest skeleton for Before You Run v0.2 planning.
 
 ## Scope
 

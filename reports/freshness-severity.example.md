@@ -1,4 +1,4 @@
-# Tripwire Freshness / Severity Helper Report
+# Before You Run Freshness / Severity Helper Report
 
 Input: data/manual-intake.example.json  
 Network access: false

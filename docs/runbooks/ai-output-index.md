@@ -1,6 +1,6 @@
-# Tripwire AI-output workflow index
+# Before You Run AI-output workflow index
 
-Tripwire AI-output workflows are local, review-based, and defensive by default.
+Before You Run AI-output workflows are local, review-based, and defensive by default.
 
 They do not use AI generation, network requests, scraping, automatic publication, or automatic edits to `data/threats.json`.
 

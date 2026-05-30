@@ -1,7 +1,7 @@
-# Tripwire MVP仕様書 v0.1
+# Before You Run MVP仕様書 v0.1
 
 Status: Draft  
-Project title: Tripwire（仮）  
+Project title: Before You Run
 Document type: Public-safe MVP specification  
 Target release: v0.1  
 Last updated: 2026-05-28
@@ -10,7 +10,7 @@ Last updated: 2026-05-28
 
 ## 1. 目的
 
-Tripwire（仮）は、初心者・個人開発者・AIコーディング利用者が、日々の開発作業で避けるべき危険行動を確認できる情報サイトである。
+Before You Runは、初心者・個人開発者・AIコーディング利用者が、日々の開発作業で避けるべき危険行動を確認できる情報サイトである。
 
 本サイトは、セキュリティ専門家向けの脆弱性DBや攻撃解説サイトではない。主目的は、公開情報をもとに、初心者にも分かる形で「何をしてはいけないか」「何を確認すべきか」「安全な代替行動は何か」を整理することである。
 
@@ -951,7 +951,7 @@ v1.0:
 
 ## 30. まとめ
 
-Tripwire v0.1は、危険行動カードを中心にした、初心者・個人開発者向けの最小公開版である。
+Before You Run v0.1は、危険行動カードを中心にした、初心者・個人開発者向けの最小公開版である。
 
 v0.1の価値は、以下にある。
 

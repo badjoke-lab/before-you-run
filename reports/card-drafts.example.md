@@ -1,4 +1,4 @@
-# Tripwire Card Drafts
+# Before You Run Card Drafts
 
 Source: data/candidate-review-queue.example.json
 

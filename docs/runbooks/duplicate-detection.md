@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The duplicate detection helper creates a local Markdown report that flags likely duplicate manual intake items before they move deeper into Tripwire Phase 2 review.
+The duplicate detection helper creates a local Markdown report that flags likely duplicate manual intake items before they move deeper into Before You Run Phase 2 review.
 
 ## Boundaries
 

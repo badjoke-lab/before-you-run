@@ -1,4 +1,4 @@
-# Tripwire Duplicate Detection Report
+# Before You Run Duplicate Detection Report
 
 Input: data/manual-intake.example.json  
 Network access: false
