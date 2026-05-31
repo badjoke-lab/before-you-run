@@ -1,1 +1,126 @@
-[]
+[
+  {
+    "id": "do-not-deserialize-untrusted-data",
+    "title": "Do not deserialize untrusted data from AI-generated or external inputs",
+    "title_ja": "AI生成コードや外部入力で、信頼できないデータをdeserializeしない",
+    "severity": "high",
+    "categories": [
+      "tooling",
+      "supply-chain",
+      "ai-coding-agents"
+    ],
+    "audience": [
+      "beginner",
+      "indie-dev",
+      "ai-coding"
+    ],
+    "summary": "Deserialization and object-loading helpers can become dangerous when they process untrusted external data or code copied from AI-generated examples without review.",
+    "summary_ja": "deserializeやオブジェクト復元処理は、信頼できない外部データやAI生成例を確認せず使うと危険につながる可能性があります。",
+    "dangerous_actions": [
+      "Deserializing data from users, files, network responses, or dependencies without trust checks",
+      "Copying AI-generated deserialize or object-loading code without understanding what it accepts",
+      "Treating serialized data as safe because it looks like a normal string or file",
+      "Allowing deserialization helpers to load classes, methods, or objects from untrusted input"
+    ],
+    "dangerous_actions_ja": [
+      "ユーザー入力、ファイル、ネットワーク応答、依存関係から来たデータを信頼確認なしでdeserializeする",
+      "AI生成のdeserialize処理やオブジェクト復元コードを、受け入れる内容を理解せずコピーする",
+      "文字列やファイルに見えるという理由だけでserialized dataを安全だと扱う",
+      "信頼できない入力からclass、method、objectを復元できる処理を許可する"
+    ],
+    "avoid_now": [
+      "Do not deserialize external input unless the format, source, and allowed types are tightly controlled",
+      "Prefer simple formats such as JSON with explicit schema validation for untrusted data",
+      "Review AI-generated deserialize, load, restore, or object-mapping code before using it",
+      "Keep framework and runtime security updates applied when serialization features are involved"
+    ],
+    "avoid_now_ja": [
+      "形式、入手元、許可する型を厳密に制御できない限り、外部入力をdeserializeしない",
+      "信頼できないデータには、明示的なschema validation付きのJSONなど単純な形式を優先する",
+      "AI生成のdeserialize、load、restore、object mappingコードは使う前に確認する",
+      "serialization機能が関係する場合は、frameworkやruntimeのsecurity updateを適用する"
+    ],
+    "sources": [
+      {
+        "title": "CVE-2026-41316: ERB @_init deserialization guard bypass via def_module / def_method / def_class",
+        "url": "https://www.ruby-lang.org/en/news/2026/05/29/cve-2026-41316/",
+        "publisher": "Ruby News",
+        "source_tier": "primary",
+        "source_type": "primary",
+        "published_at": "2026-05-29T00:00:00Z",
+        "checked_at": "2026-05-30",
+        "source_published_original": "2026-05-29T00:00:00+00:00",
+        "source_time_precision": "datetime",
+        "source_published_at": "2026-05-29T00:00:00Z",
+        "source_published_date": "2026-05-29",
+        "source_timezone": "explicit-in-source",
+        "source_timezone_confidence": "explicit"
+      }
+    ],
+    "updated_at": "2026-05-30",
+    "ai_output": {
+      "risk_summary": "Deserializing untrusted data can load or process unexpected structures. Treat AI-generated deserialize code as risky until reviewed.",
+      "do_not": [
+        "Do not deserialize user input, downloaded files, network responses, or dependency-provided data without strict trust checks.",
+        "Do not copy AI-generated deserialize or object-loading code into a project without review."
+      ],
+      "check_first": [
+        "Check where the data comes from and whether it can be controlled by another party.",
+        "Check whether the code can load classes, methods, objects, templates, or framework internals.",
+        "Check whether a safer plain-data format and schema validation can be used instead."
+      ],
+      "safe_actions": [
+        "Prefer JSON or another plain-data format with explicit schema validation for untrusted input.",
+        "Limit allowed types and fields when any deserialize-like helper is unavoidable.",
+        "Keep framework and runtime security updates applied for serialization-related components."
+      ],
+      "ask_user_before": [
+        "Adding deserialize, load, restore, eval-like, or object-mapping code",
+        "Processing external files or network data with framework loaders",
+        "Using AI-generated code that restores objects, classes, methods, or templates"
+      ],
+      "agent_instruction": "Before adding deserialize or object-loading behavior, explain the data source, allowed types, validation plan, and safer alternatives. Ask for explicit approval before implementation.",
+      "checklist": [
+        "Identified the data source",
+        "Confirmed the data is trusted or strictly validated",
+        "Avoided unsafe object loading where possible",
+        "Used schema validation or a plain-data format",
+        "Asked for approval before adding risky deserialize behavior"
+      ]
+    },
+    "ai_output_ja": {
+      "risk_summary": "信頼できないデータをdeserializeすると、想定外の構造を読み込んだり処理したりする可能性があります。AI生成のdeserializeコードは確認するまで危険扱いにします。",
+      "do_not": [
+        "ユーザー入力、ダウンロードしたファイル、ネットワーク応答、依存関係由来のデータを厳密な信頼確認なしでdeserializeしない。",
+        "AI生成のdeserialize処理やオブジェクト復元コードを確認せずプロジェクトに入れない。"
+      ],
+      "check_first": [
+        "データの出どころと、第三者が操作できるかを確認する。",
+        "class、method、object、template、framework内部を読み込める処理か確認する。",
+        "より安全なplain-data形式とschema validationで代替できるか確認する。"
+      ],
+      "safe_actions": [
+        "信頼できない入力には、明示的なschema validation付きのJSONなどplain-data形式を優先する。",
+        "deserialize風の処理が避けられない場合は、許可する型とfieldを制限する。",
+        "serialization関連のframeworkやruntime security updateを適用する。"
+      ],
+      "ask_user_before": [
+        "deserialize、load、restore、eval風、object mappingコードを追加する",
+        "外部ファイルやネットワークデータをframework loaderで処理する",
+        "object、class、method、templateを復元するAI生成コードを使う"
+      ],
+      "agent_instruction": "deserializeやobject loadingを追加する前に、データの出どころ、許可する型、validation方針、安全な代替案を説明し、実装前に明示的な承認を得る。",
+      "checklist": [
+        "データの出どころを確認した",
+        "データが信頼済み、または厳密に検証されることを確認した",
+        "可能な限り危険なobject loadingを避けた",
+        "schema validationまたはplain-data形式を使った",
+        "危険なdeserialize処理を追加する前に承認を得た"
+      ]
+    },
+    "first_seen_at": "2026-05-30",
+    "checked_at": "2026-05-30",
+    "status": "active",
+    "freshness_label": "recent"
+  }
+]
