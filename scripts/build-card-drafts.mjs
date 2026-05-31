@@ -213,7 +213,7 @@ function buildDraft(item) {
 
 function buildReport(drafts, sourceLabel) {
   const lines = [
-    '# Tripwire Card Drafts',
+    '# Before You Run Card Drafts',
     '',
     `Source: ${sourceLabel}`,
     '',
