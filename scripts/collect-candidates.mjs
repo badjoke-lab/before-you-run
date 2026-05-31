@@ -348,7 +348,7 @@ function buildCandidate(item, source, index) {
 function buildDigest(candidates, sources, errors) {
   const draftCards = candidates.filter((candidate) => candidate.review_decision === 'draft-card');
   const lines = [
-    '# Tripwire Candidate Digest',
+    '# Before You Run Candidate Digest',
     '',
     `Date: ${today}  `,
     `Sources configured: ${sources.length}  `,
@@ -420,7 +420,7 @@ async function collect() {
 
     try {
       const response = await fetch(source.url, {
-        headers: { 'user-agent': 'Tripwire candidate collector' }
+        headers: { 'user-agent': 'Before You Run candidate collector' }
       });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const text = await response.text();
@@ -447,7 +447,7 @@ async function collect() {
   fs.writeFileSync(digestPath, buildDigest(unique, sources, errors), 'utf8');
 
   fs.mkdirSync(path.dirname(runPath), { recursive: true });
-  fs.writeFileSync(runPath, `# Candidate collection run\n\nDate: ${today}\n\n- Sources: ${sources.length}\n- Candidates: ${unique.length}\n- Errors: ${errors.length}\n- Queue: ${queuePath}\n- Digest: ${digestPath}\n\n`, 'utf8');
+  fs.writeFileSync(runPath, `# Before You Run candidate collection run\n\nDate: ${today}\n\n- Sources: ${sources.length}\n- Candidates: ${unique.length}\n- Errors: ${errors.length}\n- Queue: ${queuePath}\n- Digest: ${digestPath}\n\n`, 'utf8');
 
   console.log(`Wrote candidate queue: ${queuePath}`);
   console.log(`Wrote candidate digest: ${digestPath}`);
